@@ -23,7 +23,7 @@ Em **Settings → Secrets and variables → Actions → New repository secret**:
 | Nome | Valor |
 |---|---|
 | `IG_USER_ID` | ID da conta profissional do Instagram |
-| `IG_TOKEN` | token de acesso de longa duração com `instagram_content_publish` |
-| `GRAPH_HOST` | *(opcional)* `graph.instagram.com` se o app usar o login do Instagram; o padrão é `graph.facebook.com` |
+| `IG_TOKEN` | token de acesso gerado no app da Meta (login do Instagram), com `instagram_business_content_publish` |
+| `GRAPH_HOST` | *(opcional)* use `graph.facebook.com` só se o token for do login do Facebook; o padrão é `graph.instagram.com` |
 
 Teste manual: **Actions → Publicar no Instagram → Run workflow**.

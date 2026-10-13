@@ -18,8 +18,8 @@ post.json:
 
 Variáveis de ambiente (segredos do repositório):
   IG_USER_ID     ID da conta profissional do Instagram
-  IG_TOKEN       token de acesso com instagram_content_publish
-  GRAPH_HOST     opcional: graph.facebook.com (padrão) ou graph.instagram.com
+  IG_TOKEN       token de acesso com instagram_business_content_publish
+  GRAPH_HOST     opcional: graph.instagram.com (padrão, login do Instagram) ou graph.facebook.com
   GRAPH_VERSION  opcional: padrão v23.0
 """
 import datetime as dt
@@ -41,7 +41,7 @@ ERROS = RAIZ / "erros"
 MAX_ATRASO_HORAS = 6       # post mais atrasado que isso não é publicado
 MAX_TENTATIVAS = 3
 
-GRAPH_HOST = os.environ.get("GRAPH_HOST", "graph.facebook.com").strip() or "graph.facebook.com"
+GRAPH_HOST = os.environ.get("GRAPH_HOST", "graph.instagram.com").strip() or "graph.instagram.com"
 GRAPH_VERSION = os.environ.get("GRAPH_VERSION", "v23.0").strip() or "v23.0"
 API = f"https://{GRAPH_HOST}/{GRAPH_VERSION}"
 IG_USER_ID = os.environ.get("IG_USER_ID", "").strip()
@@ -159,8 +159,8 @@ def salvar(pasta, post_id, dados):
 
 def main():
     if not IG_USER_ID or not IG_TOKEN:
-        print("Faltam os segredos IG_USER_ID e/ou IG_TOKEN no repositório.")
-        return 1
+        print("Faltam os segredos IG_USER_ID e/ou IG_TOKEN no repositório. Nada a fazer.")
+        return 0
     if not FILA.exists():
         print("Fila vazia.")
         return 0
