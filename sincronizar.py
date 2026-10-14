@@ -126,6 +126,15 @@ def completar(im, nw, nh):
     return fundo
 
 
+def ordenar(arquivos):
+    """Carrossel: se todo nome começa com número (1, 02, 3-capa...), ordena por esse número; senão, ordem de upload."""
+    import re
+    nums = [re.match(r"\s*(\d+)", a.get("nome", "")) for a in arquivos]
+    if len(arquivos) > 1 and all(nums):
+        return [a for _, a in sorted(zip([int(n.group(1)) for n in nums], arquivos), key=lambda t: t[0])]
+    return list(arquivos)
+
+
 def montar(pasta, baixados):
     baixados = pathlib.Path(baixados)
     ids = {e["id"] for e in planejar(pasta, imprimir=False)["entrar"]}
@@ -134,7 +143,7 @@ def montar(pasta, baixados):
         if c["id"] not in ids:
             continue
         pid = c["id"]
-        arquivos = c.get("arquivos") or []
+        arquivos = ordenar(c.get("arquivos") or [])
         locais = [next(iter(baixados.glob(f"{a['id']}*")), None) for a in arquivos]
         if not arquivos or None in locais:
             continue
