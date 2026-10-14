@@ -27,3 +27,11 @@ Em **Settings → Secrets and variables → Actions → New repository secret**:
 | `GRAPH_HOST` | *(opcional)* use `graph.facebook.com` só se o token for do login do Facebook; o padrão é `graph.instagram.com` |
 
 Teste manual: **Actions → Publicar no Instagram → Run workflow**. O log mostra a conta conectada (`Conta conectada: @...`) mesmo com a fila vazia.
+
+
+## Seguidores (meta da Central JF)
+
+- `.github/workflows/seguidores.yml` roda a cada 30 minutos (aos 17 e 47) e chama `seguidores.py`.
+- `seguidores.py` lê `followers_count` pela API oficial do Instagram (mesmo `IG_TOKEN` do publicador) e grava `seguidores.json`. Só faz commit quando o número muda.
+- A tarefa agendada "Atualizar seguidores Central JF (Instagram)" lê esse arquivo toda hora (aos 52) e atualiza a meta "Seguidores no Instagram" na Central JF.
+- Se o token vencer, a leitura para e a tarefa avisa depois de 3 horas sem leitura.
