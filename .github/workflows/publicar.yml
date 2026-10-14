@@ -21,6 +21,13 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # sempre o estado mais recente (evita publicar de novo o que outro run já publicou)
+
+      - name: Configurar git
+        run: |
+          git config user.name "jf-instagram-bot"
+          git config user.email "jf-instagram-bot@users.noreply.github.com"
 
       - uses: actions/setup-python@v5
         with:
@@ -33,14 +40,13 @@ jobs:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           GRAPH_HOST: ${{ secrets.GRAPH_HOST }}
           GRAPH_VERSION: ${{ secrets.GRAPH_VERSION }}
+          GIT_SYNC: "1"
           ESPERAR_MIN: ${{ github.event_name == 'push' && '85' || '0' }}
         run: python publicar.py
 
       - name: Registrar resultado no repositório
         if: always()
         run: |
-          git config user.name "jf-instagram-bot"
-          git config user.email "jf-instagram-bot@users.noreply.github.com"
           git add -A .
           if git diff --cached --quiet; then
             echo "Nada mudou."

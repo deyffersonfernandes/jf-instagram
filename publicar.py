@@ -27,6 +27,7 @@ import json
 import os
 import pathlib
 import shutil
+import subprocess
 import sys
 import time
 import urllib.error
@@ -50,6 +51,7 @@ IG_TOKEN = os.environ.get("IG_TOKEN", "").strip()
 REPO = os.environ.get("GITHUB_REPOSITORY", "")
 REF = os.environ.get("RAW_REF") or os.environ.get("GITHUB_SHA") or "main"
 RAW_BASE = os.environ.get("RAW_BASE") or f"https://raw.githubusercontent.com/{REPO}/{REF}"
+GIT_SYNC = os.environ.get("GIT_SYNC") == "1"   # no GitHub Actions: grava e busca o main durante a espera
 
 
 class ErroMeta(Exception):
@@ -182,8 +184,41 @@ def conferir_conta():
     registrar_status(token_ok=True, conta=eu.get("username", ""), ig_user_id=IG_USER_ID)
 
 
+def git(*args):
+    return subprocess.run(["git", *args], cwd=RAIZ, check=True,
+                          capture_output=True, text=True).stdout.strip()
+
+
+def sincronizar_repo(msg="Atualiza fila de publicação"):
+    """Grava o que mudou e traz o main mais recente.
+
+    Assim, uma legenda editada na Central enquanto o run espera o horário vale na
+    publicação, e um post já publicado por outro run não sai duas vezes.
+    """
+    global RAW_BASE
+    if not GIT_SYNC:
+        return
+    try:
+        git("add", "-A", ".")
+        if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=RAIZ).returncode:
+            git("commit", "-q", "-m", msg)
+        for _ in range(3):
+            try:
+                git("pull", "-q", "--rebase", "origin", "main")
+                git("push", "-q", "origin", "HEAD:main")
+                break
+            except subprocess.CalledProcessError:
+                subprocess.run(["git", "rebase", "--abort"], cwd=RAIZ, capture_output=True)
+                time.sleep(5)
+        if not os.environ.get("RAW_BASE"):
+            RAW_BASE = f"https://raw.githubusercontent.com/{REPO}/{git('rev-parse', 'HEAD')}"
+    except Exception as e:
+        print(f"Aviso: não deu para sincronizar com o repositório ({e})")
+
+
 def processar():
     """Publica tudo o que já venceu. Devolve (houve_erro, próximo_horário_pendente)."""
+    sincronizar_repo()
     houve_erro = False
     proximo = None
     for pj in sorted(FILA.glob("*/post.json")):
@@ -229,6 +264,7 @@ def processar():
                                  "permalink": link, "publicado_em": agora().isoformat()})
         shutil.rmtree(pj.parent)
         print(f"[{pid}] publicado: {link or media_id}")
+        sincronizar_repo(f"Publicado: {post.get('titulo', pid)[:60]}")
 
     return houve_erro, proximo
 
