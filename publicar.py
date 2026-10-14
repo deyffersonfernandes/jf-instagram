@@ -182,28 +182,17 @@ def conferir_conta():
     registrar_status(token_ok=True, conta=eu.get("username", ""), ig_user_id=IG_USER_ID)
 
 
-def main():
-    if not IG_TOKEN:
-        print("Falta o segredo IG_TOKEN no repositório. Nada a fazer.")
-        registrar_status(token_ok=False, erro="segredo IG_TOKEN não configurado")
-        return 0
-    try:
-        conferir_conta()
-    except ErroMeta as e:
-        print(f"Token recusado pela Meta: {e}")
-        registrar_status(token_ok=False, erro=str(e))
-        return 1
-    if not FILA.exists():
-        print("Fila vazia.")
-        return 0
-
+def processar():
+    """Publica tudo o que já venceu. Devolve (houve_erro, próximo_horário_pendente)."""
     houve_erro = False
+    proximo = None
     for pj in sorted(FILA.glob("*/post.json")):
         post = json.loads(pj.read_text())
         pid = post["id"]
         quando = dt.datetime.fromisoformat(post["publicar_em"])
         if quando > agora():
             print(f"[{pid}] aguardando {post['publicar_em']}")
+            proximo = quando if proximo is None else min(proximo, quando)
             continue
         if (PUBLICADOS / f"{pid}.json").exists():
             print(f"[{pid}] já publicado, limpando da fila")
@@ -240,6 +229,36 @@ def main():
                                  "permalink": link, "publicado_em": agora().isoformat()})
         shutil.rmtree(pj.parent)
         print(f"[{pid}] publicado: {link or media_id}")
+
+    return houve_erro, proximo
+
+
+def main():
+    if not IG_TOKEN:
+        print("Falta o segredo IG_TOKEN no repositório. Nada a fazer.")
+        registrar_status(token_ok=False, erro="segredo IG_TOKEN não configurado")
+        return 0
+    try:
+        conferir_conta()
+    except ErroMeta as e:
+        print(f"Token recusado pela Meta: {e}")
+        registrar_status(token_ok=False, erro=str(e))
+        return 1
+    if not FILA.exists():
+        print("Fila vazia.")
+        return 0
+
+    # Quando o run vem do envio de um post, espera até o horário exato (até ESPERAR_MIN minutos)
+    limite = agora() + dt.timedelta(minutes=float(os.environ.get("ESPERAR_MIN", "0") or 0))
+    houve_erro = False
+    while True:
+        erro, proximo = processar()
+        houve_erro = houve_erro or erro
+        if proximo is None or proximo > limite:
+            break
+        espera = max(0, (proximo - agora()).total_seconds()) + 5
+        print(f"Esperando {espera / 60:.1f} min até o próximo post")
+        time.sleep(espera)
 
     return 1 if houve_erro else 0
 

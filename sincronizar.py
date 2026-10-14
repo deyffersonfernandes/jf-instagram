@@ -25,7 +25,7 @@ from zoneinfo import ZoneInfo
 RAIZ = pathlib.Path(__file__).resolve().parent
 FILA, PUBLICADOS, ERROS = RAIZ / "fila", RAIZ / "publicados", RAIZ / "erros"
 FUSO = ZoneInfo("America/Sao_Paulo")
-JANELA_HORAS = 2          # entra na fila o que vence nas próximas 2 h
+JANELA_HORAS = 1.25       # entra na fila o que vence nos próximos 75 min (o GitHub espera até 85)
 MAX_ATRASO_HORAS = 6
 
 

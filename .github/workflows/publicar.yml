@@ -18,7 +18,7 @@ permissions:
 jobs:
   publicar:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -33,6 +33,7 @@ jobs:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           GRAPH_HOST: ${{ secrets.GRAPH_HOST }}
           GRAPH_VERSION: ${{ secrets.GRAPH_VERSION }}
+          ESPERAR_MIN: ${{ github.event_name == 'push' && '85' || '0' }}
         run: python publicar.py
 
       - name: Registrar resultado no repositório
