@@ -54,6 +54,42 @@ RAW_BASE = os.environ.get("RAW_BASE") or f"https://raw.githubusercontent.com/{RE
 GIT_SYNC = os.environ.get("GIT_SYNC") == "1"   # no GitHub Actions: grava e busca o main durante a espera
 
 
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+if not TELEGRAM_CHAT_ID:
+    # o Telegram só guarda as mensagens para o bot por 24 h; o chat descoberto fica salvo no status.json
+    try:
+        TELEGRAM_CHAT_ID = str(json.loads((RAIZ / "status.json").read_text()).get("telegram_chat") or "")
+    except Exception:
+        pass
+
+
+def telegram(texto):
+    """Manda um aviso no Telegram. Sem TELEGRAM_TOKEN configurado, não faz nada."""
+    global TELEGRAM_CHAT_ID
+    if not TELEGRAM_TOKEN:
+        return False
+    base = f"{os.environ.get('TELEGRAM_API', 'https://api.telegram.org')}/bot{TELEGRAM_TOKEN}"
+    try:
+        if not TELEGRAM_CHAT_ID:
+            # descobre o chat pela última mensagem que você mandou para o bot
+            with urllib.request.urlopen(f"{base}/getUpdates", timeout=30) as r:
+                ups = json.loads(r.read().decode()).get("result", [])
+            chats = [u.get("message", {}).get("chat", {}).get("id") for u in ups if u.get("message")]
+            if not chats:
+                print("Telegram: mande qualquer mensagem para o seu bot para ele saber para onde avisar.")
+                return False
+            TELEGRAM_CHAT_ID = str(chats[-1])
+        dados = urllib.parse.urlencode({"chat_id": TELEGRAM_CHAT_ID, "text": texto,
+                                        "disable_web_page_preview": "false"}).encode()
+        with urllib.request.urlopen(urllib.request.Request(f"{base}/sendMessage", data=dados), timeout=30):
+            pass
+        return True
+    except Exception as e:
+        print(f"Telegram: não deu para avisar ({e})")
+        return False
+
+
 class ErroMeta(Exception):
     pass
 
@@ -211,8 +247,22 @@ def conferir_conta():
         checagem = f"ok ({n} posts lidos)"
     except Exception as e:
         checagem = f"falhou: {e}"
+    tg = "não configurado"
+    if TELEGRAM_TOKEN:
+        antigo = {}
+        try:
+            antigo = json.loads((RAIZ / "status.json").read_text())
+        except Exception:
+            pass
+        if antigo.get("telegram") == "conectado":
+            tg = "conectado"
+        elif telegram("🔔 Pronto! A partir de agora eu te aviso aqui toda vez que um post sair no Instagram."):
+            tg = "conectado"
+        else:
+            tg = "aguardando mensagem para o bot"
     registrar_status(token_ok=True, conta=eu.get("username", ""), ig_user_id=IG_USER_ID,
-                     checagem_duplicados=checagem)
+                     checagem_duplicados=checagem, telegram=tg,
+                     **({"telegram_chat": TELEGRAM_CHAT_ID} if tg == "conectado" else {}))
 
 
 def git(*args):
@@ -267,6 +317,7 @@ def processar():
 
         atraso_h = (agora() - quando).total_seconds() / 3600
         if atraso_h > MAX_ATRASO_HORAS:
+            telegram(f"⚠️ Não publiquei (horário passou há {atraso_h:.1f} h): {post.get('titulo', '')}")
             salvar(ERROS, pid, {"id": pid, "titulo": post.get("titulo", ""),
                                 "erro": f"não publicado: horário passou há {atraso_h:.1f} h",
                                 "em": agora().isoformat()})
@@ -293,6 +344,7 @@ def processar():
             print(f"[{pid}] ERRO (tentativa {post['tentativas']}): {msg}")
             houve_erro = True
             if post["tentativas"] >= MAX_TENTATIVAS:
+                telegram(f"⚠️ Não consegui publicar: {post.get('titulo', '')}\n\nMotivo: {msg}")
                 salvar(ERROS, pid, {"id": pid, "titulo": post.get("titulo", ""), "erro": msg,
                                     "tentativas": post["tentativas"], "em": agora().isoformat()})
                 shutil.rmtree(pj.parent)
@@ -305,6 +357,8 @@ def processar():
                                  "permalink": link, "publicado_em": agora().isoformat()})
         shutil.rmtree(pj.parent)
         print(f"[{pid}] publicado: {link or media_id}")
+        telegram(f"✅ Post publicado no Instagram\n\n{post.get('titulo', '')}\n\n"
+                 f"🎵 Coloque a música: abra o post → ⋯ → Editar → Adicionar música\n{link}")
         sincronizar_repo(f"Publicado: {post.get('titulo', pid)[:60]}")
 
     return houve_erro, proximo
