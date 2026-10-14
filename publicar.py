@@ -126,6 +126,31 @@ def criar_container(post, nome, carrossel_item=False, legenda=None):
     return cid
 
 
+def _norm(txt):
+    return " ".join((txt or "").split())[:150]
+
+
+def ja_no_instagram(post, horas=24):
+    """Trava final contra post repetido: procura no próprio perfil um post recente com a mesma legenda."""
+    alvo = _norm(post.get("legenda"))
+    if not alvo:
+        return None
+    try:
+        r = graph("GET", f"{IG_USER_ID}/media", {"fields": "id,caption,timestamp,permalink", "limit": "15"})
+    except Exception as e:
+        print(f"Aviso: não deu para conferir os posts recentes ({e})")
+        return None
+    limite = agora() - dt.timedelta(hours=horas)
+    for m in r.get("data", []):
+        try:
+            quando = dt.datetime.strptime(m.get("timestamp", ""), "%Y-%m-%dT%H:%M:%S%z")
+        except ValueError:
+            continue
+        if quando >= limite and _norm(m.get("caption")) == alvo:
+            return m
+    return None
+
+
 def publicar(post):
     arquivos = post.get("arquivos") or []
     formato = post.get("formato")
@@ -181,7 +206,13 @@ def conferir_conta():
     if not IG_USER_ID:
         IG_USER_ID = str(eu.get("user_id") or eu.get("id"))
     print(f"Conta conectada: @{eu.get('username', '?')} (id {IG_USER_ID})")
-    registrar_status(token_ok=True, conta=eu.get("username", ""), ig_user_id=IG_USER_ID)
+    try:
+        n = len(graph("GET", f"{IG_USER_ID}/media", {"fields": "id", "limit": "3"}).get("data", []))
+        checagem = f"ok ({n} posts lidos)"
+    except Exception as e:
+        checagem = f"falhou: {e}"
+    registrar_status(token_ok=True, conta=eu.get("username", ""), ig_user_id=IG_USER_ID,
+                     checagem_duplicados=checagem)
 
 
 def git(*args):
@@ -241,6 +272,16 @@ def processar():
                                 "em": agora().isoformat()})
             shutil.rmtree(pj.parent)
             houve_erro = True
+            continue
+
+        existente = ja_no_instagram(post)
+        if existente:
+            print(f"[{pid}] já está no Instagram ({existente.get('permalink')}); não publica de novo")
+            salvar(PUBLICADOS, pid, {"id": pid, "titulo": post.get("titulo", ""), "media_id": existente.get("id"),
+                                     "permalink": existente.get("permalink", ""),
+                                     "publicado_em": existente.get("timestamp", agora().isoformat())})
+            shutil.rmtree(pj.parent)
+            sincronizar_repo(f"Já publicado: {post.get('titulo', pid)[:60]}")
             continue
 
         try:
