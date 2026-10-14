@@ -33,9 +33,11 @@ def ler_conteudos(pasta):
     docs = []
     for f in pathlib.Path(pasta).rglob("*.json"):
         d = json.loads(f.read_text())
-        dados = d.get("data", d)
-        dados.setdefault("id", d.get("id") or f.stem)
-        dados["_version"] = d.get("version")
+        # aceita o documento puro (exportado com out_dir) ou o envelope {"id", "data": {...}, "version"}
+        envelope = isinstance(d.get("data"), dict) and "id" in d
+        dados = dict(d["data"]) if envelope else dict(d)
+        dados["id"] = d["id"] if envelope else f.stem
+        dados["_version"] = d.get("version") if envelope else None
         docs.append(dados)
     return docs
 
@@ -65,9 +67,11 @@ def planejar(pasta, imprimir=True):
         if c.get("uso") == "anuncio":      # criativo só de anúncio não vai para o feed
             continue
         quando = horario(c)
-        if not quando:
-            continue
         pid = c["id"]
+        if not quando:
+            if c.get("data") == agora.strftime("%Y-%m-%d"):
+                avisos.append({"id": pid, "titulo": c.get("titulo"), "aviso": "agendado para hoje sem horário"})
+            continue
         if (PUBLICADOS / f"{pid}.json").exists() or (ERROS / f"{pid}.json").exists():
             continue
         if quando > agora + dt.timedelta(hours=JANELA_HORAS):
