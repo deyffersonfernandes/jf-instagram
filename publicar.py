@@ -157,6 +157,21 @@ def salvar(pasta, post_id, dados):
     (pasta / f"{post_id}.json").write_text(json.dumps(dados, ensure_ascii=False, indent=2) + "\n")
 
 
+def registrar_status(**dados):
+    """Grava status.json só quando algo muda (evita commit a cada rodada)."""
+    arq = RAIZ / "status.json"
+    antigo = {}
+    if arq.exists():
+        try:
+            antigo = json.loads(arq.read_text())
+        except Exception:
+            pass
+    comparar = {k: v for k, v in antigo.items() if k != "verificado_em"}
+    if comparar != dados:
+        arq.write_text(json.dumps({**dados, "verificado_em": agora().isoformat()},
+                                  ensure_ascii=False, indent=2) + "\n")
+
+
 def conferir_conta():
     """Confere o token e descobre o ID da conta quando IG_USER_ID não foi informado."""
     global IG_USER_ID
@@ -164,16 +179,19 @@ def conferir_conta():
     if not IG_USER_ID:
         IG_USER_ID = str(eu.get("user_id") or eu.get("id"))
     print(f"Conta conectada: @{eu.get('username', '?')} (id {IG_USER_ID})")
+    registrar_status(token_ok=True, conta=eu.get("username", ""), ig_user_id=IG_USER_ID)
 
 
 def main():
     if not IG_TOKEN:
         print("Falta o segredo IG_TOKEN no repositório. Nada a fazer.")
+        registrar_status(token_ok=False, erro="segredo IG_TOKEN não configurado")
         return 0
     try:
         conferir_conta()
     except ErroMeta as e:
         print(f"Token recusado pela Meta: {e}")
+        registrar_status(token_ok=False, erro=str(e))
         return 1
     if not FILA.exists():
         print("Fila vazia.")
