@@ -17,7 +17,7 @@ post.json:
 }
 
 Variáveis de ambiente (segredos do repositório):
-  IG_USER_ID     ID da conta profissional do Instagram
+  IG_USER_ID     opcional: ID da conta (descoberto pelo token se faltar)
   IG_TOKEN       token de acesso com instagram_business_content_publish
   GRAPH_HOST     opcional: graph.instagram.com (padrão, login do Instagram) ou graph.facebook.com
   GRAPH_VERSION  opcional: padrão v23.0
@@ -157,10 +157,24 @@ def salvar(pasta, post_id, dados):
     (pasta / f"{post_id}.json").write_text(json.dumps(dados, ensure_ascii=False, indent=2) + "\n")
 
 
+def conferir_conta():
+    """Confere o token e descobre o ID da conta quando IG_USER_ID não foi informado."""
+    global IG_USER_ID
+    eu = graph("GET", "me", {"fields": "user_id,username"})
+    if not IG_USER_ID:
+        IG_USER_ID = str(eu.get("user_id") or eu.get("id"))
+    print(f"Conta conectada: @{eu.get('username', '?')} (id {IG_USER_ID})")
+
+
 def main():
-    if not IG_USER_ID or not IG_TOKEN:
-        print("Faltam os segredos IG_USER_ID e/ou IG_TOKEN no repositório. Nada a fazer.")
+    if not IG_TOKEN:
+        print("Falta o segredo IG_TOKEN no repositório. Nada a fazer.")
         return 0
+    try:
+        conferir_conta()
+    except ErroMeta as e:
+        print(f"Token recusado pela Meta: {e}")
+        return 1
     if not FILA.exists():
         print("Fila vazia.")
         return 0

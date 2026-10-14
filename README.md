@@ -22,8 +22,8 @@ Em **Settings → Secrets and variables → Actions → New repository secret**:
 
 | Nome | Valor |
 |---|---|
-| `IG_USER_ID` | ID da conta profissional do Instagram |
 | `IG_TOKEN` | token de acesso gerado no app da Meta (login do Instagram), com `instagram_business_content_publish` |
+| `IG_USER_ID` | *(opcional)* ID da conta; se faltar, é descoberto pelo token |
 | `GRAPH_HOST` | *(opcional)* use `graph.facebook.com` só se o token for do login do Facebook; o padrão é `graph.instagram.com` |
 
-Teste manual: **Actions → Publicar no Instagram → Run workflow**.
+Teste manual: **Actions → Publicar no Instagram → Run workflow**. O log mostra a conta conectada (`Conta conectada: @...`) mesmo com a fila vazia.
