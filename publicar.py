@@ -95,6 +95,11 @@ def telegram(texto):
         return False
 
 
+def aviso_publicado(titulo, link):
+    return (f"✅ Post publicado no Instagram\n\n{titulo}\n\n"
+            f"🎵 Coloque a música: abra o post → ⋯ → Editar → Adicionar música\n{link}")
+
+
 class ErroMeta(Exception):
     pass
 
@@ -362,8 +367,7 @@ def processar():
                                  "permalink": link, "publicado_em": agora().isoformat()})
         shutil.rmtree(pj.parent)
         print(f"[{pid}] publicado: {link or media_id}")
-        telegram(f"✅ Post publicado no Instagram\n\n{post.get('titulo', '')}\n\n"
-                 f"🎵 Coloque a música: abra o post → ⋯ → Editar → Adicionar música\n{link}")
+        telegram(aviso_publicado(post.get("titulo", ""), link))
         sincronizar_repo(f"Publicado: {post.get('titulo', pid)[:60]}")
 
     return houve_erro, proximo
@@ -380,6 +384,14 @@ def main():
         print(f"Token recusado pela Meta: {e}")
         registrar_status(token_ok=False, erro=str(e))
         return 1
+    teste = FILA / "teste_aviso.txt"
+    if teste.exists():
+        # simulação pedida: manda o aviso de exemplo e apaga o pedido
+        ult = sorted(PUBLICADOS.glob("*.json"), key=lambda f: f.stat().st_mtime)
+        ex = json.loads(ult[-1].read_text()) if ult else {"titulo": "Exemplo de post", "permalink": ""}
+        telegram("🧪 SIMULAÇÃO (nada foi publicado agora)\n\n" + aviso_publicado(ex.get("titulo", ""), ex.get("permalink", "")))
+        teste.unlink()
+
     if not FILA.exists():
         print("Fila vazia.")
         return 0
