@@ -64,9 +64,12 @@ if not TELEGRAM_CHAT_ID:
         pass
 
 
+TELEGRAM_ERRO = ""
+
+
 def telegram(texto):
     """Manda um aviso no Telegram. Sem TELEGRAM_TOKEN configurado, não faz nada."""
-    global TELEGRAM_CHAT_ID
+    global TELEGRAM_CHAT_ID, TELEGRAM_ERRO
     if not TELEGRAM_TOKEN:
         return False
     base = f"{os.environ.get('TELEGRAM_API', 'https://api.telegram.org')}/bot{TELEGRAM_TOKEN}"
@@ -77,6 +80,7 @@ def telegram(texto):
                 ups = json.loads(r.read().decode()).get("result", [])
             chats = [u.get("message", {}).get("chat", {}).get("id") for u in ups if u.get("message")]
             if not chats:
+                TELEGRAM_ERRO = f"o bot não recebeu nenhuma mensagem ({len(ups)} atualizações)"
                 print("Telegram: mande qualquer mensagem para o seu bot para ele saber para onde avisar.")
                 return False
             TELEGRAM_CHAT_ID = str(chats[-1])
@@ -86,7 +90,8 @@ def telegram(texto):
             pass
         return True
     except Exception as e:
-        print(f"Telegram: não deu para avisar ({e})")
+        TELEGRAM_ERRO = str(e).replace(TELEGRAM_TOKEN, "***") if TELEGRAM_TOKEN else str(e)
+        print(f"Telegram: não deu para avisar ({TELEGRAM_ERRO})")
         return False
 
 
@@ -259,7 +264,7 @@ def conferir_conta():
         elif telegram("🔔 Pronto! A partir de agora eu te aviso aqui toda vez que um post sair no Instagram."):
             tg = "conectado"
         else:
-            tg = "aguardando mensagem para o bot"
+            tg = f"falhou: {TELEGRAM_ERRO}"
     registrar_status(token_ok=True, conta=eu.get("username", ""), ig_user_id=IG_USER_ID,
                      checagem_duplicados=checagem, telegram=tg,
                      **({"telegram_chat": TELEGRAM_CHAT_ID} if tg == "conectado" else {}))
