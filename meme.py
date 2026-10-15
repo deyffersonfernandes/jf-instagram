@@ -22,6 +22,7 @@ import argparse
 import json
 import os
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
@@ -134,7 +135,7 @@ def de_wikimedia(termo, n=5):
             continue
         meta = ii.get("extmetadata") or {}
         lic = (meta.get("LicenseShortName") or {}).get("value", "")
-        out.append({"fonte": "Wikimedia Commons", "autor": (meta.get("Artist") or {}).get("value", "")[:120],
+        out.append({"fonte": "Wikimedia Commons", "autor": re.sub(r"<[^>]+>", "", (meta.get("Artist") or {}).get("value", "")).strip()[:120],
                     "pagina": ii.get("descriptionurl", ""), "link": ii["url"], "duracao": 0, "termo": termo,
                     "licenca": lic or "ver página"})
     return out
