@@ -19,6 +19,7 @@ import hashlib
 import json
 import pathlib
 import shutil
+import subprocess
 import sys
 from zoneinfo import ZoneInfo
 
@@ -55,7 +56,29 @@ def assinatura(c):
 
 
 def eh_video(a):
-    return (a.get("tipo") or "").startswith("video/") or a.get("nome", "").lower().endswith((".mp4", ".mov"))
+    return (a.get("tipo") or "").startswith("video/") or a.get("nome", "").lower().endswith((".mp4", ".mov", ".webm"))
+
+
+def preparar_video(origem, destino):
+    """Converte para o que o Instagram aceita em Reels: MP4 H.264 + AAC, 30 fps, faststart.
+    Vídeos montados no navegador (Reels de meme da Central) podem vir em WEBM ou VP9."""
+    ffmpeg = shutil.which("ffmpeg")
+    if not ffmpeg:
+        if str(origem).lower().endswith(".webm"):
+            raise RuntimeError("ffmpeg não encontrado para converter o vídeo WEBM em MP4")
+        shutil.copy(origem, destino)
+        return
+    cmd = [ffmpeg, "-loglevel", "error", "-y", "-i", str(origem),
+           "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
+           "-vf", "scale='min(1080,iw)':-2,fps=30", "-c:a", "aac", "-b:a", "128k", "-ar", "44100",
+           "-movflags", "+faststart", str(destino)]
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if r.returncode != 0:
+        # sem faixa de áudio ou outro detalhe: tenta sem áudio antes de desistir
+        sem_audio = cmd[:cmd.index("-c:a")] + ["-an", "-movflags", "+faststart", str(destino)]
+        r2 = subprocess.run(sem_audio, capture_output=True, text=True)
+        if r2.returncode != 0:
+            raise RuntimeError("falha ao converter vídeo: " + (r.stderr or r2.stderr)[-300:])
 
 
 def planejar(pasta, imprimir=True):
@@ -158,7 +181,7 @@ def montar(pasta, baixados):
         for i, (a, loc) in enumerate(zip(arquivos, locais), 1):
             if eh_video(a):
                 nome = f"{i:02d}.mp4"
-                shutil.copy(loc, destino / nome)
+                preparar_video(loc, destino / nome)
             else:
                 nome = f"{i:02d}.jpg"
                 preparar_imagem(loc, destino / nome)
