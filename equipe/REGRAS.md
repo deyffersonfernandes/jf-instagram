@@ -29,6 +29,7 @@ Carrossel de competência (mo36, **categoria competência**, não alcance): ensi
 - Slide 1 (capa): ==gancho na dor== (o ÚNICO grifo amarelo do carrossel, ex.: ==Tem vergonha de pedir indicação?==), embaixo a promessa em texto normal ("Use essa estratégia para pedir indicação sem constranger ninguém.") e "Em 4 passos 👉". Nada de "leva 5 minutos".
 - Sem slide de problema: do slide 1 vai direto para o Passo 1.
 - **Negrito só no título de cada slide** ("**Passo 1: espere a conquista.**"). Todo o resto do slide em texto normal: sem negrito, sem grifo, inclusive dentro das mensagens prontas.
+- Não force passo de IA/prompt: só use quando a estratégia for sobre IA ou quando o prompt for a ação principal. Passo extra que não faz sentido sai (o José cortou o "adapte com IA" do carrossel do preço). A capa diz o número real de passos.
 - Placeholders sempre entre colchetes: [nome], [seu valor], [quem você atende], [emagrecer com saúde].
 - Último slide: "**Desafio de hoje:**" (só isso em negrito) + a ação, e embaixo, em texto normal: "Salva esse conteúdo para usar depois e me segue para mais estratégias como essa." ("usar toda segunda" foi só no post da reativação.)
 - Gancho forte na dor da nutri sem resultado / recém-formada ("Sem pacientes essa semana?", "Recém-formada e sem pacientes?", "Mandou o preço e a pessoa sumiu?"). Nada de dica genérica.
