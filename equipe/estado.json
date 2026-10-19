@@ -4,12 +4,6 @@
   "pexels": false,
   "veto": [
     {
-      "n": 13,
-      "id": "eq20261023-0800-vdc",
-      "vetoAte": "2026-10-19T19:06:56Z",
-      "titulo": "O Instagram acabou com a desculpa de não saber gravar Reels"
-    },
-    {
       "n": 17,
       "id": "eq20261024-0800-fut",
       "vetoAte": "2026-10-19T19:06:56Z",
@@ -28,20 +22,7 @@
       "titulo": "Postar todo dia sem direção é um diário com CRN"
     }
   ],
-  "andamento": [
-    {
-      "ids": [
-        "eq20261020-1800-usx",
-        "eq20261021-1800-xmm",
-        "eq20261022-1800-bqb",
-        "eq20261024-1800-fkv",
-        "eq20261025-1800-plj"
-      ],
-      "agente": "redator",
-      "desde": "2026-10-19T18:52:00Z",
-      "refeito": false
-    }
-  ],
+  "andamento": [],
   "pedidosJose": [],
   "avisos": [],
   "ultimaRotina": "2026-10-19T17:11:00Z"
