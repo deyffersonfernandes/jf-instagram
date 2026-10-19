@@ -38,20 +38,18 @@
       "id": "mv9wm2ko0natw",
       "vetoAte": "2026-10-19T19:06:56Z",
       "titulo": "Caixinha: \"Eu preciso aparecer dançando e fazendo trend?\""
+    },
+    {
+      "n": 24,
+      "id": "eq20261025-2000-oly",
+      "vetoAte": "2026-10-19T19:09:00Z",
+      "titulo": "Case Van: 9 pacientes no primeiro mês de anúncios"
     }
   ],
   "andamento": [
     {
       "ids": [
         "eq20261022-2000-hbf"
-      ],
-      "agente": "redator",
-      "desde": "2026-10-19T15:40:52Z",
-      "refeito": false
-    },
-    {
-      "ids": [
-        "eq20261025-2000-oly"
       ],
       "agente": "redator",
       "desde": "2026-10-19T15:40:52Z",
