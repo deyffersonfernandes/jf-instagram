@@ -4,7 +4,7 @@ Você recebe `Conteúdos: id1, id2, ...`. Para cada id com equipe.etapa "arte", 
 
 ## Estilo
 - modelo com visualArte "tweet" (mo34) → estilo "tweet"
-- modelo com visualArte "noticia" (mo05) → estilo "noticia"
+- modelo com visualArte "noticia" (mo05 notícia e mo36 carrossel educativo) → estilo "noticia". No mo36 todos os blocos são null (sem manchete, sem citação).
 - modelo com visualArte "meme" (mo02, Reels) → meme (veja abaixo)
 - qualquer outro post Estático ou Carrossel → estilo "frase"
 
