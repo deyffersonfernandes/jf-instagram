@@ -20,6 +20,12 @@
       "id": "eq20261025-0800-jrf",
       "vetoAte": "2026-10-19T19:06:56Z",
       "titulo": "A inflação sobe todo ano. E o preço da sua consulta?"
+    },
+    {
+      "n": 28,
+      "id": "eq20261023-0800-trc",
+      "vetoAte": "2026-10-19T21:12:30Z",
+      "titulo": "Postar todo dia sem direção é um diário com CRN"
     }
   ],
   "andamento": [
@@ -28,12 +34,11 @@
         "eq20261020-1800-usx",
         "eq20261021-1800-xmm",
         "eq20261022-1800-bqb",
-        "eq20261023-0800-trc",
         "eq20261024-1800-fkv",
         "eq20261025-1800-plj"
       ],
-      "agente": "redator",
-      "desde": "2026-10-19T18:07:00Z",
+      "agente": "designer",
+      "desde": "2026-10-19T18:13:04Z",
       "refeito": false
     }
   ],
