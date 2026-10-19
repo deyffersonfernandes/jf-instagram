@@ -1,6 +1,6 @@
 {
   "modoVetoAte": "2026-10-26",
-  "proximoN": 25,
+  "proximoN": 31,
   "pexels": false,
   "veto": [
     {
@@ -22,7 +22,21 @@
       "titulo": "A inflação sobe todo ano. E o preço da sua consulta?"
     }
   ],
-  "andamento": [],
+  "andamento": [
+    {
+      "ids": [
+        "eq20261020-1800-usx",
+        "eq20261021-1800-xmm",
+        "eq20261022-1800-bqb",
+        "eq20261023-0800-trc",
+        "eq20261024-1800-fkv",
+        "eq20261025-1800-plj"
+      ],
+      "agente": "redator",
+      "desde": "2026-10-19T18:07:00Z",
+      "refeito": false
+    }
+  ],
   "pedidosJose": [],
   "avisos": [],
   "ultimaRotina": "2026-10-19T17:11:00Z"
