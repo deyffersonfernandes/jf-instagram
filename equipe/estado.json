@@ -1,10 +1,63 @@
 {
   "modoVetoAte": "2026-10-26",
-  "proximoN": 1,
+  "proximoN": 25,
   "pexels": false,
   "veto": [],
-  "andamento": [],
+  "andamento": [
+    {
+      "ids": [
+        "frase-captacao-pacientes",
+        "mv9vu6drkd6ot",
+        "mv9vz41rojbac",
+        "mv9wmbyjb4bru",
+        "mv8p3834fvk7y",
+        "mv9vukdjlp8ym"
+      ],
+      "agente": "redator",
+      "desde": "2026-10-19T15:40:52Z",
+      "refeito": false
+    },
+    {
+      "ids": [
+        "eq20261021-1630-mbe",
+        "eq20261021-2000-mop",
+        "frase-enquanto-nutris",
+        "eq20261022-1200-obh",
+        "mv9vzkrun9m17",
+        "eq20261022-2000-hbf"
+      ],
+      "agente": "redator",
+      "desde": "2026-10-19T15:40:52Z",
+      "refeito": false
+    },
+    {
+      "ids": [
+        "eq20261023-0800-vdc",
+        "mv9vufzbn14mp",
+        "eq20261023-1630-ftr",
+        "mv9wm2ko0natw",
+        "eq20261024-0800-fut",
+        "mv9vuov5cf3sl"
+      ],
+      "agente": "redator",
+      "desde": "2026-10-19T15:40:52Z",
+      "refeito": false
+    },
+    {
+      "ids": [
+        "mv9w08mvb9kui",
+        "eq20261024-2000-asu",
+        "eq20261025-0800-jrf",
+        "mv9vun2x7fdtg",
+        "eq20261025-1630-cnw",
+        "eq20261025-2000-oly"
+      ],
+      "agente": "redator",
+      "desde": "2026-10-19T15:40:52Z",
+      "refeito": false
+    }
+  ],
   "pedidosJose": [],
   "avisos": [],
-  "ultimaRotina": null
+  "ultimaRotina": "2026-10-19T15:40:52Z"
 }
