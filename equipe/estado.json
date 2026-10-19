@@ -44,26 +44,21 @@
       "id": "eq20261025-2000-oly",
       "vetoAte": "2026-10-19T19:09:00Z",
       "titulo": "Case Van: 9 pacientes no primeiro mês de anúncios"
-    }
-  ],
-  "andamento": [
-    {
-      "ids": [
-        "eq20261022-2000-hbf"
-      ],
-      "agente": "redator",
-      "desde": "2026-10-19T15:40:52Z",
-      "refeito": false
     },
     {
-      "ids": [
-        "mv9wmbyjb4bru"
-      ],
-      "agente": "designer",
-      "desde": "2026-10-19T16:07:25Z",
-      "refeito": false
+      "n": 4,
+      "id": "mv9wmbyjb4bru",
+      "vetoAte": "2026-10-19T19:13:00Z",
+      "titulo": "Caixinha: 'Funciona para quem tem poucos seguidores?'"
+    },
+    {
+      "n": 12,
+      "id": "eq20261022-2000-hbf",
+      "vetoAte": "2026-10-19T19:13:00Z",
+      "titulo": "Case Paula: R$ 4 mil no primeiro mês. Onde o seu caminho trava?"
     }
   ],
+  "andamento": [],
   "pedidosJose": [
     {
       "n": 2,
