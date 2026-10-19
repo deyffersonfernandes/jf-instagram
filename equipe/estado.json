@@ -6,12 +6,7 @@
   "andamento": [
     {
       "ids": [
-        "frase-captacao-pacientes",
-        "mv9vu6drkd6ot",
-        "mv9vz41rojbac",
-        "mv9wmbyjb4bru",
-        "mv8p3834fvk7y",
-        "mv9vukdjlp8ym"
+        "mv9wmbyjb4bru"
       ],
       "agente": "redator",
       "desde": "2026-10-19T15:40:52Z",
@@ -19,11 +14,8 @@
     },
     {
       "ids": [
-        "eq20261021-1630-mbe",
         "eq20261021-2000-mop",
-        "frase-enquanto-nutris",
         "eq20261022-1200-obh",
-        "mv9vzkrun9m17",
         "eq20261022-2000-hbf"
       ],
       "agente": "redator",
@@ -34,10 +26,8 @@
       "ids": [
         "eq20261023-0800-vdc",
         "mv9vufzbn14mp",
-        "eq20261023-1630-ftr",
         "mv9wm2ko0natw",
-        "eq20261024-0800-fut",
-        "mv9vuov5cf3sl"
+        "eq20261024-0800-fut"
       ],
       "agente": "redator",
       "desde": "2026-10-19T15:40:52Z",
@@ -45,11 +35,8 @@
     },
     {
       "ids": [
-        "mv9w08mvb9kui",
         "eq20261024-2000-asu",
         "eq20261025-0800-jrf",
-        "mv9vun2x7fdtg",
-        "eq20261025-1630-cnw",
         "eq20261025-2000-oly"
       ],
       "agente": "redator",
@@ -57,7 +44,88 @@
       "refeito": false
     }
   ],
-  "pedidosJose": [],
+  "pedidosJose": [
+    {
+      "n": 2,
+      "id": "mv9vu6drkd6ot",
+      "o_que": "gravar Reels: Por que eu só trabalho com nutricionista",
+      "data": "2026-10-20",
+      "hora": "12:00",
+      "pedidoEm": "2026-10-19T16:03:00Z"
+    },
+    {
+      "n": 3,
+      "id": "mv9vz41rojbac",
+      "o_que": "gravar Reels: A frase de 1 linha na bio que faz a paciente saber que você atende ela",
+      "data": "2026-10-20",
+      "hora": "16:30",
+      "pedidoEm": "2026-10-19T16:03:00Z"
+    },
+    {
+      "n": 6,
+      "id": "mv9vukdjlp8ym",
+      "o_que": "gravar Reels: Toda segunda, antes de abrir qualquer campanha, eu faço uma pergunta",
+      "data": "2026-10-21",
+      "hora": "12:00",
+      "pedidoEm": "2026-10-19T16:03:00Z"
+    },
+    {
+      "n": 7,
+      "id": "eq20261021-1630-mbe",
+      "o_que": "gravar Reels: A mensagem da véspera que reduz o furo na agenda",
+      "data": "2026-10-21",
+      "hora": "16:30",
+      "pedidoEm": "2026-10-19T16:03:00Z"
+    },
+    {
+      "n": 11,
+      "id": "mv9vzkrun9m17",
+      "o_que": "gravar Reels: Mentira ou verdade: 4 coisas que nutri acredita sobre o perfil que atrai paciente",
+      "data": "2026-10-22",
+      "hora": "16:30",
+      "pedidoEm": "2026-10-19T16:03:00Z"
+    },
+    {
+      "n": 15,
+      "id": "eq20261023-1630-ftr",
+      "o_que": "gravar Reels: Uma paciente pediu desconto e eu aceitei na hora. Errei?",
+      "data": "2026-10-23",
+      "hora": "16:30",
+      "pedidoEm": "2026-10-19T16:03:00Z"
+    },
+    {
+      "n": 18,
+      "id": "mv9vuov5cf3sl",
+      "o_que": "foto: Mais uma semana chegando ao fim: o que rolou por aqui",
+      "data": "2026-10-24",
+      "hora": "12:00",
+      "pedidoEm": "2026-10-19T16:03:00Z"
+    },
+    {
+      "n": 19,
+      "id": "mv9w08mvb9kui",
+      "o_que": "gravar Reels: A mensagem para pedir indicação sem constranger seu paciente",
+      "data": "2026-10-24",
+      "hora": "16:30",
+      "pedidoEm": "2026-10-19T16:03:00Z"
+    },
+    {
+      "n": 22,
+      "id": "mv9vun2x7fdtg",
+      "o_que": "foto: Domingo de manhã: o único horário em que eu não olho o celular",
+      "data": "2026-10-25",
+      "hora": "12:00",
+      "pedidoEm": "2026-10-19T16:03:00Z"
+    },
+    {
+      "n": 23,
+      "id": "eq20261025-1630-cnw",
+      "o_que": "gravar Reels: Monte um destaque 'Como é a consulta' para a paciente perder o medo de agendar",
+      "data": "2026-10-25",
+      "hora": "16:30",
+      "pedidoEm": "2026-10-19T16:03:00Z"
+    }
+  ],
   "avisos": [],
   "ultimaRotina": "2026-10-19T15:40:52Z"
 }
