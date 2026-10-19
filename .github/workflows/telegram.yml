@@ -52,6 +52,9 @@ jobs:
             git worktree add -q --orphan -b midia _midia 2>/dev/null || { git worktree add -q --detach _midia && cd _midia && git checkout -q --orphan midia && git rm -rqf . || true; }
           fi
 
+      - name: Instalar dependências
+        run: pip install --quiet cryptography
+
       - name: Enviar mensagens do CMO
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}

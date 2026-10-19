@@ -4,9 +4,10 @@
     python telegram_bot.py receber   # lê mensagens novas do José e guarda em inbox/
     python telegram_bot.py enviar    # manda o que o CMO deixou em outbox/
 
-Mensagens recebidas:
-  inbox/<update_id>.json  -> {"id", "data", "tipo", "texto", "transcricao", "midia": [{"arquivo", "tipo", "nome"}], "resposta_a"}
-  A mídia (foto, áudio, vídeo, documento) vai para o ramo "midia", em <update_id>/<nome>.
+Mensagens recebidas (CIFRADAS com telegram/chave_publica.pem, porque o repositório é público):
+  inbox/<update_id>.json  -> envelope cifrado de {"id", "data", "tipo", "texto", "transcricao", "midia": [{"arquivo", "tipo", "nome"}], "resposta_a"}
+  A mídia (foto, áudio, vídeo, documento) vai cifrada para o ramo "midia", em <update_id>/<nome>.cifrado.
+  Para abrir: python3 cripto.py abrir <arquivo> <saida> <chave privada>.
 
 Mensagens para enviar:
   outbox/<qualquer>.json -> {"texto": "...", "imagens": ["outbox/a.png", ...]}
@@ -15,6 +16,7 @@ Mensagens para enviar:
 Só aceita mensagens do chat do José (status.json -> telegram_chat ou TELEGRAM_CHAT_ID).
 """
 import json, mimetypes, os, pathlib, subprocess, sys, time, urllib.parse, urllib.request, uuid
+from cripto import fechar_bytes
 from datetime import datetime, timezone
 
 RAIZ = pathlib.Path(__file__).resolve().parent
@@ -138,7 +140,15 @@ def receber():
             d = m["document"]
             reg["tipo"] = "documento"
             guardar(d["file_id"], d.get("file_name") or "arquivo", d.get("mime_type", "application/octet-stream"))
-        (INBOX / f"{uid}.json").write_text(json.dumps(reg, ensure_ascii=False, indent=1))
+        # o repositório é público: tudo que o José manda vai cifrado (só o CMO abre)
+        for md in reg["midia"]:
+            arq = MIDIA / md["arquivo"]
+            if arq.exists():
+                cif = arq.with_name(arq.name + ".cifrado")
+                cif.write_bytes(fechar_bytes(arq.read_bytes()))
+                arq.unlink()
+                md["arquivo"] += ".cifrado"
+        (INBOX / f"{uid}.json").write_bytes(fechar_bytes(json.dumps(reg, ensure_ascii=False, indent=1).encode()))
         novas += 1
     OFFSET.parent.mkdir(exist_ok=True)
     OFFSET.write_text(str(offset))
