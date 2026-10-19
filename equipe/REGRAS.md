@@ -22,9 +22,14 @@ Só o CMO altera este arquivo, e só quando o José pedir.
 | Horário | Post | Modelos |
 |---|---|---|
 | 08:00 | **1 frase** (imagem única) | Frase de impacto para nutris (mo01, estilo "frase") **ou** Frase de negócios para empreendedores (mo34, estilo "tweet"). Alterne; a maioria para nutris. |
-| 18:00 | **1 carrossel** | Notícia para nutris (mo05, estilo "noticia", só notícia real e recente) **ou** Carrossel educativo (mo36, estilo "noticia" **sem manchete**, 6 a 8 slides). |
+| 18:00 | **1 carrossel** | Notícia para nutris (mo05, estilo "noticia", só notícia real e recente) **ou** Carrossel de competência (mo36, estilo "noticia" **sem manchete**, 6 a 8 slides). |
 
-Carrossel educativo (mo36): ensina UMA coisa prática que a nutri aplica hoje, de preferência com **prompt pronto de IA** (ChatGPT/Claude), modelo de mensagem, checklist ou passo a passo (bio, destaques, primeira consulta, preço no direct, pedir indicação, reativar paciente, organizar a semana de conteúdo…). Uma ação só, que ela faz em 5 minutos e pode ter resultado no mesmo dia. Estrutura: slide 1 = gancho com promessa concreta terminando em 👉; slide 2 = o problema que ela reconhece; um passo por slide; um slide "para copiar" (mensagem, prompt ou checklist); último slide = desafio de hoje + ==Salva para usar e manda para uma amiga nutri.== + "Me segue para mais estratégias de 5 minutos". Nada de dica genérica. Modelo aprovado de referência na Central: post jf20261020-reativar.
+Carrossel de competência (mo36, **categoria competência**, não alcance): ensina UMA coisa prática que a nutri faz em 5 minutos e pode ter resultado no mesmo dia (mensagem pronta, prompt de IA, checklist ou passo a passo: bio, destaques, preço no direct, pedir indicação, reativar paciente, organizar a semana de conteúdo…). Padrão aprovado pelo José (post jf20261020-reativar):
+- Slide 1: ==gancho na dor== (o ÚNICO grifo amarelo do carrossel, ex.: ==Sem pacientes essa semana?==), embaixo a promessa com negrito ("Use essa estratégia para reativar **pacientes parados no seu WhatsApp.**") e "Em 5 passos 👉". Nada de "leva 5 minutos".
+- Sem slide de problema: do slide 1 vai direto para o Passo 1.
+- Um passo por slide, título em negrito ("**Passo 1: faça a lista.**"). Do slide 2 em diante, só **negrito**, nunca ==grifo==.
+- Último slide: desafio de hoje + "**Salva esse conteúdo para usar toda segunda e me segue para mais estratégias como essa.**"
+- Gancho forte na dor da nutri sem resultado / recém-formada ("Sem pacientes essa semana?", "Recém-formada e sem pacientes?", "Mandou o preço e a pessoa sumiu?"). Nada de dica genérica.
 
 **O José faz tudo que é vídeo ou foto:** Tema em alta/trend, Identidade, Competência, Oferta, Semana em fotos, memes em vídeo. A equipe **não cria** esses posts, não escreve roteiro para eles e não pede vídeo ao José. Quando o José mandar um vídeo/foto (com ou sem legenda), o CMO apenas cria o post na Central, escreve/ajusta a legenda se ele pedir, e agenda no horário que ele disser (ou no próximo horário livre que faça sentido: 12:00, 16:30 ou 20:00).
 
@@ -40,7 +45,7 @@ Carrossel educativo (mo36): ensina UMA coisa prática que a nutri aplica hoje, d
 ## Arte (Designer)
 - Estilo "frase" (mo01): fundo branco, Montserrat negrito, um trecho de destaque em verde marcado com [[colchetes duplos]] (no máximo um por slide), até 30 palavras por slide; carrossel de 2 a 8 slides com "arrasta →" no primeiro.
 - Estilo "tweet" (mo34): card de tweet, texto todo preto, 1 slide, até 35 palavras, sem emoji. Fala com empreendedores em geral, sem nutrição.
-- Estilo "noticia" (mo05 e mo36): card de tweet no topo (o José disse: carrossel é neste formato, não no de frase). texto serifado com **negrito** e ==grifo amarelo==, slide 1 com bloco "manchete" (veículo, título exato, trecho destacado), na notícia 3 slides de preferência (máximo 5); no carrossel educativo todos os blocos são null (sem manchete nem citação), 6 a 8 slides, até 60 palavras por slide, **negrito** em poucas palavras e ==grifo== no máximo uma vez por slide.
+- Estilo "noticia" (mo05 e mo36): card de tweet no topo (o José disse: carrossel é neste formato, não no de frase). texto serifado com **negrito** e ==grifo amarelo==, slide 1 com bloco "manchete" (veículo, título exato, trecho destacado), na notícia 3 slides de preferência (máximo 5); no carrossel de competência todos os blocos são null (sem manchete nem citação), 6 a 8 slides, até 60 palavras por slide, ==grifo== SÓ no gancho do slide 1 e **negrito** no resto. (Na notícia: ==grifo== no máximo uma vez por slide.)
 - Sem emojis (exceto 👉 no slide 1 da notícia), sem hashtags, sem @ no texto da arte.
 - Conferir cada PNG antes de entregar: texto legível, nada cortado, destaque no lugar certo.
 
