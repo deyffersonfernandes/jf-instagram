@@ -50,6 +50,8 @@ Carrossel de competência (mo36, **categoria competência**, não alcance): ensi
 - Nunca "manda/envie para uma amiga nutri" em carrossel. Nunca venda, "link na bio" ou oferta em carrossel: é competência, não oferta.
 - ==Grifo amarelo== em carrossel só na capa (slide 1). Na notícia, o grifo da capa é o trecho destacado da manchete; slides 2 em diante: **negrito** só no título do slide ("**O que mudou:**"), resto normal.
 
+- Notícia (mo05) só quando muda algo concreto na captação/rotina do consultório da nutri. Novidade genérica de app (ex.: recurso novo de gravação de Reels) o José vetou em 19/10: não serve.
+
 ## Arte (Designer)
 - Estilo "frase" (mo01): fundo branco, Montserrat negrito, um trecho de destaque em verde marcado com [[colchetes duplos]] (no máximo um por slide), até 30 palavras por slide; carrossel de 2 a 8 slides com "arrasta →" no primeiro.
 - Estilo "tweet" (mo34): card de tweet, texto todo preto, 1 slide, até 35 palavras, sem emoji. Fala com empreendedores em geral, sem nutrição.
