@@ -4,18 +4,6 @@
   "pexels": false,
   "veto": [
     {
-      "n": 17,
-      "id": "eq20261024-0800-fut",
-      "vetoAte": "2026-10-19T19:06:56Z",
-      "titulo": "Sábado de quem empreende"
-    },
-    {
-      "n": 21,
-      "id": "eq20261025-0800-jrf",
-      "vetoAte": "2026-10-19T19:06:56Z",
-      "titulo": "A inflação sobe todo ano. E o preço da sua consulta?"
-    },
-    {
       "n": 28,
       "id": "eq20261023-0800-trc",
       "vetoAte": "2026-10-19T21:12:30Z",
@@ -25,5 +13,5 @@
   "andamento": [],
   "pedidosJose": [],
   "avisos": [],
-  "ultimaRotina": "2026-10-19T17:11:00Z"
+  "ultimaRotina": "2026-10-19T19:10:03Z"
 }
