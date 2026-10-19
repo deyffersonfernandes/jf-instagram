@@ -40,13 +40,18 @@ Carrossel de competência (mo36, **categoria competência**, não alcance): ensi
 3. A virada: "a nutri que fica parada faz X, a que cresce faz Y".
 4. Um exercício prático para fazer hoje.
 5. Uma frase curta de fechamento.
-6. Assinatura "Agenda cheia é processo, não sorte." e, na linha seguinte, a chamada: mandar para uma amiga nutri / salvar / seguir o @jfernandes.trafego para mais. (Frase de negócios: mandar para o sócio/cônjuge.)
+6. Assinatura "Agenda cheia é processo, não sorte." e, na linha seguinte, a chamada. Frase (alcance): mandar para uma amiga nutri / salvar / seguir (frase de negócios: mandar para o sócio/cônjuge). Carrossel (competência): sempre seguir o perfil (veja "CTA dos carrosséis").
 - Sem venda, sem e-book, sem "Comenta E-BOOK", sem rótulos ("CTA:"), sem colchetes, markdown ou hashtags; no máximo 1 emoji; até 1.800 caracteres; parágrafos curtos.
+
+## CTA dos carrosséis (decisão do José, 19/10)
+- Os carrosséis vão receber tráfego pago para ganhar seguidores. Por isso **todo carrossel (competência) termina pedindo para seguir o perfil**: último slide e última linha da legenda = "Salva esse conteúdo para usar toda segunda e me segue para mais estratégias como essa." (ou só "Me segue para mais estratégias como essa.").
+- Nunca "manda/envie para uma amiga nutri" em carrossel. Nunca venda, "link na bio" ou oferta em carrossel: é competência, não oferta.
+- ==Grifo amarelo== em carrossel só na capa (slide 1). Na notícia, o grifo da capa é o trecho destacado da manchete; slides 2 em diante só **negrito**.
 
 ## Arte (Designer)
 - Estilo "frase" (mo01): fundo branco, Montserrat negrito, um trecho de destaque em verde marcado com [[colchetes duplos]] (no máximo um por slide), até 30 palavras por slide; carrossel de 2 a 8 slides com "arrasta →" no primeiro.
 - Estilo "tweet" (mo34): card de tweet, texto todo preto, 1 slide, até 35 palavras, sem emoji. Fala com empreendedores em geral, sem nutrição.
-- Estilo "noticia" (mo05 e mo36): card de tweet no topo (o José disse: carrossel é neste formato, não no de frase). texto serifado com **negrito** e ==grifo amarelo==, slide 1 com bloco "manchete" (veículo, título exato, trecho destacado), na notícia 3 slides de preferência (máximo 5); no carrossel de competência todos os blocos são null (sem manchete nem citação), 6 a 8 slides, até 60 palavras por slide, ==grifo== SÓ no gancho do slide 1 e **negrito** no resto. (Na notícia: ==grifo== no máximo uma vez por slide.)
+- Estilo "noticia" (mo05 e mo36): card de tweet no topo (o José disse: carrossel é neste formato, não no de frase). texto serifado com **negrito** e ==grifo amarelo==, slide 1 com bloco "manchete" (veículo, título exato, trecho destacado), na notícia 3 slides de preferência (máximo 5); no carrossel de competência todos os blocos são null (sem manchete nem citação), 6 a 8 slides, até 60 palavras por slide, ==grifo== SÓ no gancho do slide 1 e **negrito** no resto. (Na notícia também: grifo só na capa, pelo trecho destacado da manchete.)
 - Sem emojis (exceto 👉 no slide 1 da notícia), sem hashtags, sem @ no texto da arte.
 - Conferir cada PNG antes de entregar: texto legível, nada cortado, destaque no lugar certo.
 
