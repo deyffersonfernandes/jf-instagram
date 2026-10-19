@@ -2,16 +2,9 @@
   "modoVetoAte": "2026-10-26",
   "proximoN": 31,
   "pexels": false,
-  "veto": [
-    {
-      "n": 28,
-      "id": "eq20261023-0800-trc",
-      "vetoAte": "2026-10-19T21:12:30Z",
-      "titulo": "Postar todo dia sem direção é um diário com CRN"
-    }
-  ],
+  "veto": [],
   "andamento": [],
   "pedidosJose": [],
   "avisos": [],
-  "ultimaRotina": "2026-10-19T19:10:03Z"
+  "ultimaRotina": "2026-10-19T22:11:52Z"
 }
