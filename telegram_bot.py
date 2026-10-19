@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Ponte entre o bot do Telegram e o CMO (agente da Central JF).
 
-    python telegram_bot.py receber   # lê mensagens novas do José e guarda em inbox/
-    python telegram_bot.py enviar    # manda o que o CMO deixou em outbox/
+    python telegram_bot.py escutar [min]  # fica ouvindo: guarda, aciona o CMO na hora e manda as respostas
+    python telegram_bot.py receber        # leitura única (reserva)
+    python telegram_bot.py enviar         # manda o que o CMO deixou em outbox/
 
 Mensagens recebidas (CIFRADAS com telegram/chave_publica.pem, porque o repositório é público):
   inbox/<update_id>.json  -> envelope cifrado de {"id", "data", "tipo", "texto", "transcricao", "midia": [{"arquivo", "tipo", "nome"}], "resposta_a"}
@@ -96,17 +97,19 @@ def transcrever(caminho):
         return ""
 
 
-def receber():
-    if not TOKEN or not CHAT:
-        print("Sem TELEGRAM_TOKEN ou chat; nada a fazer.")
-        return
-    offset = int(OFFSET.read_text().strip() or 0) if OFFSET.exists() else 0
-    ups = api("getUpdates", {"offset": offset, "timeout": 0, "allowed_updates": json.dumps(["message", "edited_message"])})
-    if not ups:
-        print("Nenhuma mensagem nova.")
-        return
+def ler_offset():
+    return int(OFFSET.read_text().strip() or 0) if OFFSET.exists() else 0
+
+
+def buscar(offset, espera):
+    return api("getUpdates", {"offset": offset, "timeout": espera,
+                              "allowed_updates": json.dumps(["message", "edited_message"])}, timeout=espera + 30)
+
+
+def guardar_updates(ups, offset):
+    """Guarda (cifradas) as mensagens do José. Devolve (ids guardados, novo offset)."""
     INBOX.mkdir(exist_ok=True)
-    novas = 0
+    novas = []
     for up in ups:
         offset = max(offset, up["update_id"] + 1)
         m = up.get("message") or up.get("edited_message")
@@ -149,15 +152,124 @@ def receber():
                 arq.unlink()
                 md["arquivo"] += ".cifrado"
         (INBOX / f"{uid}.json").write_bytes(fechar_bytes(json.dumps(reg, ensure_ascii=False, indent=1).encode()))
-        novas += 1
+        novas.append(uid)
     OFFSET.parent.mkdir(exist_ok=True)
     OFFSET.write_text(str(offset))
-    print(f"{novas} mensagem(ns) guardada(s).")
+    return novas, offset
+
+
+def receber():
+    """Leitura única (sem disparar o CMO). Usada como reserva."""
+    if not TOKEN or not CHAT:
+        print("Sem TELEGRAM_TOKEN ou chat; nada a fazer.")
+        return
+    offset = ler_offset()
+    ups = buscar(offset, 0)
+    novas, offset = guardar_updates(ups, offset) if ups else ([], offset)
+    print(f"{len(novas)} mensagem(ns) guardada(s).")
     if novas:
         try:
             enviar_texto("📥 Recebi. O CMO responde em até 1 hora.")
         except Exception as e:
             print("aviso de recebimento falhou:", e)
+
+
+# ---------------------------------------------------------------- modo escuta (conversa em tempo real)
+CMO_TRIGGER = json.loads((RAIZ / "equipe" / "agentes.json").read_text()).get("cmo_aprovar", "")
+FIRE_TOKEN = os.environ.get("CMO_FIRE_TOKEN", "").strip()
+
+
+def git(*args, check=True):
+    return subprocess.run(["git", *args], cwd=RAIZ, check=check, capture_output=True, text=True)
+
+
+def salvar_e_subir(msg):
+    """Commita mídia (ramo midia) e caixa (main) e dá push, com retentativas."""
+    if (MIDIA / ".git").exists():
+        subprocess.run(["git", "add", "-A", "."], cwd=MIDIA)
+        if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=MIDIA).returncode:
+            subprocess.run(["git", "commit", "-qm", "Mídia do Telegram"], cwd=MIDIA)
+            for _ in range(3):
+                if subprocess.run(["git", "push", "-q", "origin", "midia"], cwd=MIDIA).returncode == 0:
+                    break
+                time.sleep(2)
+    git("add", "-A", "inbox", "outbox", "telegram")
+    if git("diff", "--cached", "--quiet", check=False).returncode == 0:
+        return
+    git("commit", "-qm", msg)
+    for _ in range(5):
+        if git("pull", "-q", "--rebase", "--autostash", "origin", "main", check=False).returncode == 0 and \
+           git("push", "-q", "origin", "HEAD:main", check=False).returncode == 0:
+            return
+        time.sleep(3)
+
+
+def disparar_cmo(ids):
+    if not (FIRE_TOKEN and CMO_TRIGGER):
+        return False
+    corpo = json.dumps({"text": "Mensagens novas do José no Telegram (cifradas no repositório): "
+                        + ", ".join(f"inbox/{i}.json" for i in ids)}).encode()
+    req = urllib.request.Request(
+        f"https://api.anthropic.com/v1/claude_code/routines/{CMO_TRIGGER}/fire", data=corpo, method="POST",
+        headers={"Authorization": f"Bearer {FIRE_TOKEN}", "anthropic-beta": "experimental-cc-routine-2026-04-01",
+                 "anthropic-version": "2023-06-01", "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            print("CMO acionado:", r.status)
+            return True
+    except Exception as e:
+        print("não consegui acionar o CMO:", e)
+        return False
+
+
+def escutar(minutos=55):
+    """Fica ouvindo o bot: guarda cada mensagem, aciona o CMO na hora e manda as respostas dele."""
+    if not TOKEN or not CHAT:
+        print("Sem TELEGRAM_TOKEN ou chat.")
+        return
+    fim = time.time() + minutos * 60
+    offset = ler_offset()
+    aguardando_ate = 0
+    while time.time() < fim:
+        # respostas do CMO
+        git("pull", "-q", "--rebase", "--autostash", "origin", "main", check=False)
+        if any(OUTBOX.glob("*.json")):
+            enviar()
+            salvar_e_subir("Telegram: respostas do CMO enviadas")
+            aguardando_ate = 0
+        # mensagens do José
+        espera = 3 if time.time() < aguardando_ate else 20
+        try:
+            ups = buscar(offset, espera)
+        except Exception as e:
+            print("getUpdates falhou:", e)
+            time.sleep(5)
+            continue
+        if ups:
+            time.sleep(4)                       # junta mensagens em sequência (ex.: foto + texto)
+            try:
+                ups += buscar(max(u["update_id"] for u in ups) + 1, 0)
+            except Exception:
+                pass
+            novas, offset = guardar_updates(ups, offset)
+            if novas:
+                try:
+                    api("sendChatAction", {"chat_id": CHAT, "action": "typing"})
+                except Exception:
+                    pass
+                salvar_e_subir("Telegram: caixa do CMO")
+                if disparar_cmo(novas):
+                    aguardando_ate = time.time() + 6 * 60
+                else:
+                    try:
+                        enviar_texto("📥 Recebi. Respondo em até 1 hora.")
+                    except Exception:
+                        pass
+        elif time.time() < aguardando_ate:
+            try:
+                api("sendChatAction", {"chat_id": CHAT, "action": "typing"})
+            except Exception:
+                pass
 
 
 def enviar():
@@ -193,4 +305,7 @@ def enviar():
 
 
 if __name__ == "__main__":
-    {"receber": receber, "enviar": enviar}[sys.argv[1]]()
+    if sys.argv[1] == "escutar":
+        escutar(int(sys.argv[2]) if len(sys.argv) > 2 else 55)
+    else:
+        {"receber": receber, "enviar": enviar}[sys.argv[1]]()
