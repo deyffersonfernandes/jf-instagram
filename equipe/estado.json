@@ -2,19 +2,47 @@
   "modoVetoAte": "2026-10-26",
   "proximoN": 25,
   "pexels": false,
-  "veto": [],
+  "veto": [
+    {
+      "n": 8,
+      "id": "eq20261021-2000-mop",
+      "vetoAte": "2026-10-19T19:06:56Z",
+      "titulo": "O que eu faço exatamente pela nutri: do perfil ao WhatsApp"
+    },
+    {
+      "n": 13,
+      "id": "eq20261023-0800-vdc",
+      "vetoAte": "2026-10-19T19:06:56Z",
+      "titulo": "O Instagram acabou com a desculpa de não saber gravar Reels"
+    },
+    {
+      "n": 17,
+      "id": "eq20261024-0800-fut",
+      "vetoAte": "2026-10-19T19:06:56Z",
+      "titulo": "Sábado de quem empreende"
+    },
+    {
+      "n": 20,
+      "id": "eq20261024-2000-asu",
+      "vetoAte": "2026-10-19T19:06:56Z",
+      "titulo": "Eu não sei vender. Isso atrapalha?"
+    },
+    {
+      "n": 21,
+      "id": "eq20261025-0800-jrf",
+      "vetoAte": "2026-10-19T19:06:56Z",
+      "titulo": "A inflação sobe todo ano. E o preço da sua consulta?"
+    },
+    {
+      "n": 16,
+      "id": "mv9wm2ko0natw",
+      "vetoAte": "2026-10-19T19:06:56Z",
+      "titulo": "Caixinha: \"Eu preciso aparecer dançando e fazendo trend?\""
+    }
+  ],
   "andamento": [
     {
       "ids": [
-        "mv9wmbyjb4bru"
-      ],
-      "agente": "redator",
-      "desde": "2026-10-19T15:40:52Z",
-      "refeito": false
-    },
-    {
-      "ids": [
-        "eq20261021-2000-mop",
         "eq20261022-2000-hbf"
       ],
       "agente": "redator",
@@ -23,9 +51,7 @@
     },
     {
       "ids": [
-        "eq20261023-0800-vdc",
-        "mv9wm2ko0natw",
-        "eq20261024-0800-fut"
+        "eq20261025-2000-oly"
       ],
       "agente": "redator",
       "desde": "2026-10-19T15:40:52Z",
@@ -33,12 +59,10 @@
     },
     {
       "ids": [
-        "eq20261024-2000-asu",
-        "eq20261025-0800-jrf",
-        "eq20261025-2000-oly"
+        "mv9wmbyjb4bru"
       ],
-      "agente": "redator",
-      "desde": "2026-10-19T15:40:52Z",
+      "agente": "designer",
+      "desde": "2026-10-19T16:07:25Z",
       "refeito": false
     }
   ],
