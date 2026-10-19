@@ -13,7 +13,8 @@ Só o CMO altera este arquivo, e só quando o José pedir.
 - Nunca invente números, casos, nomes, regras, depoimentos ou notícias. Fato só com fonte. Pessoa investigada e não condenada: sem nome, "segundo a polícia".
 
 ## Objetivo agora (out–dez/2026)
-- **Crescer para 10 mil seguidores em 30 a 45 dias** (autoridade para o lançamento). Por isso os posts da equipe são de **alcance e salvamento/compartilhamento**: gente nova seguindo.
+- **Crescer para 10 mil seguidores em 30 a 45 dias** (autoridade para o lançamento). Por isso os posts da equipe buscam salvamento, compartilhamento e gente nova seguindo.
+- **Categoria (decisão do José, 19/10):** frase (imagem única) = **alcance**; **todo carrossel = competência** (inclusive notícia mo05 e carrossel de ação rápida mo36). Ao criar um post, preencha categoria assim.
 - Em breve haverá uma **comunidade gratuita no WhatsApp** para nutricionistas (conteúdo diário, prompts, modelos). Quando o José mandar o link, as chamadas passam a convidar para o grupo. Até lá, não cite o grupo.
 - **Sem venda nos posts da equipe.** Não ofertar e-book nem serviço nas imagens/legendas da equipe. O lançamento é em janeiro de 2027; a demanda é construída aos poucos (nada de venda forçada). Nunca desconto, nunca urgência falsa.
 
