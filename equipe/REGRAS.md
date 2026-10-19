@@ -1,61 +1,55 @@
 # Regras da equipe de conteúdo (@jfernandes.trafego)
 
 Este arquivo é a fonte de verdade para o CMO, o Redator, o Copy chief e o Designer.
-Só o CMO altera este arquivo, e só quando o José pedir (pelo Telegram).
-Última atualização: 19/10/2026.
+Só o CMO altera este arquivo, e só quando o José pedir.
+Última atualização: 19/10/2026 (reunião dos sócios de 17/10 + nova divisão de trabalho com o José).
 
 ## Quem é o José e para quem falamos
-- José Fernandes, @jfernandes.trafego (perfil verificado). Ajuda nutricionistas a conseguir pacientes com posicionamento, conteúdo, tráfego pago e processo comercial, do perfil até a conversa no WhatsApp. Mais de 50 nutricionistas atendidas.
-- Público: nutricionistas brasileiras de consultório, muitas com agenda vazia, que não aprenderam na faculdade a se posicionar, vender e conseguir pacientes.
-- Fale do universo da nutricionista (consultório, pacientes, preço, rotina, faculdade), não em jargão de marketing ou tráfego. Português do Brasil, tom direto e próximo, frases curtas.
+- José Fernandes, @jfernandes.trafego (perfil verificado). Ajuda nutricionistas a conseguir pacientes com **marketing e vendas**: posicionamento, conteúdo, anúncios e processo comercial, do perfil até a conversa no WhatsApp. Mais de 50 nutricionistas atendidas.
+- **Posicionamento novo (decisão de 17/10):** a marca deixa de se apresentar como "tráfego pago" e passa a falar de **marketing e vendas para nutricionistas** (inspiração: G4, V4). Evite vender "tráfego" como solução; fale de resultado comercial: pacientes, agenda, faturamento.
+- Público (persona): nutricionistas brasileiras de consultório, principalmente as que **ainda não têm resultado expressivo**: frustração depois da formação, dificuldade de vender pelo Instagram, agenda instável. Objetivo delas: faturar de R$ 10 a 15 mil líquidos por mês com qualidade de vida. São ansiosas e querem direção humana e estratégica, não só ferramenta.
+- Tom: direto e **bem-humorado** (posts leves e diretos atraem seguidoras curiosas e qualificam a audiência). Português do Brasil, frases curtas. Fale do universo da nutri (consultório, pacientes, preço, rotina, faculdade, Instagram), não em jargão de marketing.
 - Critério final de qualquer post: uma nutri mandaria isso para uma amiga nutri?
 - Nunca invente números, casos, nomes, regras, depoimentos ou notícias. Fato só com fonte. Pessoa investigada e não condenada: sem nome, "segundo a polícia".
 
-## Estratégia comercial (decisão dos sócios, outubro de 2026)
-- **Oferta agora é SÓ o serviço: Método Nutri+** (captação de pacientes para nutricionistas: posicionamento, conteúdo, anúncios e processo comercial; promessa do perfil: ajudar a nutri a faturar pelo menos R$ 10 mil por mês). Chamada: aplicar pelo link da bio.
-- **Não ofertar e-book** ("21 Estratégias" e "Consultório Lucrativo em 21 dias") em nenhum post, legenda ou CTA. O e-book terá um lançamento em janeiro de 2027.
-- Nunca dar desconto, nunca criar falsa urgência ou vaga falsa.
-- Posts antigos que ainda citam o e-book na legenda devem ter a chamada trocada pelo serviço (ou por compartilhamento) antes de irem ao ar.
-- Provas que podem ser citadas (já públicas no perfil): Paula, R$ 4 mil no primeiro mês; Van, 9 pacientes no primeiro mês de anúncios. Nada além disso sem o José confirmar.
+## Objetivo agora (out–dez/2026)
+- **Crescer para 10 mil seguidores em 30 a 45 dias** (autoridade para o lançamento). Por isso os posts da equipe são de **alcance e salvamento/compartilhamento**: gente nova seguindo.
+- Em breve haverá uma **comunidade gratuita no WhatsApp** para nutricionistas (conteúdo diário, prompts, modelos). Quando o José mandar o link, as chamadas passam a convidar para o grupo. Até lá, não cite o grupo.
+- **Sem venda nos posts da equipe.** Não ofertar e-book nem serviço nas imagens/legendas da equipe. O lançamento é em janeiro de 2027; a demanda é construída aos poucos (nada de venda forçada). Nunca desconto, nunca urgência falsa.
 
-## Os 4 posts do dia (horário de Brasília)
-| Horário | Categoria | Missão | Rosto do José |
-|---|---|---|---|
-| 08:00 | Alcance | para saberem que eu existo | opcional |
-| 12:00 | Identidade | para saberem quem eu sou | obrigatório |
-| 16:30 | Competência | para saberem o que eu faço | obrigatório (Reels falando) |
-| 20:00 | Oferta | para saberem o que eu vendo (só Método Nutri+) | opcional |
+## Divisão de trabalho: o que a equipe faz e o que o José faz
+**A equipe faz SÓ imagens, 2 posts por dia:**
+| Horário | Post | Modelos |
+|---|---|---|
+| 08:00 | **1 frase** (imagem única) | Frase de impacto para nutris (mo01, estilo "frase") **ou** Frase de negócios para empreendedores (mo34, estilo "tweet"). Alterne; a maioria para nutris. |
+| 18:00 | **1 carrossel** | Notícia para nutris (mo05, estilo "noticia", só notícia real e recente) **ou** Carrossel educativo (mo36, estilo "frase", 5 a 8 slides). |
 
-Regra do feed: um rosto do José a cada, no mínimo, três conteúdos.
+Carrossel educativo (mo36): ensina UMA coisa prática que a nutri aplica hoje, de preferência com **prompt pronto de IA** (ChatGPT/Claude), modelo de mensagem, checklist ou passo a passo (bio, destaques, primeira consulta, preço no direct, pedir indicação, reativar paciente, organizar a semana de conteúdo…). Slide 1 = gancho forte; último slide = "Salva para usar e manda para uma amiga nutri". Nada de dica genérica.
 
-### O que a equipe consegue entregar sozinha (pronto para postar)
-- Alcance: Frase de impacto (mo01, estático, fundo branco com destaque verde), Frase de negócios para empreendedores (mo34, card de tweet), Notícia para nutris (mo05, carrossel com print da notícia, só notícia real e recente), Tema em alta (mo35, quando dá para fazer como estático ou carrossel), Meme de nicho (mo02, Reels montado pela tarefa de memes).
-- Oferta (serviço): Caixinha que vende (mo10, estático), Frase ou carrossel de serviço no estilo das frases (fundo branco, destaque verde), Case de cliente (mo11, carrossel, só com os cases já públicos: Paula e Van).
+**O José faz tudo que é vídeo ou foto:** Tema em alta/trend, Identidade, Competência, Oferta, Semana em fotos, memes em vídeo. A equipe **não cria** esses posts, não escreve roteiro para eles e não pede vídeo ao José. Quando o José mandar um vídeo/foto (com ou sem legenda), o CMO apenas cria o post na Central, escreve/ajusta a legenda se ele pedir, e agenda no horário que ele disser (ou no próximo horário livre que faça sentido: 12:00, 16:30 ou 20:00).
 
-### O que depende do José gravar ou mandar foto
-- Identidade (mo13, mo28, mo29, mo30, mo31) e Competência (mo06, mo09, mo19, mo27, mo32) são Reels ou fotos com o rosto do José.
-- A equipe escreve o roteiro completo e a legenda, deixa o post em "Gravação / design" na Central e o CMO pede ao José pelo Telegram. Quando o José manda o vídeo ou a foto pelo Telegram, o CMO anexa ao post e segue para aprovação.
-- Se até as 20h do dia anterior o vídeo/foto não chegou, o CMO troca aquele horário por um post de Alcance que a equipe consegue entregar sozinha (frase de impacto ou de negócios) e guarda o roteiro do vídeo para outro dia. Avisa o José no resumo.
-
-## Legenda (estrutura)
+## Legenda (posts da equipe)
 1. Gancho na primeira linha: pergunta, teste ou cena que a nutri reconhece na hora.
-2. A situação concreta do dia a dia dela (o direct, o WhatsApp, a consulta).
+2. A situação concreta do dia a dia dela.
 3. A virada: "a nutri que fica parada faz X, a que cresce faz Y".
 4. Um exercício prático para fazer hoje.
 5. Uma frase curta de fechamento.
-6. Ponte para o Método Nutri+ só em Oferta e, quando fizer sentido, em Competência. Identidade: sem venda, no máximo uma pergunta leve. Alcance: sem venda.
-7. Assinatura "Agenda cheia é processo, não sorte." e, na linha seguinte, a chamada final pronta.
-- Chamadas por categoria: Alcance → mandar para uma amiga nutri / repostar. Identidade → pergunta leve. Competência → salvar e mandar para uma amiga nutri, ou "Comenta NUTRI+ que eu te explico como funciona o acompanhamento" quando o tema puxar para o serviço. Oferta → "Aplica pelo link da bio" (ou "Comenta QUERO").
-- Nunca "Comenta E-BOOK". Nunca rótulos ("CTA:", "Gancho:"), colchetes, markdown, hashtags; no máximo 1 emoji; até 1.800 caracteres; parágrafos curtos.
+6. Assinatura "Agenda cheia é processo, não sorte." e, na linha seguinte, a chamada: mandar para uma amiga nutri / salvar / seguir o @jfernandes.trafego para mais. (Frase de negócios: mandar para o sócio/cônjuge.)
+- Sem venda, sem e-book, sem "Comenta E-BOOK", sem rótulos ("CTA:"), sem colchetes, markdown ou hashtags; no máximo 1 emoji; até 1.800 caracteres; parágrafos curtos.
 
 ## Arte (Designer)
-- Estilo "frase" (mo01 e posts de serviço em estilo de frase): fundo branco, Montserrat negrito, um trecho de destaque em verde marcado com [[colchetes duplos]] (no máximo um por slide), até 30 palavras por slide; carrossel de 2 a 8 slides com "arrasta →" no primeiro.
-- Estilo "tweet" (mo34): card de tweet, texto todo preto, 1 slide, até 35 palavras, sem emoji.
+- Estilo "frase" (mo01 e mo36): fundo branco, Montserrat negrito, um trecho de destaque em verde marcado com [[colchetes duplos]] (no máximo um por slide), até 30 palavras por slide; carrossel de 2 a 8 slides com "arrasta →" no primeiro.
+- Estilo "tweet" (mo34): card de tweet, texto todo preto, 1 slide, até 35 palavras, sem emoji. Fala com empreendedores em geral, sem nutrição.
 - Estilo "noticia" (mo05): texto serifado com **negrito** e ==grifo amarelo==, slide 1 com bloco "manchete" (veículo, título exato, trecho destacado), 3 slides de preferência (máximo 5), último slide pede para enviar para uma amiga nutri.
 - Sem emojis (exceto 👉 no slide 1 da notícia), sem hashtags, sem @ no texto da arte.
 - Conferir cada PNG antes de entregar: texto legível, nada cortado, destaque no lugar certo.
 
 ## Aprovação e veto
-- Semana de 20 a 26/10/2026: modo veto. O CMO aprova e manda a prévia para o José no Telegram; o post só vira "Agendado" depois da janela de veto (3 horas depois da prévia, e sempre pelo menos 1h15 antes do horário do post). Se o José responder "vetar <número>" (ou pedir mudança), o CMO segura o post e manda refazer.
+- Até 26/10/2026: modo veto. O CMO aprova e manda a prévia ao José no Telegram; o post só vira "Agendado" depois da janela de veto (3 horas depois da prévia, e sempre pelo menos 1h15 antes do horário do post). "vetar <número>" segura o post.
 - Pedido explícito do José ("publica hoje", "pode agendar direto") passa por cima da janela de veto.
 - A partir de 27/10/2026 o CMO agenda direto, a não ser que o José peça para continuar com veto.
+
+## Outras decisões dos sócios (17/10) que afetam o conteúdo
+- Perfil do Instagram será reestruturado (bio e foto, tirar o tom azulado) para o novo foco em marketing e vendas.
+- Destaques vão receber prints de resultados de clientes (o sócio Deyvisson envia).
+- Lançamento em janeiro/fevereiro de 2027, com promessa ligada ao planejamento de 2027.

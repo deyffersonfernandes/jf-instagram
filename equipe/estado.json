@@ -4,12 +4,6 @@
   "pexels": false,
   "veto": [
     {
-      "n": 8,
-      "id": "eq20261021-2000-mop",
-      "vetoAte": "2026-10-19T19:06:56Z",
-      "titulo": "O que eu faço exatamente pela nutri: do perfil ao WhatsApp"
-    },
-    {
       "n": 13,
       "id": "eq20261023-0800-vdc",
       "vetoAte": "2026-10-19T19:06:56Z",
@@ -22,141 +16,14 @@
       "titulo": "Sábado de quem empreende"
     },
     {
-      "n": 20,
-      "id": "eq20261024-2000-asu",
-      "vetoAte": "2026-10-19T19:06:56Z",
-      "titulo": "Eu não sei vender. Isso atrapalha?"
-    },
-    {
       "n": 21,
       "id": "eq20261025-0800-jrf",
       "vetoAte": "2026-10-19T19:06:56Z",
       "titulo": "A inflação sobe todo ano. E o preço da sua consulta?"
-    },
-    {
-      "n": 16,
-      "id": "mv9wm2ko0natw",
-      "vetoAte": "2026-10-19T19:06:56Z",
-      "titulo": "Caixinha: \"Eu preciso aparecer dançando e fazendo trend?\""
-    },
-    {
-      "n": 24,
-      "id": "eq20261025-2000-oly",
-      "vetoAte": "2026-10-19T19:09:00Z",
-      "titulo": "Case Van: 9 pacientes no primeiro mês de anúncios"
-    },
-    {
-      "n": 4,
-      "id": "mv9wmbyjb4bru",
-      "vetoAte": "2026-10-19T19:13:00Z",
-      "titulo": "Caixinha: 'Funciona para quem tem poucos seguidores?'"
-    },
-    {
-      "n": 12,
-      "id": "eq20261022-2000-hbf",
-      "vetoAte": "2026-10-19T19:13:00Z",
-      "titulo": "Case Paula: R$ 4 mil no primeiro mês. Onde o seu caminho trava?"
     }
   ],
   "andamento": [],
-  "pedidosJose": [
-    {
-      "n": 2,
-      "id": "mv9vu6drkd6ot",
-      "o_que": "gravar Reels: Por que eu só trabalho com nutricionista",
-      "data": "2026-10-20",
-      "hora": "12:00",
-      "pedidoEm": "2026-10-19T16:03:00Z"
-    },
-    {
-      "n": 3,
-      "id": "mv9vz41rojbac",
-      "o_que": "gravar Reels: A frase de 1 linha na bio que faz a paciente saber que você atende ela",
-      "data": "2026-10-20",
-      "hora": "16:30",
-      "pedidoEm": "2026-10-19T16:03:00Z"
-    },
-    {
-      "n": 6,
-      "id": "mv9vukdjlp8ym",
-      "o_que": "gravar Reels: Toda segunda, antes de abrir qualquer campanha, eu faço uma pergunta",
-      "data": "2026-10-21",
-      "hora": "12:00",
-      "pedidoEm": "2026-10-19T16:03:00Z"
-    },
-    {
-      "n": 7,
-      "id": "eq20261021-1630-mbe",
-      "o_que": "gravar Reels: A mensagem da véspera que reduz o furo na agenda",
-      "data": "2026-10-21",
-      "hora": "16:30",
-      "pedidoEm": "2026-10-19T16:03:00Z"
-    },
-    {
-      "n": 10,
-      "id": "eq20261022-1200-obh",
-      "o_que": "foto: Eu não prometo agenda cheia em 7 dias",
-      "data": "2026-10-22",
-      "hora": "12:00",
-      "pedidoEm": "2026-10-19T16:08:00Z"
-    },
-    {
-      "n": 11,
-      "id": "mv9vzkrun9m17",
-      "o_que": "gravar Reels: Mentira ou verdade: 4 coisas que nutri acredita sobre o perfil que atrai paciente",
-      "data": "2026-10-22",
-      "hora": "16:30",
-      "pedidoEm": "2026-10-19T16:03:00Z"
-    },
-    {
-      "n": 14,
-      "id": "mv9vufzbn14mp",
-      "o_que": "gravar Reels: A primeira nutri que eu atendi e o que eu percebi ali",
-      "data": "2026-10-23",
-      "hora": "12:00",
-      "pedidoEm": "2026-10-19T16:08:00Z"
-    },
-    {
-      "n": 15,
-      "id": "eq20261023-1630-ftr",
-      "o_que": "gravar Reels: Uma paciente pediu desconto e eu aceitei na hora. Errei?",
-      "data": "2026-10-23",
-      "hora": "16:30",
-      "pedidoEm": "2026-10-19T16:03:00Z"
-    },
-    {
-      "n": 18,
-      "id": "mv9vuov5cf3sl",
-      "o_que": "foto: Mais uma semana chegando ao fim: o que rolou por aqui",
-      "data": "2026-10-24",
-      "hora": "12:00",
-      "pedidoEm": "2026-10-19T16:03:00Z"
-    },
-    {
-      "n": 19,
-      "id": "mv9w08mvb9kui",
-      "o_que": "gravar Reels: A mensagem para pedir indicação sem constranger seu paciente",
-      "data": "2026-10-24",
-      "hora": "16:30",
-      "pedidoEm": "2026-10-19T16:03:00Z"
-    },
-    {
-      "n": 22,
-      "id": "mv9vun2x7fdtg",
-      "o_que": "foto: Domingo de manhã: o único horário em que eu não olho o celular",
-      "data": "2026-10-25",
-      "hora": "12:00",
-      "pedidoEm": "2026-10-19T16:03:00Z"
-    },
-    {
-      "n": 23,
-      "id": "eq20261025-1630-cnw",
-      "o_que": "gravar Reels: Monte um destaque 'Como é a consulta' para a paciente perder o medo de agendar",
-      "data": "2026-10-25",
-      "hora": "16:30",
-      "pedidoEm": "2026-10-19T16:03:00Z"
-    }
-  ],
+  "pedidosJose": [],
   "avisos": [],
   "ultimaRotina": "2026-10-19T17:11:00Z"
 }
