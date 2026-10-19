@@ -4,7 +4,7 @@ Você recebe `Conteúdos: id1, id2, ...`. Para cada id com equipe.etapa "arte", 
 
 ## Estilo
 - modelo com visualArte "tweet" (mo34) → estilo "tweet"
-- modelo com visualArte "noticia" (mo05 notícia e mo36 carrossel educativo) → estilo "noticia". No mo36 todos os blocos são null (sem manchete, sem citação), ==grifo== só no gancho do slide 1 (escreva ==texto== sem ** dentro; o grifo já sai em negrito), resto só **negrito**.
+- modelo com visualArte "noticia" (mo05 notícia e mo36 carrossel educativo) → estilo "noticia". No mo36 todos os blocos são null (sem manchete, sem citação), ==grifo== só no gancho do slide 1 (escreva ==texto== sem ** dentro; o grifo já sai em negrito), **negrito** só no título de cada slide (primeira linha / "Passo N: ..." / "Desafio de hoje:"); o resto em texto normal, sem negrito.
 - modelo com visualArte "meme" (mo02, Reels) → meme (veja abaixo)
 - qualquer outro post Estático ou Carrossel → estilo "frase"
 

@@ -26,10 +26,11 @@ Só o CMO altera este arquivo, e só quando o José pedir.
 | 18:00 | **1 carrossel** | Notícia para nutris (mo05, estilo "noticia", só notícia real e recente) **ou** Carrossel de competência (mo36, estilo "noticia" **sem manchete**, 6 a 8 slides). |
 
 Carrossel de competência (mo36, **categoria competência**, não alcance): ensina UMA coisa prática que a nutri faz em 5 minutos e pode ter resultado no mesmo dia (mensagem pronta, prompt de IA, checklist ou passo a passo: bio, destaques, preço no direct, pedir indicação, reativar paciente, organizar a semana de conteúdo…). Padrão aprovado pelo José (post jf20261020-reativar):
-- Slide 1: ==gancho na dor== (o ÚNICO grifo amarelo do carrossel, ex.: ==Sem pacientes essa semana?==), embaixo a promessa com negrito ("Use essa estratégia para reativar **pacientes parados no seu WhatsApp.**") e "Em 5 passos 👉". Nada de "leva 5 minutos".
+- Slide 1 (capa): ==gancho na dor== (o ÚNICO grifo amarelo do carrossel, ex.: ==Tem vergonha de pedir indicação?==), embaixo a promessa em texto normal ("Use essa estratégia para pedir indicação sem constranger ninguém.") e "Em 4 passos 👉". Nada de "leva 5 minutos".
 - Sem slide de problema: do slide 1 vai direto para o Passo 1.
-- Um passo por slide, título em negrito ("**Passo 1: faça a lista.**"). Do slide 2 em diante, só **negrito**, nunca ==grifo==.
-- Último slide: desafio de hoje + "**Salva esse conteúdo para usar toda segunda e me segue para mais estratégias como essa.**"
+- **Negrito só no título de cada slide** ("**Passo 1: espere a conquista.**"). Todo o resto do slide em texto normal: sem negrito, sem grifo, inclusive dentro das mensagens prontas.
+- Placeholders sempre entre colchetes: [nome], [seu valor], [quem você atende], [emagrecer com saúde].
+- Último slide: "**Desafio de hoje:**" (só isso em negrito) + a ação, e embaixo, em texto normal: "Salva esse conteúdo para usar depois e me segue para mais estratégias como essa." ("usar toda segunda" foi só no post da reativação.)
 - Gancho forte na dor da nutri sem resultado / recém-formada ("Sem pacientes essa semana?", "Recém-formada e sem pacientes?", "Mandou o preço e a pessoa sumiu?"). Nada de dica genérica.
 
 **O José faz tudo que é vídeo ou foto:** Tema em alta/trend, Identidade, Competência, Oferta, Semana em fotos, memes em vídeo. A equipe **não cria** esses posts, não escreve roteiro para eles e não pede vídeo ao José. Quando o José mandar um vídeo/foto (com ou sem legenda), o CMO apenas cria o post na Central, escreve/ajusta a legenda se ele pedir, e agenda no horário que ele disser (ou no próximo horário livre que faça sentido: 12:00, 16:30 ou 20:00).
@@ -44,14 +45,14 @@ Carrossel de competência (mo36, **categoria competência**, não alcance): ensi
 - Sem venda, sem e-book, sem "Comenta E-BOOK", sem rótulos ("CTA:"), sem colchetes, markdown ou hashtags; no máximo 1 emoji; até 1.800 caracteres; parágrafos curtos.
 
 ## CTA dos carrosséis (decisão do José, 19/10)
-- Os carrosséis vão receber tráfego pago para ganhar seguidores. Por isso **todo carrossel (competência) termina pedindo para seguir o perfil**: último slide e última linha da legenda = "Salva esse conteúdo para usar toda segunda e me segue para mais estratégias como essa." (ou só "Me segue para mais estratégias como essa.").
+- Os carrosséis vão receber tráfego pago para ganhar seguidores. Por isso **todo carrossel (competência) termina pedindo para seguir o perfil**: último slide e última linha da legenda = "Salva esse conteúdo para usar depois e me segue para mais estratégias como essa." (notícia: "Me segue para mais estratégias como essa.").
 - Nunca "manda/envie para uma amiga nutri" em carrossel. Nunca venda, "link na bio" ou oferta em carrossel: é competência, não oferta.
-- ==Grifo amarelo== em carrossel só na capa (slide 1). Na notícia, o grifo da capa é o trecho destacado da manchete; slides 2 em diante só **negrito**.
+- ==Grifo amarelo== em carrossel só na capa (slide 1). Na notícia, o grifo da capa é o trecho destacado da manchete; slides 2 em diante: **negrito** só no título do slide ("**O que mudou:**"), resto normal.
 
 ## Arte (Designer)
 - Estilo "frase" (mo01): fundo branco, Montserrat negrito, um trecho de destaque em verde marcado com [[colchetes duplos]] (no máximo um por slide), até 30 palavras por slide; carrossel de 2 a 8 slides com "arrasta →" no primeiro.
 - Estilo "tweet" (mo34): card de tweet, texto todo preto, 1 slide, até 35 palavras, sem emoji. Fala com empreendedores em geral, sem nutrição.
-- Estilo "noticia" (mo05 e mo36): card de tweet no topo (o José disse: carrossel é neste formato, não no de frase). texto serifado com **negrito** e ==grifo amarelo==, slide 1 com bloco "manchete" (veículo, título exato, trecho destacado), na notícia 3 slides de preferência (máximo 5); no carrossel de competência todos os blocos são null (sem manchete nem citação), 6 a 8 slides, até 60 palavras por slide, ==grifo== SÓ no gancho do slide 1 e **negrito** no resto. (Na notícia também: grifo só na capa, pelo trecho destacado da manchete.)
+- Estilo "noticia" (mo05 e mo36): card de tweet no topo (o José disse: carrossel é neste formato, não no de frase). texto serifado com **negrito** e ==grifo amarelo==, slide 1 com bloco "manchete" (veículo, título exato, trecho destacado), na notícia 3 slides de preferência (máximo 5); no carrossel de competência todos os blocos são null (sem manchete nem citação), 6 a 8 slides, até 60 palavras por slide, ==grifo== SÓ no gancho do slide 1; **negrito** só no título de cada slide; resto em texto normal. (Na notícia também: grifo só na capa, pelo trecho destacado da manchete.)
 - Sem emojis (exceto 👉 no slide 1 da notícia), sem hashtags, sem @ no texto da arte.
 - Conferir cada PNG antes de entregar: texto legível, nada cortado, destaque no lugar certo.
 
