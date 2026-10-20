@@ -1,12 +1,71 @@
 {
-  "proximoN": 39,
+  "proximoN": 57,
   "pexels": false,
-  "andamento": [],
+  "andamento": [
+    {
+      "ids": [
+        "eq20261020-yox",
+        "eq20261020-ukg",
+        "eq20261020-pbu",
+        "eq20261020-zpc",
+        "eq20261020-ebk",
+        "eq20261020-qgc"
+      ],
+      "agente": "redator",
+      "desde": "2026-10-20T19:39:03Z",
+      "refeito": false
+    },
+    {
+      "ids": [
+        "eq20261020-hnc",
+        "eq20261020-rhu",
+        "eq20261020-vqg",
+        "eq20261020-ebb",
+        "eq20261020-fdx",
+        "eq20261020-xio"
+      ],
+      "agente": "redator",
+      "desde": "2026-10-20T19:39:03Z",
+      "refeito": false
+    },
+    {
+      "ids": [
+        "eq20261020-niy",
+        "eq20261020-zgy",
+        "eq20261020-vow",
+        "eq20261020-xck",
+        "eq20261020-zzg",
+        "eq20261020-cws"
+      ],
+      "agente": "redator",
+      "desde": "2026-10-20T19:39:03Z",
+      "refeito": false
+    }
+  ],
   "avisos": [],
   "ultimaRotina": "2026-10-20T14:12:15Z",
   "avisadosPostados": [],
   "semana": {
-    "ids": [],
-    "avisado": true
+    "ids": [
+      "eq20261020-yox",
+      "eq20261020-ukg",
+      "eq20261020-pbu",
+      "eq20261020-zpc",
+      "eq20261020-ebk",
+      "eq20261020-qgc",
+      "eq20261020-hnc",
+      "eq20261020-rhu",
+      "eq20261020-vqg",
+      "eq20261020-ebb",
+      "eq20261020-fdx",
+      "eq20261020-xio",
+      "eq20261020-niy",
+      "eq20261020-zgy",
+      "eq20261020-vow",
+      "eq20261020-xck",
+      "eq20261020-zzg",
+      "eq20261020-cws"
+    ],
+    "avisado": false
   }
 }
