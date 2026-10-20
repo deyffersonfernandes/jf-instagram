@@ -305,7 +305,7 @@ def layout(linha1, linha2, asp, S=2):
     dr.text((nx * S, (y + 20) * S), "José Fernandes", font=fn, fill=(15, 20, 25))
     nw = dr.textlength("José Fernandes", font=fn) / S
     selo(dr, (nx + nw + 30) * S, (y + 20 + 29) * S, 19 * S, 15 * S)
-    dr.text((nx * S, (y + 76) * S), "@jfernandes.trafego", font=fonte("Montserrat.ttf", 34 * S, 400), fill=(83, 100, 113))
+    dr.text((nx * S, (y + 76) * S), "@josefernandesmarketing", font=fonte("Montserrat.ttf", 34 * S, 400), fill=(83, 100, 113))
     y += HEAD + g1
     f = fonte("InstrumentSans.ttf", size * S, 700)
     for cor, linhas in ((PRETO, L1), (ROSA, L2)):

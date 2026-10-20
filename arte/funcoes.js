@@ -22,7 +22,7 @@ async function desenharTweet(t){
   const nw=g.measureText(nome).width;const bx=nx+nw+14+20,by=y+26+29;
   g.fillStyle='#1d9bf0';g.beginPath();for(let i=0;i<16;i++){const a=i*Math.PI/8,rr=i%2?18:22;g.lineTo(bx+Math.cos(a)*rr,by+Math.sin(a)*rr)}g.closePath();g.fill();
   g.strokeStyle='#ffffff';g.lineWidth=4.5;g.lineCap='round';g.lineJoin='round';g.beginPath();g.moveTo(bx-9,by+1);g.lineTo(bx-2,by+8);g.lineTo(bx+10,by-7);g.stroke();
-  g.fillStyle='#536471';g.font='400 40px "Instrument Sans", sans-serif';g.fillText('@jfernandes.trafego',nx,y+88);
+  g.fillStyle='#536471';g.font='400 40px "Instrument Sans", sans-serif';g.fillText('@josefernandesmarketing',nx,y+88);
   y+=headH+gap;g.fillStyle='#0f1419';g.font=`400 ${size}px "Instrument Sans", sans-serif`;
   for(const l of lines){if(l===null){y+=Math.round(lh*0.6);continue}g.fillText(l,X,y);y+=lh}
   return new Promise((res,rej)=>c.toBlob(b=>b?res(b):rej({code:'canvas'}),'image/png'));
@@ -111,12 +111,12 @@ function desenharCitacao(g,b,x,y,w,maxH){
 }
 function cabecalhoNoticia(g,av,X,y){
   const AV=100;g.save();g.beginPath();g.arc(X+AV/2,y+AV/2,AV/2,0,Math.PI*2);g.clip();if(av)g.drawImage(av,X,y,AV,AV);else{g.fillStyle='#1d4ed8';g.fillRect(X,y,AV,AV)}g.restore();
-  const nx=X+AV+18;g.fillStyle='#111111';g.font='700 34px Montserrat, sans-serif';const nome='José Fernandes | Tráfego para Nutricionistas';
+  const nx=X+AV+18;g.fillStyle='#111111';g.font='700 34px Montserrat, sans-serif';const nome='José Fernandes | Marketing para Nutricionistas';
   let fs=34;while(fs>24){g.font=`700 ${fs}px Montserrat, sans-serif`;if(g.measureText(nome).width<1080-nx-140)break;fs-=1}
   g.fillText(nome,nx,y+14);const nw=g.measureText(nome).width;const mT=g.measureText('TN');const bx=nx+nw+26,by=y+14+(mT.actualBoundingBoxDescent-mT.actualBoundingBoxAscent)/2;
   g.fillStyle='#1d9bf0';g.beginPath();for(let i=0;i<16;i++){const a=i*Math.PI/8,rr=i%2?13:16;g.lineTo(bx+Math.cos(a)*rr,by+Math.sin(a)*rr)}g.closePath();g.fill();
   g.strokeStyle='#fff';g.lineWidth=3.5;g.lineCap='round';g.lineJoin='round';g.beginPath();g.moveTo(bx-6.5,by+1);g.lineTo(bx-1.5,by+6);g.lineTo(bx+7.5,by-5);g.stroke();
-  g.fillStyle='#333333';g.font='400 28px Montserrat, sans-serif';g.fillText('@jfernandes.trafego',nx,y+58);
+  g.fillStyle='#333333';g.font='400 28px Montserrat, sans-serif';g.fillText('@josefernandesmarketing',nx,y+58);
 }
 async function desenharNoticia(t,bloco){
   const W=1080,H=1440,X=84,MAXW=W-2*X;const c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');
@@ -149,7 +149,7 @@ function desenharSlide(t,seta,estilo,bloco){
     if(lines.length*lh<=900)break}
   const total=lines.length*lh+28+34;let y=Math.round((H-total)/2);const sp=g.measureText(' ').width;
   for(const ln of lines){let x=X;for(const [w,hl] of ln){g.fillStyle=hl?'#088A45':'#000000';g.fillText(w,x,y);x+=g.measureText(w).width+sp}y+=lh}
-  g.font='400 27px Montserrat, sans-serif';g.fillStyle='#000000';g.fillText('@jfernandes.trafego',X,y+28);
+  g.font='400 27px Montserrat, sans-serif';g.fillStyle='#000000';g.fillText('@josefernandesmarketing',X,y+28);
   if(seta){g.font='500 30px Montserrat, sans-serif';g.fillStyle='#969696';const tw=g.measureText('arrasta').width;const x0=W-X-tw-58;g.fillText('arrasta',x0,1310);
     const ay=1329,ax=x0+tw+14;g.strokeStyle='#969696';g.lineWidth=4;g.lineCap='round';g.beginPath();g.moveTo(ax,ay);g.lineTo(ax+40,ay);g.moveTo(ax+28,ay-11);g.lineTo(ax+41,ay);g.moveTo(ax+28,ay+11);g.lineTo(ax+41,ay);g.stroke()}
   return new Promise((res,rej)=>c.toBlob(b=>b?res(b):rej({code:'canvas'}),'image/png'));

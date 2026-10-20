@@ -1,6 +1,6 @@
 # Equipe de conteúdo automática
 
-Agentes (tarefas agendadas do Claude) que produzem os 4 posts diários do @jfernandes.trafego em cascata:
+Agentes (tarefas agendadas do Claude) que produzem os 4 posts diários do @josefernandesmarketing em cascata:
 
 CMO (planeja) → Redator (roteiro e legenda) → Copy chief (revisa) → Designer (arte) → CMO (aprova e agenda) → publicação automática no Instagram.
 
