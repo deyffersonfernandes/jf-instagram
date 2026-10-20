@@ -2,58 +2,9 @@
   "modoVetoAte": "2026-10-26",
   "proximoN": 39,
   "pexels": false,
-  "veto": [
-    {
-      "n": 31,
-      "id": "eq20261023-0800-prm",
-      "vetoAte": "2026-10-20T14:00:00Z",
-      "titulo": "Post técnico atrai colega. Post sobre a dor atrai paciente."
-    },
-    {
-      "n": 32,
-      "id": "eq20261025-0800-rtq",
-      "vetoAte": "2026-10-20T14:00:00Z",
-      "titulo": "A faculdade te formou nutricionista. Ser dona de consultório é outra formação."
-    },
-    {
-      "n": 34,
-      "id": "eq20261026-0800-yox",
-      "vetoAte": "2026-10-20T14:00:00Z",
-      "titulo": "Quem diz para quem atende é lembrada e indicada."
-    },
-    {
-      "n": 35,
-      "id": "eq20261026-1800-skz",
-      "vetoAte": "2026-10-20T14:00:00Z",
-      "titulo": "Paciente marcou e não apareceu? 4 passos para reduzir as faltas"
-    },
-    {
-      "n": 36,
-      "id": "eq20261027-0800-abw",
-      "vetoAte": "2026-10-20T14:00:00Z",
-      "titulo": "O cliente não compra do melhor. Compra de quem ele lembra."
-    },
-    {
-      "n": 37,
-      "id": "eq20261027-1800-igf",
-      "vetoAte": "2026-10-20T14:00:00Z",
-      "titulo": "Paciente não paga pelo plano alimentar. Paga pelo acompanhamento. (28/10 08:00)"
-    },
-    {
-      "n": 33,
-      "id": "eq20261025-1800-gbb",
-      "vetoAte": "2026-10-20T14:05:00Z",
-      "titulo": "OMS lança primeiro guia de obesidade em crianças e jovens: alimentação vem antes do remédio"
-    },
-    {
-      "n": 38,
-      "id": "eq20261027-1800-nte",
-      "vetoAte": "2026-10-20T14:08:00Z",
-      "titulo": "Te seguiu e foi embora sem te chamar? 4 passos para o destaque \"Comece aqui\""
-    }
-  ],
+  "veto": [],
   "andamento": [],
   "pedidosJose": [],
   "avisos": [],
-  "ultimaRotina": "2026-10-20T00:15:00Z"
+  "ultimaRotina": "2026-10-20T14:12:15Z"
 }
