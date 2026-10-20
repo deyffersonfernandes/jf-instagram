@@ -38,17 +38,15 @@
       "id": "eq20261027-1800-igf",
       "vetoAte": "2026-10-20T14:00:00Z",
       "titulo": "Paciente não paga pelo plano alimentar. Paga pelo acompanhamento. (28/10 08:00)"
+    },
+    {
+      "n": 33,
+      "id": "eq20261025-1800-gbb",
+      "vetoAte": "2026-10-20T14:05:00Z",
+      "titulo": "OMS lança primeiro guia de obesidade em crianças e jovens: alimentação vem antes do remédio"
     }
   ],
   "andamento": [
-    {
-      "ids": [
-        "eq20261025-1800-gbb"
-      ],
-      "agente": "designer",
-      "desde": "2026-10-20T11:01:00Z",
-      "refeito": false
-    },
     {
       "ids": [
         "eq20261027-1800-nte"
