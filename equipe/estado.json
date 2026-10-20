@@ -1,16 +1,7 @@
 {
   "proximoN": 57,
   "pexels": false,
-  "andamento": [
-    {
-      "ids": [
-        "eq20261020-ebb"
-      ],
-      "agente": "designer",
-      "desde": "2026-10-20T19:57:12Z",
-      "refeito": false
-    }
-  ],
+  "andamento": [],
   "avisos": [],
   "ultimaRotina": "2026-10-20T14:12:15Z",
   "avisadosPostados": [],
@@ -35,6 +26,6 @@
       "eq20261020-zzg",
       "eq20261020-cws"
     ],
-    "avisado": false
+    "avisado": true
   }
 }
