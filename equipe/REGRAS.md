@@ -62,11 +62,9 @@ Carrossel de competência (mo36, **categoria competência**, não alcance): ensi
 - Sem emojis (exceto 👉 no slide 1 da notícia), sem hashtags, sem @ no texto da arte.
 - Conferir cada PNG antes de entregar: texto legível, nada cortado, destaque no lugar certo.
 
-## Aprovação e veto
-- Até 26/10/2026: modo veto. O CMO aprova e manda a prévia ao José no Telegram; o post só vira "Agendado" depois da janela de veto (3 horas depois da prévia, e sempre pelo menos 1h15 antes do horário do post). "vetar <número>" segura o post.
-- Pedido explícito do José ("publica hoje", "pode agendar direto") passa por cima da janela de veto.
-- A partir de 27/10/2026 o CMO agenda direto, a não ser que o José peça para continuar com veto.
-
+## Aprovação e calendário (decisão do José, 20/10)
+- A equipe produz, revisa e deixa cada post 100% finalizado no status "pronto", SEM data e hora. Quem coloca no calendário é o José (ele arrasta na Central ou manda o CMO agendar dizendo dia e hora).
+- Sem prévias no Telegram. O CMO só avisa: quando o conteúdo da semana inteira está pronto (quantos e de que categoria) e quando um post sai no Instagram (para o José colocar a música).
 ## Outras decisões dos sócios (17/10) que afetam o conteúdo
 - Perfil do Instagram será reestruturado (bio e foto, tirar o tom azulado) para o novo foco em marketing e vendas.
 - Destaques vão receber prints de resultados de clientes (o sócio Deyvisson envia).

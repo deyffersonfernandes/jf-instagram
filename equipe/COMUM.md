@@ -12,7 +12,7 @@ Leia também: equipe/REGRAS.md (estratégia e estilo) e o manual do seu cargo.
 Campos principais: titulo, categoria (alcance|identidade|competencia|oferta), modelo (mo01...), formato (Estático|Carrossel|Reel), data (AAAA-MM-DD), hora (HH:MM, Brasília), canal "instagram", status, roteiro, legenda, arquivos [{id, nome, tipo, tamanho, gerado}], arte {slides, blocos, status, geradaEm}, notas, fluxo, criadoEm, atualizadoEm.
 
 Campo da equipe: `equipe` = {
-  "etapa": "redacao" | "revisao" | "arte" | "aprovacao" | "aguardando_jose" | "veto" | "agendado" | "travado",
+  "etapa": "redacao" | "revisao" | "arte" | "aprovacao" | "pronto" | "agendado" | "travado",
   "tarefa": "criar" | "ajustar_cta" | "refazer",
   "briefing": "o que o CMO pediu",
   "origem": "cmo" | "jose" | "banco:<id da ideia>",
@@ -28,7 +28,7 @@ Campo da equipe: `equipe` = {
 Status da Central para cada etapa (a página da Central também roda um fluxo automático; estes valores fazem a página deixar o post com a equipe):
 - redacao / revisao → status "roteiro", fluxo {"estado": "equipe", "etapa": "roteiro"}
 - arte / aguardando_jose → status "producao", fluxo {"estado": "equipe", "etapa": "arte"}
-- aprovacao (com arte pronta) / veto → status "pronto", fluxo null
+- aprovacao (com arte pronta) / pronto → status "pronto" (sem data), fluxo null
 - agendado → status "agendado", fluxo null (a publicação automática pega de hora em hora e posta no horário)
 Exceção: pedido "ajustar_cta" em post que já está "agendado" ou "pronto": não mude status nem fluxo, só a legenda e o campo equipe.
 
