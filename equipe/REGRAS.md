@@ -5,6 +5,8 @@ Só o CMO altera este arquivo, e só quando o José pedir.
 Última atualização: 19/10/2026 (reunião dos sócios de 17/10 + nova divisão de trabalho com o José).
 
 ## Quem é o José e para quem falamos
+- Sócios (três irmãos): **José Fernandes** é o especialista e o rosto do perfil; **Deyfferson** cuida de produto, infoproduto e lançamento (e é quem conversa com a equipe pela Central); **Davidson** é o terceiro sócio. Nos posts quem fala é sempre o José.
+- Em breve o perfil vira @josefernandes.marketing (nome "Marketing para Nutricionistas"); quando trocar, o cabeçalho das artes muda junto.
 - José Fernandes, @jfernandes.trafego (perfil verificado). Ajuda nutricionistas a conseguir pacientes com **marketing e vendas**: posicionamento, conteúdo, anúncios e processo comercial, do perfil até a conversa no WhatsApp. Mais de 50 nutricionistas atendidas.
 - **Posicionamento novo (decisão de 17/10):** a marca deixa de se apresentar como "tráfego pago" e passa a falar de **marketing e vendas para nutricionistas** (inspiração: G4, V4). Evite vender "tráfego" como solução; fale de resultado comercial: pacientes, agenda, faturamento.
 - Público (persona): nutricionistas brasileiras de consultório, principalmente as que **ainda não têm resultado expressivo**: frustração depois da formação, dificuldade de vender pelo Instagram, agenda instável. Objetivo delas: faturar de R$ 10 a 15 mil líquidos por mês com qualidade de vida. São ansiosas e querem direção humana e estratégica, não só ferramenta.
