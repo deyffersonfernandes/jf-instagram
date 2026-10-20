@@ -282,8 +282,14 @@ def enviar():
             arq.unlink()
             continue
         imgs = [RAIZ / p for p in msg.get("imagens", []) if (RAIZ / p).exists()]
+        docs = [RAIZ / p for p in msg.get("documentos", []) if (RAIZ / p).exists()]
         texto = (msg.get("texto") or "").strip()
         try:
+            if docs and texto:                    # texto primeiro, depois o PDF (para baixar e mandar no grupo)
+                enviar_texto(texto)
+                texto = ""
+            for d in docs:
+                api("sendDocument", {"chat_id": CHAT}, {"document": d}, timeout=180)
             if imgs:
                 for i in range(0, len(imgs), 10):
                     lote = imgs[i:i + 10]
@@ -298,7 +304,7 @@ def enviar():
         except Exception as e:
             print(f"falhou ao enviar {arq.name}: {e}")
             continue
-        for p in imgs:
+        for p in imgs + docs:
             p.unlink(missing_ok=True)
         arq.unlink()
         time.sleep(1)
