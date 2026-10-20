@@ -39,12 +39,13 @@ Carrossel de competência (mo36, **categoria competência**, não alcance): ensi
 **O José faz tudo que é vídeo ou foto:** Tema em alta/trend, Identidade, Competência, Oferta, Semana em fotos, memes em vídeo. A equipe **não cria** esses posts, não escreve roteiro para eles e não pede vídeo ao José. Quando o José mandar um vídeo/foto (com ou sem legenda), o CMO apenas cria o post na Central, escreve/ajusta a legenda se ele pedir, e agenda no horário que ele disser (ou no próximo horário livre que faça sentido: 12:00, 16:30 ou 20:00).
 
 ## Legenda (posts da equipe)
+- **Proibido:** nunca use a frase "Agenda cheia é processo, não sorte." (nem variações) em legenda, arte, roteiro ou mensagem. O José vetou em 20/10.
 1. Gancho na primeira linha: pergunta, teste ou cena que a nutri reconhece na hora.
 2. A situação concreta do dia a dia dela.
 3. A virada: "a nutri que fica parada faz X, a que cresce faz Y".
 4. Um exercício prático para fazer hoje.
 5. Uma frase curta de fechamento.
-6. Assinatura "Agenda cheia é processo, não sorte." e, na linha seguinte, a chamada. Frase (alcance): mandar para uma amiga nutri / salvar / seguir (frase de negócios: mandar para o sócio/cônjuge). Carrossel (competência): sempre seguir o perfil (veja "CTA dos carrosséis").
+6. Termine com a chamada. Frase (alcance): mandar para uma amiga nutri / salvar / seguir (frase de negócios: mandar para o sócio/cônjuge). Carrossel (competência): sempre seguir o perfil (veja "CTA dos carrosséis").
 - Sem venda, sem e-book, sem "Comenta E-BOOK", sem rótulos ("CTA:"), sem colchetes, markdown ou hashtags; no máximo 1 emoji; até 1.800 caracteres; parágrafos curtos.
 
 ## CTA dos carrosséis (decisão do José, 19/10)
