@@ -4,33 +4,10 @@
   "andamento": [
     {
       "ids": [
-        "eq20261020-pbu"
+        "eq20261020-ebb"
       ],
-      "agente": "redator",
-      "desde": "2026-10-20T19:39:03Z",
-      "refeito": false
-    },
-    {
-      "ids": [
-        "eq20261020-ebb",
-        "eq20261020-fdx",
-        "eq20261020-xio"
-      ],
-      "agente": "redator",
-      "desde": "2026-10-20T19:39:03Z",
-      "refeito": false
-    },
-    {
-      "ids": [
-        "eq20261020-niy",
-        "eq20261020-zgy",
-        "eq20261020-vow",
-        "eq20261020-xck",
-        "eq20261020-zzg",
-        "eq20261020-cws"
-      ],
-      "agente": "redator",
-      "desde": "2026-10-20T19:39:03Z",
+      "agente": "designer",
+      "desde": "2026-10-20T19:57:12Z",
       "refeito": false
     }
   ],
