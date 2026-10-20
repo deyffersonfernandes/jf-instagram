@@ -1,9 +1,31 @@
 {
   "modoVetoAte": "2026-10-26",
-  "proximoN": 31,
+  "proximoN": 38,
   "pexels": false,
   "veto": [],
-  "andamento": [],
+  "andamento": [
+    {
+      "ids": [
+        "eq20261023-0800-prm",
+        "eq20261025-0800-rtq",
+        "eq20261025-1800-gbb",
+        "eq20261026-0800-yox",
+        "eq20261026-1800-skz",
+        "eq20261027-0800-abw"
+      ],
+      "agente": "redator",
+      "desde": "2026-10-20T10:46:00Z",
+      "refeito": false
+    },
+    {
+      "ids": [
+        "eq20261027-1800-igf"
+      ],
+      "agente": "redator",
+      "desde": "2026-10-20T10:46:00Z",
+      "refeito": false
+    }
+  ],
   "pedidosJose": [],
   "avisos": [],
   "ultimaRotina": "2026-10-20T00:15:00Z"
