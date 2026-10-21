@@ -41,7 +41,9 @@ Carrossel de competência (mo36, **categoria competência**, não alcance): ensi
 - **Negrito só no título de cada slide** ("**Passo 1: espere a conquista.**"). Todo o resto do slide em texto normal: sem negrito, sem grifo, inclusive dentro das mensagens prontas.
 - Não force passo de IA/prompt: só use quando a estratégia for sobre IA ou quando o prompt for a ação principal. Passo extra que não faz sentido sai (o José cortou o "adapte com IA" do carrossel do preço). A capa diz o número real de passos.
 - Placeholders sempre entre colchetes: [nome], [seu valor], [quem você atende], [emagrecer com saúde].
-- Último slide: "**Desafio de hoje:**" (só isso em negrito) + a ação, e embaixo, em texto normal: "Salva esse conteúdo para usar depois e me segue para mais estratégias como essa." ("usar toda segunda" foi só no post da reativação.)
+- O último passo fecha o conteúdo (ele é o desfecho; não deixe nada para depois do card de venda).
+- **Último slide = card de venda do Método Nutri+** (decisão do José, 21/10; substitui o antigo slide "Desafio de hoje / Salva"). Texto do slide: **gancho em negrito ligado ao tema do carrossel** (até ~80 caracteres, formato "[o que o carrossel resolve]. Mas é o processo que [enche a agenda / traz paciente]." — ex.: "**O prompt resolve o que postar. Mas é o processo que enche a agenda.**"), depois o texto fixo "No Método Nutri+, eu e meu time montamos a estratégia completa do seu consultório: posicionamento, anúncios, conversão e fidelização dos seus pacientes." e "Diagnóstico gratuito no link da bio.", e embaixo o print da página do Método Nutri+. Sem pílulas, selos ou botões extras. A arte é feita com `arte/venda.py` (veja DESIGNER.md).
+- O desafio e o "Salva" ficam na legenda (exercício para hoje + chamada final).
 - Gancho forte na dor da nutri sem resultado / recém-formada ("Sem pacientes essa semana?", "Recém-formada e sem pacientes?", "Mandou o preço e a pessoa sumiu?"). Nada de dica genérica.
 
 **O José faz tudo que é vídeo ou foto:** Tema em alta/trend, Identidade, Competência, Oferta, Semana em fotos, memes em vídeo. A equipe **não cria** esses posts, não escreve roteiro para eles e não pede vídeo ao José. Quando o José mandar um vídeo/foto (com ou sem legenda), o CMO apenas cria o post na Central, escreve/ajusta a legenda se ele pedir, e agenda no horário que ele disser (ou no próximo horário livre que faça sentido: 12:00, 16:30 ou 20:00).
@@ -57,8 +59,8 @@ Carrossel de competência (mo36, **categoria competência**, não alcance): ensi
 - Sem venda, sem e-book, sem "Comenta E-BOOK", sem rótulos ("CTA:"), sem colchetes, markdown ou hashtags; no máximo 1 emoji; até 1.800 caracteres; parágrafos curtos.
 
 ## CTA dos carrosséis (decisão do José, 19/10)
-- Os carrosséis vão receber tráfego pago para ganhar seguidores. Por isso **todo carrossel (competência) termina pedindo para seguir o perfil**: último slide e última linha da legenda = "Salva esse conteúdo para usar depois e me segue para mais estratégias como essa." (notícia: "Me segue para mais estratégias como essa.").
-- Nunca "manda/envie para uma amiga nutri" em carrossel. Nunca venda, "link na bio" ou oferta em carrossel: é competência, não oferta.
+- Os carrosséis vão receber tráfego pago para ganhar seguidores. Por isso **todo carrossel (competência) termina pedindo para seguir o perfil**: última linha da legenda = "Salva esse conteúdo para usar depois e me segue para mais estratégias como essa." (notícia: "Me segue para mais estratégias como essa.").
+- Nunca "manda/envie para uma amiga nutri" em carrossel. A única venda do carrossel de competência é o card do Método Nutri+ no último slide; na legenda, antes da chamada final, entra a linha "Quer que a gente monte essa estratégia com você? O diagnóstico gratuito está no link da bio."
 - ==Grifo amarelo== em carrossel só na capa (slide 1). Na notícia, o grifo da capa é o trecho destacado da manchete; slides 2 em diante: **negrito** só no título do slide ("**O que mudou:**"), resto normal.
 
 - Notícia (mo05) só quando muda algo concreto na captação/rotina do consultório da nutri. Novidade genérica de app (ex.: recurso novo de gravação de Reels) o José vetou em 19/10: não serve.
