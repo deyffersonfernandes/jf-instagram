@@ -59,18 +59,61 @@ def eh_video(a):
     return (a.get("tipo") or "").startswith("video/") or a.get("nome", "").lower().endswith((".mp4", ".mov", ".webm"))
 
 
+def _sondar_video(origem):
+    """Lê codec, tamanho e fps do vídeo (vazio se não der para ler)."""
+    ffprobe = shutil.which("ffprobe")
+    if not ffprobe:
+        return {}
+    r = subprocess.run([ffprobe, "-v", "error", "-show_entries",
+                        "stream=codec_type,codec_name,width,height,avg_frame_rate,pix_fmt",
+                        "-of", "json", str(origem)], capture_output=True, text=True)
+    if r.returncode != 0:
+        return {}
+    info = {}
+    for s in json.loads(r.stdout or "{}").get("streams", []):
+        if s.get("codec_type") == "video" and "v" not in info:
+            info["v"] = s
+        elif s.get("codec_type") == "audio" and "a" not in info:
+            info["a"] = s
+    return info
+
+
+def _pronto_para_reels(info):
+    """True quando o arquivo já está no formato do Instagram e pode ir sem recomprimir."""
+    v, a = info.get("v"), info.get("a")
+    if not v or v.get("codec_name") != "h264" or v.get("pix_fmt") not in ("yuv420p", "yuvj420p"):
+        return False
+    if (v.get("width") or 0) > 1080 or (v.get("height") or 0) > 1920:
+        return False
+    try:
+        n, d = (v.get("avg_frame_rate") or "0/1").split("/")
+        fps = float(n) / float(d or 1)
+    except (ValueError, ZeroDivisionError):
+        return False
+    if not 23 <= fps <= 60.5:
+        return False
+    return a is None or a.get("codec_name") == "aac"
+
+
 def preparar_video(origem, destino):
-    """Converte para o que o Instagram aceita em Reels: MP4 H.264 + AAC, 30 fps, faststart.
-    Vídeos montados no navegador (Reels de meme da Central) podem vir em WEBM ou VP9."""
+    """Deixa o vídeo pronto para Reels SEM perder qualidade.
+    Se já está em MP4 H.264 + AAC até 1080x1920 (o normal do celular e dos editores),
+    só reorganiza o arquivo (faststart), sem recomprimir: sai idêntico ao original.
+    Vídeos montados no navegador (WEBM/VP9 dos Reels de meme) são convertidos."""
     ffmpeg = shutil.which("ffmpeg")
     if not ffmpeg:
         if str(origem).lower().endswith(".webm"):
             raise RuntimeError("ffmpeg não encontrado para converter o vídeo WEBM em MP4")
         shutil.copy(origem, destino)
         return
+    if _pronto_para_reels(_sondar_video(origem)):
+        r = subprocess.run([ffmpeg, "-loglevel", "error", "-y", "-i", str(origem), "-map", "0:v:0", "-map", "0:a:0?",
+                            "-c", "copy", "-movflags", "+faststart", str(destino)], capture_output=True, text=True)
+        if r.returncode == 0:
+            return
     cmd = [ffmpeg, "-loglevel", "error", "-y", "-i", str(origem),
-           "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
-           "-vf", "scale='min(1080,iw)':-2,fps=30", "-c:a", "aac", "-b:a", "128k", "-ar", "44100",
+           "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-pix_fmt", "yuv420p",
+           "-vf", "scale='min(1080,iw)':-2,fps=30", "-c:a", "aac", "-b:a", "192k", "-ar", "44100",
            "-movflags", "+faststart", str(destino)]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
@@ -79,6 +122,32 @@ def preparar_video(origem, destino):
         r2 = subprocess.run(sem_audio, capture_output=True, text=True)
         if r2.returncode != 0:
             raise RuntimeError("falha ao converter vídeo: " + (r.stderr or r2.stderr)[-300:])
+
+
+def ids_do_arquivo(a):
+    """Vídeos grandes ficam na Central em partes de até 14 MB (campo "partes", em ordem).
+    Devolve todos os ids de asset que precisam ser baixados para esse arquivo."""
+    partes = a.get("partes") or []
+    return list(partes) if len(partes) > 1 else [a["id"]]
+
+
+def localizar(baixados, a):
+    """Acha o arquivo baixado; se estiver em partes, junta as partes byte a byte
+    (o resultado é idêntico ao original enviado)."""
+    ids = ids_do_arquivo(a)
+    locais = [next(iter(baixados.glob(f"{i}*")), None) for i in ids]
+    if None in locais:
+        return None
+    if len(locais) == 1:
+        return locais[0]
+    inteiro = baixados / f"inteiro-{a['id']}.mp4"
+    with open(inteiro, "wb") as saida:
+        for loc in locais:
+            with open(loc, "rb") as parte:
+                shutil.copyfileobj(parte, saida)
+    if a.get("tamanho") and inteiro.stat().st_size != a["tamanho"]:
+        raise RuntimeError(f"vídeo {a.get('nome')} veio incompleto ao juntar as partes")
+    return inteiro
 
 
 def planejar(pasta, imprimir=True):
@@ -110,7 +179,7 @@ def planejar(pasta, imprimir=True):
         if existente.exists() and json.loads(existente.read_text()).get("assinatura") == assinatura(c):
             continue
         entrar.append({"id": pid, "titulo": c.get("titulo"), "quando": quando.isoformat(),
-                       "baixar": [a["id"] for a in arquivos]})
+                       "baixar": [i for a in arquivos for i in ids_do_arquivo(a)]})
     plano = {"entrar": entrar, "avisos": avisos}
     if imprimir:
         print(json.dumps(plano, ensure_ascii=False, indent=2))
@@ -167,7 +236,7 @@ def montar(pasta, baixados):
             continue
         pid = c["id"]
         arquivos = ordenar(c.get("arquivos") or [])
-        locais = [next(iter(baixados.glob(f"{a['id']}*")), None) for a in arquivos]
+        locais = [localizar(baixados, a) for a in arquivos]
         if not arquivos or None in locais:
             continue
         quando = horario(c)
