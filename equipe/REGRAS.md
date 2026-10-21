@@ -24,15 +24,16 @@ Só o CMO altera este arquivo, e só quando o José pedir.
 **A equipe faz SÓ imagens, 2 posts por dia:**
 | Horário | Post | Modelos |
 |---|---|---|
-| 08:00 | **1 frase** (imagem única) | Frase de impacto para nutris (mo01, estilo "frase") **ou** Frase de negócios para empreendedores (mo34, estilo "tweet"). Alterne; a maioria para nutris. |
+| 07:00 | **1 frase** (imagem única) | Frase de impacto para nutris (mo01, estilo "frase") **ou** Frase de negócios para empreendedores (mo34, estilo "tweet"). Alterne; a maioria para nutris. |
 | 18:00 | **1 carrossel** | Notícia para nutris (mo05, estilo "noticia", só notícia real e recente) **ou** Carrossel de competência (mo36, estilo "noticia" **sem manchete**, 6 a 8 slides). |
 
-**Melhor horário de cada post (decisão do José, 21/10):** além da categoria, todo post sai com `horaSugerida` (HH:MM) e `horaMotivo` (uma frase), escolhidos pelo conteúdo e pela rotina da nutri de consultório, não só pela tabela. A Central usa esse horário quando o José arrasta o post para o calendário. Referência:
-- 07:00 a 07:30: o que ela aplica no mesmo dia (mensagem para mandar hoje, algo para usar na consulta de hoje) e vídeos de "começo de dia".
-- 12:00 a 12:30: o que pede leitura ou um ajuste rápido (legenda longa, bio, destaques, ação de 5 minutos) e histórias de Identidade.
-- 18:00 a 19:00: WhatsApp e conversas paradas (fim do expediente), e posts que pedem para comentar uma palavra (mais gente online).
+**Horários do dia (decisão do José, 21/10): 07:00 Alcance · 12:00 Identidade · 18:00 Competência · 20:00 Oferta.** Mínimo de 2 horas entre dois posts do mesmo dia (posts muito próximos disputam alcance).
+Todo post sai com `horaSugerida` (um desses 4 horários, HH:MM) e `horaMotivo` (uma frase), escolhidos pelo conteúdo e pela rotina da nutri de consultório. A Central usa esse horário quando o José arrasta o post para o calendário. Referência:
+- 07:00: frase do dia; o que ela aplica no mesmo dia (mensagem para mandar hoje, algo para usar na consulta de hoje) e vídeos de "começo de dia" (nesses dias o vídeo ocupa o lugar da frase).
+- 12:00: o que pede leitura ou ajuste rápido (legenda longa, bio, destaques, ação de 5 minutos) e histórias de Identidade.
+- 18:00: carrossel de competência, WhatsApp e conversas paradas (fim do expediente), posts que pedem para comentar uma palavra.
 - 20:00: Oferta e decisão (link da bio, agendar reunião, entrar no grupo).
-Conteúdo com dia certo (ex.: "esta semana" → segunda; "fim de semana" → sexta/sábado) leva o dia no `horaMotivo`. As frases das 08:00 e os carrosséis das 18:00 continuam nesses horários, salvo motivo claro.
+Conteúdo com dia certo (ex.: "esta semana" → segunda; "fim de semana" → sexta/sábado) leva o dia no `horaMotivo`.
 
 Carrossel de competência (mo36, **categoria competência**, não alcance): ensina UMA coisa prática que a nutri faz em 5 minutos e pode ter resultado no mesmo dia (mensagem pronta, prompt de IA, checklist ou passo a passo: bio, destaques, preço no direct, pedir indicação, reativar paciente, organizar a semana de conteúdo…). Padrão aprovado pelo José (post jf20261020-reativar):
 - Slide 1 (capa): ==gancho na dor== (o ÚNICO grifo amarelo do carrossel, ex.: ==Tem vergonha de pedir indicação?==), embaixo a promessa em texto normal ("Use essa estratégia para pedir indicação sem constranger ninguém.") e "Em 4 passos 👉". Nada de "leva 5 minutos".
