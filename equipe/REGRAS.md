@@ -24,15 +24,15 @@ Só o CMO altera este arquivo, e só quando o José pedir.
 **A equipe faz SÓ imagens, 2 posts por dia:**
 | Horário | Post | Modelos |
 |---|---|---|
-| 08:00 | **1 frase** (imagem única) | Frase de impacto para nutris (mo01, estilo "frase") **ou** Frase de negócios para empreendedores (mo34, estilo "tweet"). Alterne; a maioria para nutris. |
-| 16:00 | **1 carrossel** | Notícia para nutris (mo05, estilo "noticia", só notícia real e recente) **ou** Carrossel de competência (mo36, estilo "noticia" **sem manchete**, 6 a 8 slides). |
+| 07:00 | **1 frase** (imagem única) | Frase de impacto para nutris (mo01, estilo "frase") **ou** Frase de negócios para empreendedores (mo34, estilo "tweet"). Alterne; a maioria para nutris. |
+| 15:00 | **1 carrossel** | Notícia para nutris (mo05, estilo "noticia", só notícia real e recente) **ou** Carrossel de competência (mo36, estilo "noticia" **sem manchete**, 6 a 8 slides). |
 
-**Horários do dia (decisão do José, 21/10, à noite — horários proporcionais, 4 horas entre um e outro): 08:00 Alcance · 12:00 Identidade · 16:00 Competência · 20:00 Oferta.** Nada de 07:00, 16:30 ou 18:00. Se um vídeo ocupar o horário de outra categoria, a outra vai para o próximo horário livre da grade (nunca fora dela).
+**Horários do dia (decisão do José, 21/10, à noite — o primeiro post sai SEMPRE às 07:00 e os outros a cada 4 horas): 07:00 Alcance · 11:00 Identidade · 15:00 Competência · 19:00 Oferta.** Nada de 08:00, 12:00, 16:00, 16:30, 18:00 ou 20:00. Se um vídeo ocupar o horário de outra categoria, a outra vai para o próximo horário livre da grade (nunca fora dela).
 Todo post sai com `horaSugerida` (um desses 4 horários, HH:MM) e `horaMotivo` (uma frase), escolhidos pelo conteúdo e pela rotina da nutri de consultório. A Central usa esse horário quando o José arrasta o post para o calendário. Referência:
-- 08:00: frase do dia; o que ela aplica no mesmo dia (mensagem para mandar hoje, algo para usar na consulta de hoje) e vídeos de "começo de dia" (nesses dias o vídeo ocupa o lugar da frase).
-- 12:00: o que pede leitura ou ajuste rápido (legenda longa, bio, destaques, ação de 5 minutos) e histórias de Identidade.
-- 16:00: carrossel de competência, WhatsApp e conversas paradas (intervalo da tarde), posts que pedem para comentar uma palavra.
-- 20:00: Oferta e decisão (link da bio, agendar reunião, entrar no grupo).
+- 07:00: frase do dia; o que ela aplica no mesmo dia (mensagem para mandar hoje, algo para usar na consulta de hoje) e vídeos de "começo de dia" (nesses dias o vídeo ocupa o lugar da frase).
+- 11:00: o que pede leitura ou ajuste rápido (legenda longa, bio, destaques, ação de 5 minutos) e histórias de Identidade.
+- 15:00: carrossel de competência, WhatsApp e conversas paradas (intervalo da tarde), posts que pedem para comentar uma palavra.
+- 19:00: Oferta e decisão (link da bio, agendar reunião, entrar no grupo).
 Conteúdo com dia certo (ex.: "esta semana" → segunda; "fim de semana" → sexta/sábado) leva o dia no `horaMotivo`.
 
 Carrossel de competência (mo36, **categoria competência**, não alcance): ensina UMA coisa prática que a nutri faz em 5 minutos e pode ter resultado no mesmo dia (mensagem pronta, prompt de IA, checklist ou passo a passo: bio, destaques, preço no direct, pedir indicação, reativar paciente, organizar a semana de conteúdo…). Padrão aprovado pelo José (post jf20261020-reativar):
@@ -46,7 +46,7 @@ Carrossel de competência (mo36, **categoria competência**, não alcance): ensi
 - O desafio fica na legenda (exercício para hoje). **CTA único**: veja "CTA dos carrosséis".
 - Gancho forte na dor da nutri sem resultado / recém-formada ("Sem pacientes essa semana?", "Recém-formada e sem pacientes?", "Mandou o preço e a pessoa sumiu?"). Nada de dica genérica.
 
-**O José faz tudo que é vídeo ou foto:** Tema em alta/trend, Identidade, Competência, Oferta, Semana em fotos, memes em vídeo. A equipe **não cria** esses posts, não escreve roteiro para eles e não pede vídeo ao José. Quando o José mandar um vídeo/foto (com ou sem legenda), o CMO apenas cria o post na Central, escreve/ajusta a legenda se ele pedir, e agenda no horário que ele disser (ou no próximo horário livre da grade 08:00 / 12:00 / 16:00 / 20:00).
+**O José faz tudo que é vídeo ou foto:** Tema em alta/trend, Identidade, Competência, Oferta, Semana em fotos, memes em vídeo. A equipe **não cria** esses posts, não escreve roteiro para eles e não pede vídeo ao José. Quando o José mandar um vídeo/foto (com ou sem legenda), o CMO apenas cria o post na Central, escreve/ajusta a legenda se ele pedir, e agenda no horário que ele disser (ou no próximo horário livre da grade 07:00 / 11:00 / 15:00 / 19:00).
 
 ## Legenda (posts da equipe)
 - **Proibido:** nunca use a frase "Agenda cheia é processo, não sorte." (nem variações) em legenda, arte, roteiro ou mensagem. O José vetou em 20/10.
