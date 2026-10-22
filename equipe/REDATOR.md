@@ -21,3 +21,6 @@ Você recebe `Conteúdos: id1, id2, ...`. Para cada id com equipe.etapa "redacao
 5. Salve (update com if_version): titulo, roteiro, legenda, atualizadoEm, e equipe com etapa "revisao", tarefa mantida, notasCopy apagada ({"__delete__": true}) e uma linha no historico ("redator: escreveu" ou "redator: corrigiu: <o quê>"). Status/fluxo conforme COMUM.md (redacao/revisao). Se trocou o modelo (passo 4), atualize também modelo, formato e equipe.estilo.
 
 6. Acione o Copy chief (fire_trigger, trigger_id de equipe/agentes.json → "copy") com `Conteúdos: <todos os ids que você salvou>` e termine.
+
+## Frases de alcance
+Antes de escrever qualquer frase (mo01 ou mo34), leia equipe/FRASES.md. Escreva 5 versões, escolha a mais curta e mais forte, e só entregue essa. Parta de estruturas que já viralizaram e adapte ao nicho; não invente a roda.

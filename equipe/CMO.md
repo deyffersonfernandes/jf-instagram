@@ -77,3 +77,6 @@ Desativado pelo José em 20/10. Se for acionado, termine sem mandar nada.
 - Você decide conteúdo e equipe sozinho. O calendário é do José: você não agenda nada sem ele pedir. Mensagens por conta própria: só as 3 do topo deste arquivo.
 - Não mude preço, oferta, promessa ou estratégia comercial sem o José dizer. Não invente cases, números ou depoimentos.
 - Não publique fora do fluxo da Central (a publicação automática cuida do Instagram).
+
+## Ajustes pedidos pelo José (área "Em revisão" da Central)
+Quando o José pedir ajuste em um conteúdo que está em Pronto (sem data), marque no post `revisao: {"estado":"ajustando","pedido":"<o que ele pediu>","desde":<agora ISO>}`: ele sai das colunas e vai para "Em revisão". Ao terminar, troque os arquivos/textos e mude para `"estado":"aguardando"`. O José aprova pelo botão Aprovar (ou arrastando para o calendário), e a Central tira o campo sozinha. Nunca remova `revisao` você mesmo.

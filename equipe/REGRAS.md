@@ -68,7 +68,7 @@ Carrossel de competência (mo36, **categoria competência**, não alcance): ensi
 - Notícia (mo05) só quando muda algo concreto na captação/rotina do consultório da nutri. Novidade genérica de app (ex.: recurso novo de gravação de Reels) o José vetou em 19/10: não serve.
 
 ## Arte (Designer)
-- Estilo "frase" (mo01): fundo branco, Montserrat negrito, um trecho de destaque em verde marcado com [[colchetes duplos]] (no máximo um por slide), até 30 palavras por slide; carrossel de 2 a 8 slides com "arrasta →" no primeiro.
+- Estilo "frase" (mo01): fundo branco, Montserrat negrito, um trecho de destaque em verde marcado com [[colchetes duplos]] (no máximo um por slide), até 30 palavras por slide (frase de alcance de imagem única: até 14 palavras, veja FRASES.md); carrossel de 2 a 8 slides com "arrasta →" no primeiro.
 - Estilo "tweet" (mo34): card de tweet, texto todo preto, 1 slide, até 35 palavras, sem emoji. Fala com empreendedores em geral, sem nutrição.
 - Estilo "noticia" (mo05 e mo36): card de tweet no topo (o José disse: carrossel é neste formato, não no de frase). texto serifado com **negrito** e ==grifo amarelo==, slide 1 com bloco "manchete" (veículo, título exato, trecho destacado), na notícia 3 slides de preferência (máximo 5); no carrossel de competência todos os blocos são null (sem manchete nem citação), 6 a 8 slides, até 60 palavras por slide, ==grifo== SÓ no gancho do slide 1; **negrito** só no título de cada slide; resto em texto normal. (Na notícia também: grifo só na capa, pelo trecho destacado da manchete.)
 - Sem emojis (exceto 👉 no slide 1 da notícia), sem hashtags, sem @ no texto da arte.
