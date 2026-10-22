@@ -142,11 +142,11 @@ function desenharSlide(t,seta,estilo,bloco){
   const W=1080,H=1440,X=116,MAXW=W-2*X;const c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');
   g.fillStyle='#ffffff';g.fillRect(0,0,W,H);g.textBaseline='top';
   const paras=String(t).split('\n').map(p=>p.trim());let size=84,lines=[],lh=100;
-  for(;size>=44;size-=4){g.font=`700 ${size}px Montserrat, sans-serif`;lh=Math.round(size*1.19);lines=[];
+  for(;size>=44;size-=4){g.font=`700 ${size}px Montserrat, sans-serif`;lh=Math.round(size*1.19);lines=[];let quebrou=false;
     for(const p of paras){if(!p){if(lines.length)lines.push([]);continue}
       const words=[];for(const [txt,hl] of partesArte(p))for(const w of txt.split(/\s+/).filter(Boolean))words.push([w,hl]);
-      let cur=[];for(const w of words){const tr=[...cur,w].map(x=>x[0]).join(' ');if(cur.length&&g.measureText(tr).width>MAXW){lines.push(cur);cur=[w]}else cur.push(w)}lines.push(cur)}
-    if(lines.length*lh<=900)break}
+      let cur=[];for(const w of words){const tr=[...cur,w].map(x=>x[0]).join(' ');if(cur.length&&g.measureText(tr).width>MAXW){lines.push(cur);cur=[w];quebrou=true}else cur.push(w)}lines.push(cur)}
+    if(lines.length*lh<=900&&!(paras.length>1&&quebrou&&size>56))break}
   const total=lines.length*lh+28+34;let y=Math.round((H-total)/2);const sp=g.measureText(' ').width;
   for(const ln of lines){let x=X;for(const [w,hl] of ln){g.fillStyle=hl?'#088A45':'#000000';g.fillText(w,x,y);x+=g.measureText(w).width+sp}y+=lh}
   g.font='400 27px Montserrat, sans-serif';g.fillStyle='#000000';g.fillText('@josefernandesmarketing',X,y+28);

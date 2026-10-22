@@ -36,3 +36,17 @@ Padrão do erro: frase explicando em vez de bater, fórmula "a nutri que... a qu
 
 ## Legenda das frases
 Curta: 2 a 4 linhas. Uma linha que aprofunda a frase com a cena real, uma linha de virada, e o CTA (nutri: "Manda pra uma amiga nutri que..."; negócios: "Manda pro seu sócio"). Sem exercício, sem textão.
+
+## Referência de peso (perfil Felipe Capuano, frases que o José aprovou em 22/10)
+Não copiar. Usar como régua de impacto e estrutura:
+- "Não vende mais quem conhece mais gente. Vende mais quem gera mais confiança." (antítese "não X quem..., Y quem...")
+- "Cobrança é o preço de quem entrega." (aforismo de uma linha)
+- "Nem sempre vai ter aplauso. Às vezes vai ter só você, sua disciplina e a decisão de não parar." (disciplina, solidão do processo)
+- "No fim, não vence quem começou animado. Vence quem continuou quando ficou difícil."
+- "No dia bom, todo mundo tem talento. No dia ruim, sobra quem tem competência."
+- "Bateu a meta, continua. Ficou abaixo, continua... Resultado oscila, constância não." (repetição em lista curta; reescreva mais curto)
+- Ruim (o José reprovou): "Talento fecha uma venda, processo fecha o ano." Evite a palavra "processo" como virada.
+- Frases em lista (ex.: "Cliente sumiu? Liga. Não atendeu? Manda mensagem...") só funcionam se cada linha for óbvia e o fecho for forte.
+
+## Arte
+- Frase de nutri: deixe o renderizador quebrar as linhas sozinho (fica com a letra grande). Só use \n quando o José pedir uma quebra específica (ex.: "Dar desconto é o / jeito mais caro de / conseguir paciente.").
