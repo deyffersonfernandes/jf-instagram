@@ -7,11 +7,11 @@ async function desenharTweet(t){
   const W=1080,H=1440,X=96,MAXW=W-2*X;const c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');
   g.fillStyle='#ffffff';g.fillRect(0,0,W,H);g.textBaseline='top';
   const av=await carregarAvatar();const AV=150,headH=AV,gap=56;
-  const paras=String(t).replace(/\[\[|\]\]/g,'').split('\n').map(x=>x.trim());
+  const paras=String(t).split('\n').map(x=>x.trim()).map(x=>{const m=x.match(/^\[\[(.*)\]\]$/);return m?{t:m[1],hl:true}:{t:x.replace(/\[\[|\]\]/g,''),hl:false}});
   let size=66,lh=86,lines=[];
   for(;size>=40;size-=2){g.font=`400 ${size}px "Instrument Sans", sans-serif`;lh=Math.round(size*1.3);lines=[];
-    for(const pa of paras){if(!pa){lines.push(null);continue}
-      let cur='';for(const w of pa.split(/\s+/).filter(Boolean)){const tr=cur?cur+' '+w:w;if(cur&&g.measureText(tr).width>MAXW){lines.push(cur);cur=w}else cur=tr}if(cur)lines.push(cur)}
+    for(const pa of paras){if(!pa.t){lines.push(null);continue}g.font=`${pa.hl?700:400} ${size}px "Instrument Sans", sans-serif`;
+      let cur='';for(const w of pa.t.split(/\s+/).filter(Boolean)){const tr=cur?cur+' '+w:w;if(cur&&g.measureText(tr).width>MAXW){lines.push({t:cur,hl:pa.hl});cur=w}else cur=tr}if(cur)lines.push({t:cur,hl:pa.hl})}
     while(lines.length&&lines[lines.length-1]===null)lines.pop();
     const hh=lines.reduce((a,l)=>a+(l===null?Math.round(lh*0.6):lh),0);if(hh<=880)break}
   const textH=lines.reduce((a,l)=>a+(l===null?Math.round(lh*0.6):lh),0);
@@ -24,7 +24,7 @@ async function desenharTweet(t){
   g.strokeStyle='#ffffff';g.lineWidth=4.5;g.lineCap='round';g.lineJoin='round';g.beginPath();g.moveTo(bx-9,by+1);g.lineTo(bx-2,by+8);g.lineTo(bx+10,by-7);g.stroke();
   g.fillStyle='#536471';g.font='400 40px "Instrument Sans", sans-serif';g.fillText('@josefernandesmarketing',nx,y+88);
   y+=headH+gap;g.fillStyle='#0f1419';g.font=`400 ${size}px "Instrument Sans", sans-serif`;
-  for(const l of lines){if(l===null){y+=Math.round(lh*0.6);continue}g.fillText(l,X,y);y+=lh}
+  for(const l of lines){if(l===null){y+=Math.round(lh*0.6);continue}g.font=`${l.hl?700:400} ${size}px "Instrument Sans", sans-serif`;g.fillStyle=l.hl?'#088A45':'#0f1419';g.fillText(l.t,X,y);y+=lh}
   return new Promise((res,rej)=>c.toBlob(b=>b?res(b):rej({code:'canvas'}),'image/png'));
 }
 function syncBtns(){
