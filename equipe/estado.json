@@ -1,18 +1,9 @@
 {
   "proximoN": 57,
   "pexels": false,
-  "andamento": [
-    {
-      "ids": [
-        "eq20261022-1800-bqb"
-      ],
-      "agente": "redator",
-      "desde": "2026-10-22T10:40:00Z",
-      "refeito": false
-    }
-  ],
+  "andamento": [],
   "avisos": [],
-  "ultimaRotina": "2026-10-22T10:40:00Z",
+  "ultimaRotina": "2026-10-22T10:55:00Z",
   "avisadosPostados": [
     "jf20261020-reativar",
     "mv8p3834fvk7y",
@@ -42,7 +33,7 @@
       "eq20261020-ebb",
       "eq20261020-vow"
     ],
-    "avisado": false,
+    "avisado": true,
     "obs": "PLANEJAR 22/10: meta ja coberta pelo estoque (9 frases prontas; 6 carrosseis prontos + 3 agendados 26-28/10). Nenhum post novo criado."
   }
 }
