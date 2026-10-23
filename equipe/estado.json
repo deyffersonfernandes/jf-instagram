@@ -1,40 +1,41 @@
 {
-  "proximoN": 57,
-  "pexels": false,
-  "andamento": [],
-  "avisos": [],
-  "ultimaRotina": "2026-10-22T23:10:00Z",
-  "avisadosPostados": [
-    "jf20261020-reativar",
-    "mv8p3834fvk7y",
-    "reel1021-09-bio-instagram",
-    "eq20261021-1800-xmm",
-    "reel1021-01-mentira-blogueira",
-    "reel1021-15-poucos-seguidores"
+ "proximoN": 57,
+ "pexels": false,
+ "andamento": [],
+ "avisos": [],
+ "ultimaRotina": "2026-10-23T23:10:00Z",
+ "avisadosPostados": [
+  "jf20261020-reativar",
+  "mv8p3834fvk7y",
+  "reel1021-09-bio-instagram",
+  "eq20261021-1800-xmm",
+  "reel1021-01-mentira-blogueira",
+  "reel1021-15-poucos-seguidores",
+  "eq20261025-1800-plj"
+ ],
+ "semana": {
+  "periodo": "2026-10-26 a 2026-11-01",
+  "ids": [
+   "eq20261020-yox",
+   "eq20261020-ukg",
+   "eq20261020-pbu",
+   "eq20261020-zpc",
+   "eq20261020-ebk",
+   "eq20261020-qgc",
+   "eq20261020-hnc",
+   "eq20261020-rhu",
+   "eq20261020-vqg",
+   "eq20261020-fdx",
+   "eq20261020-xio",
+   "eq20261020-niy",
+   "eq20261020-zgy",
+   "eq20261020-xck",
+   "eq20261020-zzg",
+   "eq20261020-cws",
+   "eq20261020-ebb",
+   "eq20261020-vow"
   ],
-  "semana": {
-    "periodo": "2026-10-26 a 2026-11-01",
-    "ids": [
-      "eq20261020-yox",
-      "eq20261020-ukg",
-      "eq20261020-pbu",
-      "eq20261020-zpc",
-      "eq20261020-ebk",
-      "eq20261020-qgc",
-      "eq20261020-hnc",
-      "eq20261020-rhu",
-      "eq20261020-vqg",
-      "eq20261020-fdx",
-      "eq20261020-xio",
-      "eq20261020-niy",
-      "eq20261020-zgy",
-      "eq20261020-xck",
-      "eq20261020-zzg",
-      "eq20261020-cws",
-      "eq20261020-ebb",
-      "eq20261020-vow"
-    ],
-    "avisado": true,
-    "obs": "PLANEJAR 22/10: meta ja coberta pelo estoque (9 frases prontas; 6 carrosseis prontos + 3 agendados 26-28/10). Nenhum post novo criado."
-  }
+  "avisado": true,
+  "obs": "PLANEJAR 22/10: meta ja coberta pelo estoque (9 frases prontas; 6 carrosseis prontos + 3 agendados 26-28/10). Nenhum post novo criado."
+ }
 }
