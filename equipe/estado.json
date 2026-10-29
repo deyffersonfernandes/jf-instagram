@@ -13,11 +13,11 @@
       "agente": "redator",
       "desde": "2026-10-29T10:40:03Z",
       "refeito": true,
-      "obs": "fire_trigger do Redator negado pela permissao (PLANEJAR 29/10, ROTINA 12:28Z e 13:13Z). Os 5 posts seguem em redacao, sem mexer. Precisa liberar o fire_trigger."
+      "obs": "fire_trigger do Redator negado pela permissao (PLANEJAR 29/10, ROTINA 12:28Z, 13:13Z e 14:16Z). Os 5 posts seguem em redacao, sem mexer. Precisa liberar o fire_trigger."
     }
   ],
   "avisos": [],
-  "ultimaRotina": "2026-10-29T13:13:00Z",
+  "ultimaRotina": "2026-10-29T14:16:00Z",
   "avisadosPostados": [
     "jf20261020-reativar",
     "mv8p3834fvk7y",
