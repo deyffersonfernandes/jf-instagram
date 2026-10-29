@@ -1,9 +1,23 @@
 {
- "proximoN": 57,
+ "proximoN": 62,
  "pexels": false,
- "andamento": [],
+ "andamento": [
+  {
+   "ids": [
+    "eq20261029-hzj",
+    "eq20261029-jed",
+    "eq20261029-jdp",
+    "eq20261029-vdi",
+    "fr1022b-n03"
+   ],
+   "agente": "redator",
+   "desde": "2026-10-29T10:40:03Z",
+   "refeito": false,
+   "obs": "fire_trigger do Redator negado pela permissão no PLANEJAR de 29/10; a ROTINA deve reacionar."
+  }
+ ],
  "avisos": [],
- "ultimaRotina": "2026-10-28T23:10:00Z",
+ "ultimaRotina": "2026-10-29T10:40:03Z",
  "avisadosPostados": [
   "jf20261020-reativar",
   "mv8p3834fvk7y",
@@ -19,28 +33,25 @@
   "reel1022-meta-batida"
  ],
  "semana": {
-  "periodo": "2026-10-26 a 2026-11-01",
+  "periodo": "2026-11-02 a 2026-11-08",
   "ids": [
-   "eq20261020-yox",
-   "eq20261020-ukg",
-   "eq20261020-pbu",
-   "eq20261020-zpc",
-   "eq20261020-ebk",
-   "eq20261020-qgc",
-   "eq20261020-hnc",
-   "eq20261020-rhu",
-   "eq20261020-vqg",
-   "eq20261020-fdx",
-   "eq20261020-xio",
-   "eq20261020-niy",
-   "eq20261020-zgy",
+   "eq20261029-hzj",
+   "eq20261029-jed",
+   "eq20261029-jdp",
+   "eq20261029-vdi",
+   "fr1022b-n03",
    "eq20261020-xck",
+   "eq20261020-xio",
    "eq20261020-zzg",
-   "eq20261020-cws",
-   "eq20261020-ebb",
-   "eq20261020-vow"
+   "eq20261023-0800-prm",
+   "fr1022b-b01",
+   "fr1022b-b02",
+   "fr1022b-b05",
+   "fr1022b-n01",
+   "fr1022b-n02",
+   "fr1022b-n04"
   ],
-  "avisado": true,
-  "obs": "PLANEJAR 22/10: meta ja coberta pelo estoque (9 frases prontas; 6 carrosseis prontos + 3 agendados 26-28/10). Nenhum post novo criado."
+  "avisado": false,
+  "obs": "PLANEJAR 29/10: estoque tinha 3 carrosseis prontos (xck, xio, zzg) e 16 frases prontas sem data; criados 4 carrosseis mo36 (banco car17, car14, car20, car10). fr1022b-n03 devolvida para refazer (variacao da frase proibida). Sem noticia mo05 nesta semana."
  }
 }
