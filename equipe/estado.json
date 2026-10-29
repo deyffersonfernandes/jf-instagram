@@ -1,9 +1,22 @@
 {
   "proximoN": 62,
   "pexels": false,
-  "andamento": [],
+  "andamento": [
+    {
+      "ids": [
+        "eq20261029-hzj",
+        "eq20261029-jed",
+        "eq20261029-jdp",
+        "eq20261029-vdi",
+        "fr1022b-n03"
+      ],
+      "agente": "copy",
+      "desde": "2026-10-29T23:12:00Z",
+      "refeito": false
+    }
+  ],
   "avisos": [],
-  "ultimaRotina": "2026-10-29T18:13:00Z",
+  "ultimaRotina": "2026-10-29T23:12:00Z",
   "avisadosPostados": [
     "jf20261020-reativar",
     "mv8p3834fvk7y",
@@ -17,7 +30,8 @@
     "eq20261020-ebb",
     "foto1023-orgulho-consultorio",
     "reel1022-meta-batida",
-    "eq20261020-rhu"
+    "eq20261020-rhu",
+    "reel1023-dono-negocio"
   ],
   "semana": {
     "periodo": "2026-11-02 a 2026-11-08",
@@ -40,21 +54,5 @@
     ],
     "avisado": false,
     "obs": "PLANEJAR 29/10: estoque tinha 3 carrosseis prontos (xck, xio, zzg) e 16 frases prontas sem data; criados 4 carrosseis mo36 (banco car17, car14, car20, car10). fr1022b-n03 devolvida para refazer (variacao da frase proibida). Sem noticia mo05 nesta semana."
-  },
-  "travados": [
-    {
-      "ids": [
-        "eq20261029-hzj",
-        "eq20261029-jed",
-        "eq20261029-jdp",
-        "eq20261029-vdi",
-        "fr1022b-n03"
-      ],
-      "agente": "copy",
-      "desde": "2026-10-29T16:35:00Z",
-      "refeito": true,
-      "obs": "Redator escreveu os 5 (etapa revisao, 16:35Z). fire_trigger do Copy chief NEGADO pela permissão: CMO precisa acionar o Copy com estes ids. fr1022b-n03 com frase nova; arte antiga precisa ser refeita. Redator acionado de novo às 16:4xZ com os mesmos ids: nada em redacao; fire_trigger do Copy negado pela 2ª vez. CMO 18:10Z: fire_trigger do Copy negado pela 3ª vez. Posts marcados etapa travado na Central; retomar acionando o Copy chief quando a permissão de fire_trigger for liberada.",
-      "travadoEm": "2026-10-29T18:13:00Z"
-    }
-  ]
+  }
 }
