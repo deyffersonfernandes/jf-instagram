@@ -1,58 +1,58 @@
 {
- "proximoN": 62,
- "pexels": false,
- "andamento": [
-  {
-   "ids": [
-    "eq20261029-hzj",
-    "eq20261029-jed",
-    "eq20261029-jdp",
-    "eq20261029-vdi",
-    "fr1022b-n03"
-   ],
-   "agente": "redator",
-   "desde": "2026-10-29T10:40:03Z",
-   "refeito": true,
-   "obs": "fire_trigger do Redator negado pela permissao no PLANEJAR de 29/10 e de novo na ROTINA 29/10 12:28Z. Os 5 posts seguem em redacao, sem mexer. Precisa liberar o fire_trigger."
-  }
- ],
- "avisos": [],
- "ultimaRotina": "2026-10-29T12:30:00Z",
- "avisadosPostados": [
-  "jf20261020-reativar",
-  "mv8p3834fvk7y",
-  "reel1021-09-bio-instagram",
-  "eq20261021-1800-xmm",
-  "reel1021-01-mentira-blogueira",
-  "reel1021-15-poucos-seguidores",
-  "eq20261025-1800-plj",
-  "eq20261022-1800-bqb",
-  "reel1023-isso-e-sucesso",
-  "eq20261020-ebb",
-  "foto1023-orgulho-consultorio",
-  "reel1022-meta-batida",
-  "eq20261020-rhu"
- ],
- "semana": {
-  "periodo": "2026-11-02 a 2026-11-08",
-  "ids": [
-   "eq20261029-hzj",
-   "eq20261029-jed",
-   "eq20261029-jdp",
-   "eq20261029-vdi",
-   "fr1022b-n03",
-   "eq20261020-xck",
-   "eq20261020-xio",
-   "eq20261020-zzg",
-   "eq20261023-0800-prm",
-   "fr1022b-b01",
-   "fr1022b-b02",
-   "fr1022b-b05",
-   "fr1022b-n01",
-   "fr1022b-n02",
-   "fr1022b-n04"
+  "proximoN": 62,
+  "pexels": false,
+  "andamento": [
+    {
+      "ids": [
+        "eq20261029-hzj",
+        "eq20261029-jed",
+        "eq20261029-jdp",
+        "eq20261029-vdi",
+        "fr1022b-n03"
+      ],
+      "agente": "redator",
+      "desde": "2026-10-29T10:40:03Z",
+      "refeito": true,
+      "obs": "fire_trigger do Redator negado pela permissao (PLANEJAR 29/10, ROTINA 12:28Z e 13:13Z). Os 5 posts seguem em redacao, sem mexer. Precisa liberar o fire_trigger."
+    }
   ],
-  "avisado": false,
-  "obs": "PLANEJAR 29/10: estoque tinha 3 carrosseis prontos (xck, xio, zzg) e 16 frases prontas sem data; criados 4 carrosseis mo36 (banco car17, car14, car20, car10). fr1022b-n03 devolvida para refazer (variacao da frase proibida). Sem noticia mo05 nesta semana."
- }
+  "avisos": [],
+  "ultimaRotina": "2026-10-29T13:13:00Z",
+  "avisadosPostados": [
+    "jf20261020-reativar",
+    "mv8p3834fvk7y",
+    "reel1021-09-bio-instagram",
+    "eq20261021-1800-xmm",
+    "reel1021-01-mentira-blogueira",
+    "reel1021-15-poucos-seguidores",
+    "eq20261025-1800-plj",
+    "eq20261022-1800-bqb",
+    "reel1023-isso-e-sucesso",
+    "eq20261020-ebb",
+    "foto1023-orgulho-consultorio",
+    "reel1022-meta-batida",
+    "eq20261020-rhu"
+  ],
+  "semana": {
+    "periodo": "2026-11-02 a 2026-11-08",
+    "ids": [
+      "eq20261029-hzj",
+      "eq20261029-jed",
+      "eq20261029-jdp",
+      "eq20261029-vdi",
+      "fr1022b-n03",
+      "eq20261020-xck",
+      "eq20261020-xio",
+      "eq20261020-zzg",
+      "eq20261023-0800-prm",
+      "fr1022b-b01",
+      "fr1022b-b02",
+      "fr1022b-b05",
+      "fr1022b-n01",
+      "fr1022b-n02",
+      "fr1022b-n04"
+    ],
+    "avisado": false,
+    "obs": "PLANEJAR 29/10: estoque tinha 3 carrosseis prontos (xck, xio, zzg) e 16 frases prontas sem data; criados 4 carrosseis mo36 (banco car17, car14, car20, car10). fr1022b-n03 devolvida para refazer (variacao da frase proibida). Sem noticia mo05 nesta semana."
+  }
 }
