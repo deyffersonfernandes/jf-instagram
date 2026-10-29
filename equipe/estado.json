@@ -10,10 +10,10 @@
         "eq20261029-vdi",
         "fr1022b-n03"
       ],
-      "agente": "redator",
-      "desde": "2026-10-29T16:22:00Z",
+      "agente": "copy",
+      "desde": "2026-10-29T16:35:00Z",
       "refeito": true,
-      "obs": "fire_trigger do Redator finalmente aceito na ROTINA 16:22Z (antes negado 4x). Se parar de novo, CMO troca por frase."
+      "obs": "Redator escreveu os 5 (etapa revisao, 16:35Z). fire_trigger do Copy chief NEGADO pela permissão: CMO precisa acionar o Copy com estes ids. fr1022b-n03 com frase nova; arte antiga precisa ser refeita."
     }
   ],
   "avisos": [],
