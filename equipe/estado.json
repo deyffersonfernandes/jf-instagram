@@ -1,22 +1,9 @@
 {
   "proximoN": 62,
   "pexels": false,
-  "andamento": [
-    {
-      "ids": [
-        "eq20261029-hzj",
-        "eq20261029-jed",
-        "eq20261029-jdp",
-        "eq20261029-vdi",
-        "fr1022b-n03"
-      ],
-      "agente": "designer",
-      "desde": "2026-10-30T00:12:00Z",
-      "refeito": false
-    }
-  ],
+  "andamento": [],
   "avisos": [],
-  "ultimaRotina": "2026-10-30T00:12:00Z",
+  "ultimaRotina": "2026-10-30T00:18:00Z",
   "avisadosPostados": [
     "jf20261020-reativar",
     "mv8p3834fvk7y",
@@ -52,7 +39,7 @@
       "fr1022b-n02",
       "fr1022b-n04"
     ],
-    "avisado": false,
+    "avisado": true,
     "obs": "PLANEJAR 29/10: estoque tinha 3 carrosseis prontos (xck, xio, zzg) e 16 frases prontas sem data; criados 4 carrosseis mo36 (banco car17, car14, car20, car10). fr1022b-n03 devolvida para refazer (variacao da frase proibida). Sem noticia mo05 nesta semana."
   }
 }
