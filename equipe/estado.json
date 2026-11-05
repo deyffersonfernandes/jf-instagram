@@ -1,7 +1,19 @@
 {
-  "proximoN": 62,
+  "proximoN": 66,
   "pexels": false,
-  "andamento": [],
+  "andamento": [
+    {
+      "ids": [
+        "eq20261105-bbc",
+        "eq20261105-nlc",
+        "eq20261105-hdz",
+        "eq20261105-utk"
+      ],
+      "agente": "redator",
+      "desde": "2026-11-05T10:45:00Z",
+      "refeito": false
+    }
+  ],
   "avisos": [],
   "ultimaRotina": "2026-11-04T23:11:00Z",
   "avisadosPostados": [
@@ -24,25 +36,28 @@
     "reel1021-13-autoridade-depoimentos"
   ],
   "semana": {
-    "periodo": "2026-11-02 a 2026-11-08",
+    "periodo": "2026-11-09 a 2026-11-15",
     "ids": [
-      "eq20261029-hzj",
-      "eq20261029-jed",
-      "eq20261029-jdp",
-      "eq20261029-vdi",
-      "fr1022b-n03",
+      "eq20261105-bbc",
+      "eq20261105-nlc",
+      "eq20261105-hdz",
+      "eq20261105-utk",
       "eq20261020-xck",
       "eq20261020-xio",
       "eq20261020-zzg",
+      "eq20261029-hzj",
+      "eq20261029-jdp",
+      "eq20261029-jed",
+      "eq20261029-vdi",
       "eq20261023-0800-prm",
       "fr1022b-b01",
       "fr1022b-b02",
-      "fr1022b-b05",
       "fr1022b-n01",
       "fr1022b-n02",
-      "fr1022b-n04"
+      "fr1022b-n04",
+      "fr1022b-n05"
     ],
-    "avisado": true,
-    "obs": "PLANEJAR 29/10: estoque tinha 3 carrosseis prontos (xck, xio, zzg) e 16 frases prontas sem data; criados 4 carrosseis mo36 (banco car17, car14, car20, car10). fr1022b-n03 devolvida para refazer (variacao da frase proibida). Sem noticia mo05 nesta semana."
+    "avisado": false,
+    "obs": "PLANEJAR 05/11: nada da semana 02-08/11 foi agendado; estoque pronto sem data = 7 carrosseis + 17 frases (cobre o resto desta semana e a próxima só nas frases). Criados 4 carrosseis mo36 (banco car21, car16, car15, car03) para fechar 11 carrosseis entre 05 e 15/11. Frases: 0 novas (17 prontas). Sem noticia mo05. Nenhuma correção de CTA necessária (roteiros antigos de xck/xio/zzg ainda citam 'Salva', mas arte e legenda estão corretas)."
   }
 }
