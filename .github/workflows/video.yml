@@ -46,6 +46,11 @@ jobs:
           git config user.name "jf-instagram-bot"
           git config user.email "jf-instagram-bot@users.noreply.github.com"
           shopt -s nullglob
+          # apaga os ramos video/<id> cujo pedido já saiu de main (vídeo terminado)
+          for r in $(git ls-remote --heads origin 'video/*' | awk '{print $2}' | sed 's#refs/heads/##'); do
+            id=${r#video/}
+            [ -f "pedidos/video/$id.json" ] || git push -q origin --delete "$r" || true
+          done
           for ped in pedidos/video/*.json; do
             id=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['id'])" "$ped")
             git fetch -q origin "video/$id" || { echo "sem ramo video/$id"; continue; }

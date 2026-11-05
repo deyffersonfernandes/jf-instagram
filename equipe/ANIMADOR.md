@@ -21,7 +21,7 @@ titulo, formato (id de video/formatos.json), status (ideia | roteiro | voz | pro
 4. Voz (se houver `audio`): baixe para `<pasta>/voz.<ext>`. passo "sincronizando a voz". Tire os tempos no GitHub (a voz vai num ramo à parte; o pedido vai em main):
    ```
    cd /home/claude/jf-instagram
-   git push -q origin --delete video/<id> 2>/dev/null; git branch -D video/<id> 2>/dev/null; rm -rf /tmp/vid-<id>
+   git branch -D video/<id> 2>/dev/null; rm -rf /tmp/vid-<id>
    git worktree add -q --orphan -b video/<id> /tmp/vid-<id>
    cp <pasta>/voz.<ext> /tmp/vid-<id>/voz.<ext>
    (cd /tmp/vid-<id> && git add -A && git commit -qm "Voz do vídeo <id>" && git push -q -f origin video/<id>)
@@ -31,7 +31,7 @@ titulo, formato (id de video/formatos.json), status (ideia | roteiro | voz | pro
 5. Prévia: passo "animando". `python3 video/estudio.py quadros <pasta>/roteiro.json --saida <pasta>/folha.jpg [--palavras <pasta>/palavras.json]` e abra a folha com Read. Confira como um diretor de arte: texto cortado ou saindo da tela, sobreposição, cena vazia, número errado, palavra em inglês ou com erro, cena que não combina com a fala. Corrija o roteiro (só a parte visual) e gere a folha de novo (até 3 rodadas). Para olhar um momento específico: `--tempos 3.5,12`.
 6. Render: `python3 video/estudio.py render <pasta>/roteiro.json --saida <pasta>/reel.mp4 [--audio <pasta>/voz.<ext> --palavras <pasta>/palavras.json]` (leva de 2 a 5 minutos). Confira: `ffprobe` (1080x1920, duração parecida com a voz), extraia 3 quadros (início, meio, fim) com ffmpeg e abra com Read. Se a voz e a legenda estiverem desencontradas, ou algo quebrou, corrija e renderize de novo (no máximo 2 vezes).
 7. Entregue: passo "subindo o vídeo". Suba `reel.mp4` (nome: título sem acento, com hífens, .mp4) e `folha.jpg` como assets. Leia o documento de novo e grave: `arquivo` {id, nome, tipo "video/mp4", tamanho}, `previa` {id, tipo "image/jpeg"}, `duracao` (segundos), `status` "pronto", `prontoEm` (agora ISO), `fluxo` null, `roteiro` (a versão final, se você corrigiu algo), e uma linha em historico ({"quando", "agente": "animador", "acao": "vídeo pronto (Xs)"}). Se já existia um `arquivo` antigo (refação), apague o asset antigo depois de gravar o novo.
-8. Limpe: `git rm pedidos/video/<id>.json` (commit e push em main), `git push -q origin --delete video/<id>` e `git worktree remove --force /tmp/vid-<id>`. Nunca deixe a voz no repositório (ele é público).
+8. Limpe: `git rm pedidos/video/<id>.json`, commit e push em main (o workflow apaga o ramo video/<id> com a voz sozinho; daqui o proxy não deixa apagar ramo) e `git worktree remove --force /tmp/vid-<id>`. Nunca deixe a voz no repositório (ele é público).
 9. Avise o José pelo Telegram (como no CMO.md): grave `outbox/<AAAAMMDD-HHMMSS>-video.json` com {"texto": "🎥 Vídeo pronto: <título> (<duração>s)\nEstá na Central → Conteúdo → Vídeos IA → Pronto para baixar."}, commit e push em main.
 
 ## Se travar
