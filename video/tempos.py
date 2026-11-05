@@ -12,9 +12,13 @@ ped = json.load(open(os.path.join(pasta, "pedido.json"), encoding="utf-8"))
 voz = [f for f in glob.glob(os.path.join(pasta, "voz.*"))][0]
 wav = os.path.join(pasta, "_voz.wav")
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", voz, "-ac", "1", "-ar", "16000", wav], check=True)
+import wave
+import numpy as np
+with wave.open(wav) as w:
+    audio = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
 from faster_whisper import WhisperModel
 modelo = WhisperModel(os.environ.get("WHISPER_MODELO", "small"), device="cpu", compute_type="int8")
-segs, info = modelo.transcribe(wav, language="pt", word_timestamps=True, vad_filter=False,
+segs, info = modelo.transcribe(audio, language="pt", word_timestamps=True, vad_filter=False,
                                initial_prompt=(ped.get("texto") or "")[:800], beam_size=5)
 pal = []
 for s in segs:
