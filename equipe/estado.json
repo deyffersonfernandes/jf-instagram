@@ -1,19 +1,7 @@
 {
   "proximoN": 66,
   "pexels": false,
-  "andamento": [
-    {
-      "ids": [
-        "eq20261105-bbc",
-        "eq20261105-nlc",
-        "eq20261105-hdz",
-        "eq20261105-utk"
-      ],
-      "agente": "redator",
-      "desde": "2026-11-05T10:45:00Z",
-      "refeito": false
-    }
-  ],
+  "andamento": [],
   "avisos": [],
   "ultimaRotina": "2026-11-04T23:11:00Z",
   "avisadosPostados": [
@@ -57,7 +45,8 @@
       "fr1022b-n04",
       "fr1022b-n05"
     ],
-    "avisado": false,
-    "obs": "PLANEJAR 05/11: nada da semana 02-08/11 foi agendado; estoque pronto sem data = 7 carrosseis + 17 frases (cobre o resto desta semana e a próxima só nas frases). Criados 4 carrosseis mo36 (banco car21, car16, car15, car03) para fechar 11 carrosseis entre 05 e 15/11. Frases: 0 novas (17 prontas). Sem noticia mo05. Nenhuma correção de CTA necessária (roteiros antigos de xck/xio/zzg ainda citam 'Salva', mas arte e legenda estão corretas)."
+    "avisado": true,
+    "obs": "PLANEJAR 05/11: nada da semana 02-08/11 foi agendado; estoque pronto sem data = 7 carrosseis + 17 frases (cobre o resto desta semana e a próxima só nas frases). Criados 4 carrosseis mo36 (banco car21, car16, car15, car03) para fechar 11 carrosseis entre 05 e 15/11. Frases: 0 novas (17 prontas). Sem noticia mo05. Nenhuma correção de CTA necessária (roteiros antigos de xck/xio/zzg ainda citam 'Salva', mas arte e legenda estão corretas).",
+    "avisadoEm": "2026-11-05T11:00:00Z"
   }
 }
