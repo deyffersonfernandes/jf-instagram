@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>mundo</title>
+<style>html,body{margin:0;background:#000}canvas{display:block}#gl{display:none}</style></head>
+<body><canvas id="gl" width="1080" height="1920"></canvas><canvas id="ov" width="1080" height="1920"></canvas>
+<script>
+(async () => {
+  for (const w of [500, 700, 800, 900]) {
+    const f = new FontFace('Montserrat', `url(/fontes/Montserrat-${w}.ttf)`, { weight: String(w) });
+    await f.load(); document.fonts.add(f);
+  }
+  await import('./mundo.js');
+})();
+</script></body></html>

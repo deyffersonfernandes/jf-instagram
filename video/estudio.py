@@ -1637,6 +1637,84 @@ def folha(v, saida, tempos=None, colunas=4):
     return tempos
 
 
+# ---------------------------------------------------------------- mundinho 3D (estilo hexágonos)
+def linha_do_tempo(rot, pal, dur):
+    """Converte o roteiro 'mundo' em linha do tempo para video/mundo/mundo.js."""
+    falas = rot["falas"]
+    pf = {}
+    for p in pal:
+        pf.setdefault(p["fala"], []).append(p)
+
+    def quando(i, em=None, atraso=0):
+        ps = pf.get(i, [])
+        t = ps[0]["ini"] if ps else 0
+        if em:
+            alvo = norm(str(em).split()[0])
+            for w in ps:
+                if norm(w["w"]).startswith(alvo):
+                    t = w["ini"]
+                    break
+        return t + atraso
+
+    dest = {norm(d) for d in rot.get("destaques", [])}
+    tl = {"fps": FPS, "dur": dur, "legenda_y": rot.get("legenda_y", 1250), "estacoes": [], "final": None,
+          "palavras": [{"w": p["w"], "ini": p["ini"], "fim": p["fim"], "dest": norm(p["w"]) in dest} for p in pal]}
+    ev = []
+    atual = None
+    for i, f in enumerate(falas):
+        e = f.get("estacao")
+        if e:
+            t0 = quando(i, e.get("em"), e.get("atraso", 0))
+            atual = {"tipo": e.get("tipo", "pessoas"), "dados": e.get("dados", {}), "titulo": e.get("titulo", ""),
+                     "t": t0, "aparece": t0 - 0.15, "t_titulo": t0 + 0.6, "rotulos": []}
+            tl["estacoes"].append(atual)
+            ev.append((t0 - 0.35, "whoosh"))
+        ps = f.get("passo") or []
+        if isinstance(ps, dict):
+            ps = [ps]
+        for p in ps:
+            tp = quando(i, p.get("em"), p.get("atraso", 0))
+            if p.get("titulo") and atual is not None:
+                atual["t_titulo"] = tp
+                ev.append((tp, "ding"))
+            if p.get("rotulo") and atual is not None:
+                atual["rotulos"].append({"texto": p["rotulo"], "alvo": p.get("alvo", "tela"), "t": tp, "dy": p.get("dy", 0), "cor": p.get("cor")})
+                ev.append((tp, "pop"))
+        fn = f.get("final")
+        if fn:
+            tl["final"] = {"t": quando(i, fn.get("em"), fn.get("atraso", 0)), "titulo": fn.get("titulo", ""),
+                           "t_titulo": quando(i, fn.get("em_titulo") or fn.get("em"), fn.get("atraso_titulo", 1.2))}
+            ev.append((tl["final"]["t"], "whoosh"))
+            ev.append((tl["final"]["t_titulo"], "ding"))
+    return tl, ev
+
+
+class _Mix:
+    def __init__(self, dur, eventos):
+        self.dur, self.eventos = dur, eventos
+
+
+def render_mundo(rot, pal, dur, saida, voz_path=None, acelerar=1.0, quadros=None):
+    tl, ev = linha_do_tempo(rot, pal, dur)
+    base = os.path.splitext(os.path.abspath(saida))[0]
+    arq = base + "-tl.json"
+    json.dump(tl, open(arq, "w", encoding="utf-8"), ensure_ascii=False)
+    js = os.path.join(AQUI, "mundo", "render3d.js")
+    if quadros:
+        subprocess.run(["node", js, arq, base + ".jpg", "--quadros", ",".join(str(q) for q in quadros)], check=True)
+        return dur
+    mudo = base + "-mudo.mp4"
+    subprocess.run(["node", js, arq, mudo], check=True)
+    voz = ler_audio(voz_path, acelerar) if voz_path else None
+    wav = base + "-mix.wav"
+    mixar(_Mix(dur, ev), wav, voz)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", mudo, "-i", wav, "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+                    "-shortest", "-movflags", "+faststart", saida], check=True)
+    for f in (mudo, wav, arq):
+        os.remove(f)
+    return dur
+
+
 # ---------------------------------------------------------------- validação
 def validar(rot):
     erros = []
@@ -1648,6 +1726,10 @@ def validar(rot):
         c = f.get("cena")
         if c and c.get("tipo") not in CENAS:
             erros.append(f"fala {i + 1}: cena '{c.get('tipo')}' não existe ({', '.join(CENAS)})")
+    if rot.get("estilo") == "mundo":
+        if rot.get("falas") and not rot["falas"][0].get("estacao"):
+            erros.append("a primeira fala precisa abrir uma estação")
+        return [e for e in erros if "cena" not in e]
     if rot.get("falas") and not rot["falas"][0].get("cena"):
         erros.append("a primeira fala precisa abrir uma cena")
     return erros
@@ -1685,6 +1767,26 @@ def main():
     if a.audio:
         dur_audio = (float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", a.audio],
                                          capture_output=True, text=True).stdout.strip() or 0) / acel) or None
+    if rot.get("estilo") == "mundo":
+        if pal:
+            pal_r, dur = alinhar(rot, pal)
+        else:
+            pal_r, dur = estimar(rot)
+            if dur_audio:
+                kk = max(0.3, dur_audio - 0.15) / max(0.1, pal_r[-1]["fim"])
+                for p in pal_r:
+                    p["ini"] *= kk; p["fim"] *= kk
+        if dur_audio:
+            dur = max(dur, dur_audio + 0.3)
+        dur += float(rot.get("cauda", 1.5))
+        if a.acao == "quadros":
+            ts = [float(x) for x in a.tempos.split(",")] if a.tempos else [1.0]
+            render_mundo(rot, pal_r, dur, a.saida or "mundo.mp4", quadros=ts)
+            print("duração", round(dur, 1), "s")
+        else:
+            render_mundo(rot, pal_r, dur, a.saida or "reel.mp4", a.audio, acel)
+            print("ok", round(dur, 1), "s")
+        return
     v = Video(rot, pal, dur_audio)
     if a.acao == "quadros":
         ts = [float(x) for x in a.tempos.split(",")] if a.tempos else None

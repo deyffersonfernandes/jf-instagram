@@ -44,3 +44,8 @@ Termine sem mensagem para o usuário.
 
 ## Prévia sem voz
 Quando o José pedir para produzir antes de gravar a voz, renderize sem `--audio` (o estúdio estima o tempo para a voz em 1.1), suba como `previaVideo` e deixe o status em "voz". Quando ele subir o MP3 e mandar para produção, renderize de novo com a voz e entregue em "pronto".
+
+## Mundinho 3D (estilo hexágonos) — `"estilo": "mundo"`
+É o formato principal quando a fala é uma sequência de conceitos ("isso é propaganda… isso é tráfego pago…"): um caminho de hexágonos em 3D, uma estação por conceito, a câmera andando de uma para a outra e, no fim, subindo para mostrar tudo. **O que a fala cita aparece como é de verdade**: outdoor/placa na rua, print do anúncio patrocinado no Instagram, print da matéria no portal de notícias, a conversa no WhatsApp, o consultório com pacientes.
+- Preparar: `npm install --prefix video/mundo` (puppeteer-core) e Chrome em /usr/bin/google-chrome (ou variável CHROME). O render roda o three.js no Chrome sem tela (video/mundo/mundo.js) e leva uns 4 minutos para 30 s.
+- O roteiro e os tipos de estação estão no ROTEIRO.md (seção Mundinho 3D). `quadros` gera um JPG por tempo pedido (`--tempos`).

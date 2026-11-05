@@ -60,3 +60,33 @@ Também existem as cenas antigas (`quiz`, `agenda`, `barras`, `split`, `titulo`,
 - Números só reais ou claramente de exemplo. Nunca invente pesquisa, estatística ou caso.
 - Fala em português do Brasil, como o José fala: direto, "você", frases curtas.
 - CTA final: "Salva esse vídeo e…" (cena cta salvar) ou "Comenta QUERO que eu te envio o link da Comunidade Nutri+" (cena cta comentar). Nada de e-book nem desconto.
+
+## Mundinho 3D (`"estilo": "mundo"`) — o formato dos hexágonos
+Use quando o vídeo é uma sequência de conceitos ou etapas (cada frase termina com "isso é X"). Cada fala com `estacao` cria uma plataforma hexagonal nova no caminho; a câmera vai até ela. **A estação mostra literalmente o que a fala diz** (se fala de outdoor, aparece o outdoor na rua; se fala de jornal, aparece o print da matéria; se fala de anúncio, o print do anúncio patrocinado).
+
+```json
+{"titulo": "Isso é marketing!", "estilo": "mundo", "destaques": ["propaganda", "marketing"],
+ "falas": [
+  {"texto": "Se você coloca uma placa na frente do seu consultório, isso é propaganda.",
+   "estacao": {"tipo": "placa", "titulo": "PROPAGANDA", "dados": {"titulo": "Ana Souza", "sub": "Nutricionista · CRN-3 54321"}},
+   "passo": [{"rotulo": "PLACA NA FRENTE", "alvo": "placa", "em": "placa"}, {"titulo": true, "em": "propaganda"}]},
+  {"texto": "E se tudo isso foi planejado desde o início...", "final": {"titulo": "ISSO É\nMARKETING!", "em": "planejado", "em_titulo": "início"}},
+  {"texto": "Isso é marketing!"}
+ ]}
+```
+
+| tipo de estação | o que aparece | dados | alvos para rotulo |
+|---|---|---|---|
+| `placa` | consultório por fora com a placa na frente, na rua | titulo, sub, extra, predio | placa, predio |
+| `outdoor` | outdoor na rua com carros passando | titulo, sub, botao | painel, rua |
+| `anuncio` | celular gigante com o print de um anúncio patrocinado do Instagram + pessoas olhando | usuario, chamada, botao, curtidas, legenda | tela, pessoas |
+| `jornal` | celular gigante com o print de uma matéria de portal de notícias (marca fictícia, nunca G1 ou outro veículo real) | portal, editoria, titulo, linha, autor | tela, pessoas |
+| `whats` | celular gigante com a conversa do WhatsApp + a nutri | contato, mensagens [{de: "ele"/"eu", msg}] | tela, nutri |
+| `agenda` | celular com a agenda da semana | titulo, cheios (0 a 40) | tela |
+| `consultorio` | consultório com a nutri e pacientes girando em volta (acompanhamento) | pacientes, coracoes, anel | nutri, predio |
+| `pessoas` | um grupo de pessoas | n | pessoas |
+
+- `{"titulo": true, "em": "palavra"}` mostra o título numerado da estação ("1. PROPAGANDA") no topo, quando a palavra é dita.
+- `{"rotulo": "TEXTO", "alvo": "tela", "em": "palavra"}` etiqueta presa no objeto 3D (`"cor": "#34a878"` para o ponto verde).
+- `final`: a câmera sobe e mostra o caminho inteiro com os títulos; `titulo` (pode ter \n) aparece grande no topo.
+- Precisa de uma estação nova para cada conceito; se o vídeo pede algo que não está na tabela, use a estação mais parecida e diga no histórico (ou crie o tipo novo em video/mundo/mundo.js).
