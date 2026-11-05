@@ -1,13 +1,20 @@
 name: Tempos da narração (Reels IA)
 
-# O Animador sobe a narração num ramo video/<id> (pedido.json + voz.mp3).
+# O Animador sobe a voz num ramo video/<id> (voz.<ext>) e grava
+# pedidos/video/<id>.json em main ({"id", "rodada", "texto"}).
 # Este workflow tira o tempo de cada palavra com o Whisper e devolve
-# palavras.json no mesmo ramo. O Animador apaga o ramo quando termina.
+# palavras.json no ramo video/<id>. O Animador apaga o ramo e o pedido.
 
 on:
   push:
-    branches: ["video/**"]
-    paths: ["pedido.json"]
+    branches: [main]
+    paths:
+      - "pedidos/video/*.json"
+  workflow_dispatch:
+
+concurrency:
+  group: video-${{ github.sha }}
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -15,16 +22,12 @@ permissions:
 jobs:
   tempos:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
-          path: base
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref_name }}
-          path: pedido
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -36,15 +39,21 @@ jobs:
           key: whisper-small-v1
       - name: Instalar
         run: |
-          sudo apt-get install -y -qq ffmpeg >/dev/null
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
           pip install --quiet faster-whisper
-      - name: Tirar os tempos
-        run: python3 base/video/tempos.py pedido
-      - name: Devolver
+      - name: Tirar os tempos de cada pedido
         run: |
-          cd pedido
           git config user.name "jf-instagram-bot"
           git config user.email "jf-instagram-bot@users.noreply.github.com"
-          git add palavras.json
-          git commit -qm "Tempos da narração"
-          git push -q origin HEAD:${{ github.ref_name }}
+          shopt -s nullglob
+          for ped in pedidos/video/*.json; do
+            id=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['id'])" "$ped")
+            git fetch -q origin "video/$id" || { echo "sem ramo video/$id"; continue; }
+            rm -rf "/tmp/v-$id" && git worktree add -q "/tmp/v-$id" FETCH_HEAD
+            rod=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1])).get('rodada',''))" "$ped")
+            if [ -f "/tmp/v-$id/palavras.json" ] && grep -q "$rod" "/tmp/v-$id/palavras.json"; then echo "já feito $id"; continue; fi
+            cp "$ped" "/tmp/v-$id/pedido.json"
+            python3 video/tempos.py "/tmp/v-$id" || { echo '{"erro":"whisper falhou"}' > "/tmp/v-$id/palavras.json"; }
+            ( cd "/tmp/v-$id" && git add palavras.json && git commit -qm "Tempos da narração $id" && \
+              for i in 1 2 3; do git push -q origin HEAD:"video/$id" && break; sleep 3; done )
+          done
