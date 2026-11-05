@@ -1,0 +1,50 @@
+name: Tempos da narração (Reels IA)
+
+# O Animador sobe a narração num ramo video/<id> (pedido.json + voz.mp3).
+# Este workflow tira o tempo de cada palavra com o Whisper e devolve
+# palavras.json no mesmo ramo. O Animador apaga o ramo quando termina.
+
+on:
+  push:
+    branches: ["video/**"]
+    paths: ["pedido.json"]
+
+permissions:
+  contents: write
+
+jobs:
+  tempos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: base
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          path: pedido
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface
+          key: whisper-small-v1
+      - name: Instalar
+        run: |
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          pip install --quiet faster-whisper
+      - name: Tirar os tempos
+        run: python3 base/video/tempos.py pedido
+      - name: Devolver
+        run: |
+          cd pedido
+          git config user.name "jf-instagram-bot"
+          git config user.email "jf-instagram-bot@users.noreply.github.com"
+          git add palavras.json
+          git commit -qm "Tempos da narração"
+          git push -q origin HEAD:${{ github.ref_name }}

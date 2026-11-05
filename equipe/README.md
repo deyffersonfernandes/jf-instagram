@@ -8,3 +8,8 @@ CMO (planeja) → Redator (roteiro e legenda) → Copy chief (revisa) → Design
 - O CMO roda sozinho: planejamento às 7h37, rotina de hora em hora (minuto 8) e resumo às 21h13 (horário de Brasília). A equipe aciona o próximo agente assim que termina.
 - Manuais: COMUM.md, REGRAS.md (estratégia), CMO.md, REDATOR.md, COPY.md, DESIGNER.md. IDs das tarefas: agentes.json. Estado do CMO: estado.json.
 - As artes são desenhadas por `arte/render.js` com as mesmas funções da Central (`arte/funcoes.js`, gerado por `arte/extrair.py`).
+
+
+## Desde 05/11/2026
+- O José é o CEO: nenhum agente cria conteúdo sozinho. Eles só trabalham no que ele manda para a esteira (planejamento semanal automático desligado).
+- Esteira de Vídeos IA (Central → Conteúdo → Vídeos IA): gerador de ideias e roteirista rodam na página; o Animador (equipe/ANIMADOR.md, tarefa em agentes.json → "animador") monta o vídeo com video/estudio.py e deixa em Pronto para o José baixar e postar como Reels de teste. Tempos da voz: workflow video.yml (Whisper).

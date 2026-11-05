@@ -1,0 +1,30 @@
+{
+  "titulo": "Teste de todas as cenas",
+  "tema": "escuro",
+  "destaques": ["pensar", "acompanhamento", "mito", "vida"],
+  "falas": [
+    {"texto": "A paciente mandou: vou pensar.", "cena": {"tipo": "chat", "contato": "Paciente · Ana"}, "passo": {"de": "ele", "msg": "Oi! Vi o valor. Vou pensar e te aviso 🙂", "hora": "14:02"}},
+    {"texto": "E você respondeu assim.", "passo": {"de": "eu", "msg": "Tudo bem! Qualquer coisa me chama.", "hora": "14:05", "lido": true, "marca": "erro"}},
+    {"texto": "Ela nunca mais voltou.", "passo": {"aviso": "Ana visualizou e não respondeu"}},
+    {"texto": "Agora faz a conta de quanto isso custou.", "cena": {"tipo": "conta", "titulo": "Quanto vale essa paciente", "prefixo": "R$ "}, "passo": {"rotulo": "Consulta", "valor": 300}},
+    {"texto": "Mais cinco retornos no acompanhamento.", "passo": {"rotulo": "5 retornos", "valor": 1250, "op": "+"}},
+    {"texto": "E duas indicações por ano.", "passo": {"rotulo": "2 indicações", "valor": 3100, "op": "+"}},
+    {"texto": "Você perdeu quatro mil e seiscentos reais.", "passo": {"total": 4650, "rotulo": "Você perdeu", "cor": "ruim"}},
+    {"texto": "Sua agenda começa vazia.", "cena": {"tipo": "agenda", "titulo": "Sua semana", "cheios": 4}},
+    {"texto": "Você posta todo dia e ela enche.", "passo": {"encher": 18}},
+    {"texto": "No mês seguinte esvazia de novo.", "passo": [{"esvaziar": 14}, {"rotulo": "Agenda sanfona", "atraso": 0.8}]},
+    {"texto": "Pergunta: a paciente pediu desconto. O que você faz?", "cena": {"tipo": "quiz", "pergunta": "A paciente pediu desconto. O que você faz?", "opcoes": ["Dá o desconto", "Explica o que está incluso", "Ignora a mensagem"], "certa": 1}},
+    {"texto": "Pensa aí. Três, dois, um.", "passo": {"acao": "timer", "seg": 3}},
+    {"texto": "Você explica o valor antes do preço.", "passo": [{"acao": "revelar"}, {"explica": "Valor primeiro, preço depois.", "atraso": 0.6}]},
+    {"texto": "Consulta barata enche a agenda.", "cena": {"tipo": "mito"}, "passo": {"frase": "Consulta barata enche a agenda"}},
+    {"texto": "Isso é mito.", "passo": {"veredito": "MITO"}},
+    {"texto": "Ela atrai quem só quer preço e some no mês seguinte.", "passo": {"verdade": "Preço baixo atrai quem compara preço e some no mês seguinte."}},
+    {"texto": "Seu consultório tem uma barra de vida.", "cena": {"tipo": "jogo", "nome": "Consultório da Ana", "vida": 70}},
+    {"texto": "Não chamou o paciente de volta? Menos trinta.", "passo": {"delta": -30, "texto": "Não chamou o paciente de volta"}},
+    {"texto": "Vendeu acompanhamento de três meses? Mais cinquenta.", "passo": [{"delta": 50, "texto": "Vendeu acompanhamento de 3 meses"}, {"nivel": 2, "atraso": 0.8}]},
+    {"texto": "Plantão: nutricionista descobre por que a agenda esvazia.", "cena": {"tipo": "plantao", "tag": "Plantão", "letreiro": "Agenda sanfona atinge consultórios"}, "passo": {"manchete": "Nutricionista descobre que paciente some porque ninguém chamou de volta"}},
+    {"texto": "Duas nutris começam iguais em janeiro.", "cena": {"tipo": "barras", "titulo": "Faturamento no mês", "prefixo": "R$ ", "ordenar": true, "barras": [{"nome": "Nutri que vende consulta avulsa", "valor": 3000, "cor": "ruim"}, {"nome": "Nutri que vende acompanhamento", "valor": 3000, "cor": "bom"}]}, "passo": {"mostrar": "todas", "rotulo": "JANEIRO"}},
+    {"texto": "Em dezembro, uma fatura o triplo da outra.", "passo": {"valores": [3200, 9600], "rotulo": "DEZEMBRO", "destacar": 1}},
+    {"texto": "É isso. Segue para ver a próxima.", "cena": {"tipo": "final", "titulo": "Segue para a próxima", "sub": "Marketing e vendas para nutricionistas"}}
+  ]
+}

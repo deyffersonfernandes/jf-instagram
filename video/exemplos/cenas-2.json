@@ -1,0 +1,30 @@
+{
+  "tema": "escuro",
+  "destaques": ["retorno"],
+  "falas": [
+    {"texto": "Você não tem problema de agenda.", "cena": {"tipo": "frase"}, "passo": {"texto": "Você não tem problema de *agenda*."}},
+    {"texto": "Você tem problema de retorno.", "passo": {"texto": "Você tem problema de *retorno*."}},
+    {"texto": "Duas nutris, a mesma semana.", "cena": {"tipo": "split", "esq": {"titulo": "Nutri A"}, "dir": {"titulo": "Nutri B"}}},
+    {"texto": "Uma manda o preço seco. A outra pergunta o objetivo primeiro.", "passo": [{"lado": "esq", "texto": "Manda o preço seco"}, {"lado": "dir", "texto": "Pergunta o objetivo primeiro", "em": "outra"}]},
+    {"texto": "Resultado: uma fica no vácuo, a outra fecha.", "passo": {"resultado": {"esq": "Vácuo", "dir": "Fechou"}}},
+    {"texto": "Ranqueei as formas de conseguir paciente.", "cena": {"tipo": "tier", "titulo": "Formas de conseguir paciente"}},
+    {"texto": "Indicação é boa, mas não depende de você.", "passo": {"item": "Indicação", "faixa": "B"}},
+    {"texto": "Anúncio com o público certo, topo.", "passo": {"item": "Anúncio certo", "faixa": "S"}},
+    {"texto": "Desconto, lá embaixo.", "passo": {"item": "Desconto", "faixa": "D"}},
+    {"texto": "Três motivos para o paciente sumir.", "cena": {"tipo": "top", "titulo": "Por que o paciente some"}},
+    {"texto": "Três: ninguém marcou o retorno.", "passo": {"n": 3, "texto": "Ninguém marcou o retorno"}},
+    {"texto": "Dois: ele não viu resultado.", "passo": {"n": 2, "texto": "Ele não viu resultado"}},
+    {"texto": "Um: você vendeu consulta, não acompanhamento.", "passo": {"n": 1, "texto": "Você vendeu consulta, não acompanhamento"}},
+    {"texto": "Os noventa dias do paciente.", "cena": {"tipo": "timeline", "titulo": "Os 90 dias do paciente"}},
+    {"texto": "Dia zero, a consulta.", "passo": {"marco": "Dia 0", "texto": "A primeira consulta"}},
+    {"texto": "Dia sete, ele some.", "passo": {"marco": "Dia 7", "texto": "Ele some", "cor": "ruim"}},
+    {"texto": "Dia trinta, o retorno que não aconteceu.", "passo": {"marco": "Dia 30", "texto": "O retorno que não aconteceu", "cor": "ruim"}},
+    {"texto": "Mil pessoas viram seu post.", "cena": {"tipo": "funil", "etapas": [{"nome": "Viram o post", "valor": 1000}, {"nome": "Foram ao perfil", "valor": 80}, {"nome": "Chamaram no WhatsApp", "valor": 9}, {"nome": "Marcaram consulta", "valor": 2}]}, "passo": {"mostrar": 0}},
+    {"texto": "Oitenta foram ao perfil. Nove chamaram. Duas marcaram.", "passo": [{"mostrar": 1}, {"mostrar": 2, "em": "nove"}, {"mostrar": 3, "em": "duas"}]},
+    {"texto": "Segunda de manhã, o celular da nutri.", "cena": {"tipo": "celular", "hora": "08:12"}},
+    {"texto": "Uma paciente remarcou, outra cancelou.", "passo": [{"notif": {"app": "WhatsApp", "titulo": "Paciente Carla", "texto": "Posso remarcar pra semana que vem?"}}, {"notif": {"app": "Agenda", "titulo": "Consulta cancelada", "texto": "Qui 15h · Juliana"}, "em": "outra"}]},
+    {"texto": "A bio dela antes e depois.", "cena": {"tipo": "antes_depois", "antes": {"titulo": "Antes", "linhas": ["Nutricionista", "Amo comida saudável", "CRN 12345"]}, "depois": {"titulo": "Depois", "linhas": ["Emagrecimento para mulheres 40+", "Sem dieta restritiva", "Agende pelo link"]}}},
+    {"texto": "Olha a diferença.", "passo": {"revelar": true}},
+    {"texto": "Isso é posicionamento.", "cena": {"tipo": "titulo"}, "passo": {"texto": "Isso é *posicionamento*.", "icone": "check", "cor": "txt"}}
+  ]
+}
