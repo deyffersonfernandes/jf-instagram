@@ -209,7 +209,7 @@ def titulo_grande(cv, s, t, t0, y=700, rgb=AMAR):
     if t0 is None or t < t0:
         return
     k = E.prog(t, t0, 0.45)
-    a = 1 - E.cl((t - t0 - 2.0) / 0.4)
+    a = 1 - E.cl((t - t0 - 2.6) / 0.4)
     if a <= 0:
         return
     sc = E.lerp(2.2, 1, E.e_back(k))
@@ -999,39 +999,48 @@ def registrar(Emod):
                 if tp <= t and p.get("final"):
                     fim = tp
             ys = [1660 - i * (1180 / max(1, n - 1)) for i in range(n)] if n > 1 else [900]
+            zig = n >= 4
+            xs = [(320 if i % 2 == 0 else 760) if zig else 540 for i in range(n)]
+            r = 150 if zig else 210
             for i in range(n - 1):
                 for j in range(4):
-                    yy = E.lerp(ys[i], ys[i + 1], (j + 1) / 5)
-                    E.rrect(cv, 490, yy - 18, 100, 36, 18, (240, 235, 222))
+                    k_ = (j + 1) / 5
+                    E.rrect(cv, E.lerp(xs[i], xs[i + 1], k_) - 45, E.lerp(ys[i], ys[i + 1], k_) - 16, 90, 32, 16, (240, 235, 222))
             for i, e in enumerate(et):
-                y = ys[i]
+                y, x = ys[i], xs[i]
                 lit = i <= on or fim is not None
                 tp = min([tp for tp, p in self.passos if p.get("etapa") == i] or [fim or 99])
                 k = E.e_back(E.prog(t, tp, 0.4)) if lit else 0
                 pa = skia.Path()
-                r = 210
-                for a in range(6):
-                    ang = math.radians(60 * a + 30)
-                    px, py = 540 + r * math.cos(ang), y + r * 0.55 * math.sin(ang)
-                    pa.moveTo(px, py) if a == 0 else pa.lineTo(px, py)
+                for a_ in range(6):
+                    ang = math.radians(60 * a_ + 30)
+                    px, py = x + r * math.cos(ang), y + r * 0.55 * math.sin(ang)
+                    pa.moveTo(px, py) if a_ == 0 else pa.lineTo(px, py)
                 pa.close()
                 cv.save(); cv.translate(0, 18); cv.drawPath(pa, E.P((200, 190, 170))); cv.restore()
                 cv.drawPath(pa, E.P(AMAR if lit else (240, 235, 222)))
-                E.icone(cv, e.get("icone", "check"), 540, y - 10, 100, (60, 60, 60) if lit else (190, 185, 175))
+                E.icone(cv, e.get("icone", "check"), x, y - 10, 100 if not zig else 76, (60, 60, 60) if lit else (190, 185, 175))
                 if lit:
                     nome_ = f"{i + 1}. {e.get('nome', '').upper()}"
-                    sz = 58 * (0.6 + 0.4 * k)
-                    fz = E.F(sz, 900); lw_ = min(fz.measureText(nome_), 1000)
-                    cv.save(); cv.translate(540, y - 165)
-                    if fz.measureText(nome_) > 1000:
-                        cv.scale(1000 / fz.measureText(nome_), 1000 / fz.measureText(nome_)); lw_ = fz.measureText(nome_)
+                    sz = (58 if not zig else 46) * (0.6 + 0.4 * k)
+                    fz = E.F(sz, 900); lw_ = fz.measureText(nome_)
+                    cv.save(); cv.translate(x, y - r * 0.8)
+                    mx = 1000 if not zig else 520
+                    if lw_ > mx:
+                        cv.scale(mx / lw_, mx / lw_)
                     cv.drawString(nome_, -lw_ / 2, sz * 0.35, fz, E.P((40, 30, 10), 1, stroke=14))
                     cv.drawString(nome_, -lw_ / 2, sz * 0.35, fz, E.P(AMAR))
                     cv.restore()
                     if e.get("rotulo"):
-                        pilula(cv, e["rotulo"], 540, y + 155, E.prog(t, tp + 0.3, 0.35), alinhar="c", size=30)
+                        pilula(cv, e["rotulo"], x, y + r * 0.75, E.prog(t, tp + 0.3, 0.35), alinhar="c", size=28)
             if fim is not None:
                 titulo_grande(cv, self.d.get("titulo", "PRONTO!"), t, fim, y=200)
+            cm = [(tp, p) for tp, p in self.passos if tp <= t and p.get("comemora")]
+            if cm:
+                tp, p = cm[-1]
+                confete(cv, t, tp)
+                cv.drawColor(E.C((0, 0, 0), 0.35 * E.e_out(E.prog(t, tp, 0.3))))
+                titulo_grande(cv, p["comemora"], t, tp, y=p.get("y", 760))
             self.selos(cv, t)
 
     for cls in (Perfil, Editar, Whats, Stories, Links, Consultorio, Conteudos, CTA, Caminho):

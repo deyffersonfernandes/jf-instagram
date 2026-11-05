@@ -211,6 +211,7 @@ def circulo(cv, x, y, r, rgb, a=1.0, stroke=0):
 
 def icone(cv, nome, x, y, s, rgb, a=1.0):
     """Ícones desenhados com traço. (x, y) = centro, s = tamanho."""
+    nome = {"whatsapp": "celular", "anuncio": "grafico", "instagram": "celular", "agenda": "calendario", "dinheiro_": "dinheiro"}.get(nome, nome)
     st = max(3, s * 0.12)
     p = P(rgb, a, stroke=st)
     pa = skia.Path()
@@ -254,6 +255,13 @@ def icone(cv, nome, x, y, s, rgb, a=1.0):
     elif nome == "celular":
         rrect(cv, x - h * .5, y - h * .85, h, h * 1.7, h * .18, rgb, a, stroke=st)
         circulo(cv, x, y + h * .6, st * .6, rgb, a)
+    elif nome == "placa":
+        rrect(cv, x - h * .85, y - h * .7, h * 1.7, h * .9, h * .12, rgb, a, stroke=st)
+        cv.drawRect(skia.Rect.MakeXYWH(x - st / 2, y + h * .2, st, h * .75), P(rgb, a))
+    elif nome == "jornal":
+        rrect(cv, x - h * .75, y - h * .8, h * 1.5, h * 1.6, h * .1, rgb, a, stroke=st)
+        for k in range(3):
+            cv.drawRect(skia.Rect.MakeXYWH(x - h * .45, y - h * .4 + k * h * .35, h * .9, st * .8), P(rgb, a))
     elif nome == "grafico":
         for i, hh in enumerate((.4, .75, 1.1)):
             rrect(cv, x - h * .8 + i * h * .6, y + h * .6 - hh * h, h * .4, hh * h, 4, rgb, a)
@@ -1298,6 +1306,8 @@ class Video:
             self.dur += 2.2
         elif self.cenas and self.cenas[-1].tipo == "final":
             self.dur = max(self.dur, self.cenas[-1].t0 + 2.2)
+        elif not fim_final:
+            self.dur += float(rot.get("cauda", 1.3))  # segura o último quadro (ex.: "ISSO É MARKETING!")
         for i, c in enumerate(self.cenas):
             c.t1 = self.cenas[i + 1].t0 if i + 1 < len(self.cenas) else self.dur + 1
 
@@ -1536,9 +1546,10 @@ def trilha(dur, estilo="leve"):
     return out * fade
 
 
-def ler_audio(caminho):
+def ler_audio(caminho, acelerar=1.0):
     tmp = caminho + ".wav"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", caminho, "-ac", "1", "-ar", str(SR), tmp], check=True)
+    filtro = ["-filter:a", f"atempo={acelerar}"] if abs(acelerar - 1) > 1e-3 else []
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", caminho] + filtro + ["-ac", "1", "-ar", str(SR), tmp], check=True)
     with wave.open(tmp) as w:
         x = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
     os.remove(tmp)
@@ -1572,8 +1583,8 @@ def mixar(v, caminho_wav, voz=None):
 
 
 # ---------------------------------------------------------------- render
-def render(v, saida, voz_path=None):
-    voz = ler_audio(voz_path) if voz_path else None
+def render(v, saida, voz_path=None, acelerar=1.0):
+    voz = ler_audio(voz_path, acelerar) if voz_path else None
     if voz is not None:
         v.dur = max(v.dur, len(voz) / SR + 0.3)
     wav = saida + ".wav"
@@ -1650,6 +1661,7 @@ def main():
     ap.add_argument("--audio")
     ap.add_argument("--palavras")
     ap.add_argument("--tempos", help="tempos separados por vírgula (quadros/png)")
+    ap.add_argument("--acelerar", type=float, help="acelera a voz (padrão: 'acelerar' do roteiro ou 1.1)")
     a = ap.parse_args()
     rot = json.load(open(a.roteiro, encoding="utf-8"))
     if "roteiro" in rot and "falas" not in rot:
@@ -1664,10 +1676,15 @@ def main():
     pal = json.load(open(a.palavras, encoding="utf-8")) if a.palavras else None
     if isinstance(pal, dict):
         pal = pal.get("palavras")
+    # o José quer todo vídeo com a voz acelerada (padrão 1.1): os tempos do Whisper
+    # (tirados do áudio original) são divididos pelo mesmo fator
+    acel = float(a.acelerar if a.acelerar is not None else rot.get("acelerar", 1.1)) if a.audio else 1.0
+    if pal and acel != 1.0:
+        pal = [dict(p, ini=p["ini"] / acel, fim=p["fim"] / acel) for p in pal]
     dur_audio = None
     if a.audio:
-        dur_audio = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", a.audio],
-                                         capture_output=True, text=True).stdout.strip() or 0) or None
+        dur_audio = (float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", a.audio],
+                                         capture_output=True, text=True).stdout.strip() or 0) / acel) or None
     v = Video(rot, pal, dur_audio)
     if a.acao == "quadros":
         ts = [float(x) for x in a.tempos.split(",")] if a.tempos else None
@@ -1677,7 +1694,7 @@ def main():
         for x in a.tempos.split(","):
             v.png(float(x), (a.saida or "q") + f"-{x}.png")
     else:
-        d = render(v, a.saida or "reel.mp4", a.audio)
+        d = render(v, a.saida or "reel.mp4", a.audio, acel)
         print("ok", round(d, 1), "s")
 
 

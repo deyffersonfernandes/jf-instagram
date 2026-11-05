@@ -21,7 +21,7 @@ O roteiro é um JSON com a narração dividida em **falas** (frases curtas, na o
 }
 ```
 
-- Sempre `"estilo": "tela"`, `"tema": "claro"`, `"velocidade": 1.1` (a voz do ElevenLabs vai em 1.1) e `"final": null` (o fim é a cena `cta`).
+- Sempre `"estilo": "tela"`, `"tema": "claro"`, `"velocidade": 1.1` e `"final": null` (o fim é a cena `cta`). Todo vídeo sai com a voz acelerada para 1.1 (`"acelerar": 1.1` é o padrão do render com áudio); o José gera a voz no ElevenLabs em velocidade normal.
 - `destaques`: 2 a 4 palavras da fala que ficam amarelas na legenda (a legenda é uma palavra por vez, no meio da tela).
 - `legenda_y` (opcional): altura da legenda (padrão 1330). Use 1720 quando a parte de baixo da tela for importante (ex.: grade de posts).
 - A personagem é sempre a mesma nutri: **Ana Souza** (@anasouzanutri, loira, de jaleco, "Ajudo mulheres a emagrecer com acompanhamento nutricional").
