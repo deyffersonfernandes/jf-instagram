@@ -1,25 +1,101 @@
 [
-  {"id": "tela", "nome": "Construindo na tela", "cenas": ["consultorio", "perfil", "editar", "whats", "stories", "links", "cta"], "dur": "20-45 s",
-   "como": "Modelo do vídeo 'Como atrair pacientes pelo Instagram': a tela do app (perfil, WhatsApp, Stories, link da bio) começa errada ou vazia e vai sendo montada na frente de quem assiste, peça por peça, na corrente 'Mas tem um problema… Então você… Pronto!'. Cada problema cai como notificação vermelha; cada solução é digitada, fixada ou tocada.",
-   "gancho": "'Você é nutricionista e…' / 'Uma paciente te chama no WhatsApp e…'",
-   "exemplos": ["A bio que vende", "Os três posts fixados", "O link da bio", "O que postar hoje nos Stories", "Perguntou o preço. E agora?"]},
-  {"id": "mundinho", "nome": "Mundinho do consultório", "cenas": ["consultorio", "caminho", "cta"], "dur": "30-60 s",
-   "como": "Modelo do vídeo 'Consultório previsível': um caminho de etapas numeradas que vão acendendo (1. INDICAÇÃO, 2. CONTEÚDO…). Cada solução ganha um nome técnico ('Isso é recorrência') e, no final, o caminho inteiro acende com o nome do sistema.",
-   "gancho": "'Se você abre um consultório e espera o paciente chegar…'",
-   "exemplos": ["Consultório previsível", "Esteira de produtos", "O caminho do seguidor até o paciente"]},
-  {"id": "consulta", "nome": "Dentro do consultório", "cenas": ["consultorio", "whats", "cta"], "dur": "25-40 s",
-   "como": "A nutri e a paciente no consultório ilustrado: balões de fala, a paciente entrando, saindo, e popups (datas de retorno, plano, agenda na parede). Bom para atendimento, retorno, objeção e preço cara a cara.",
-   "gancho": "'Você atende uma paciente, entrega as orientações e…'",
-   "exemplos": ["O segundo agendamento", "A paciente que pede desconto na consulta", "Como apresentar o acompanhamento no fim da consulta"]},
-  {"id": "conversa", "nome": "A conversa que perde x a que fecha", "cenas": ["whats", "cta"], "dur": "25-40 s",
-   "como": "O WhatsApp da nutri: primeiro a resposta comum (marca vermelha, a paciente visualiza e some), depois a conversa refeita com a resposta certa sendo digitada (marca verde, a paciente responde).",
-   "gancho": "A mensagem que toda nutri recebe ('Quanto custa?', 'Vou pensar', 'Faz desconto?').",
-   "exemplos": ["O paciente disse 'vou pensar'", "Perguntou o preço. E agora?", "O paciente que sumiu depois da 1ª consulta"]},
-  {"id": "antes_depois", "nome": "Antes e depois na tela", "cenas": ["perfil", "links", "whats", "stories", "cta"], "dur": "20-35 s",
-   "como": "A mesma tela mostrada errada (com as falhas marcadas por etiquetas e notificações vermelhas) e depois corrigida item por item, terminando com confete. Ideal para 'conserte isso hoje'.",
-   "gancho": "'Esse é o perfil de uma nutri que não recebe mensagem. Olha a bio.'",
-   "exemplos": ["Perfil que não converte x perfil que converte", "Link da bio com 10 botões x 1 botão", "Destaques bagunçados x organizados"]},
-  {"id": "misto", "nome": "Livre (o roteirista escolhe)", "cenas": [], "dur": "20-45 s",
-   "como": "O roteirista escolhe as telas que melhor contam a ideia, sempre no estilo 'construindo na tela'.",
-   "gancho": "O mais forte para a ideia.", "exemplos": []}
+ {
+  "id": "tela",
+  "nome": "Construindo na tela",
+  "cenas": [
+   "consultorio",
+   "perfil",
+   "editar",
+   "whats",
+   "stories",
+   "links",
+   "cta"
+  ],
+  "dur": "20-45 s",
+  "como": "Modelo do vídeo 'Como atrair pacientes pelo Instagram': a tela do app (perfil, WhatsApp, Stories, link da bio) começa errada ou vazia e vai sendo montada na frente de quem assiste, peça por peça, na corrente 'Mas tem um problema… Então você… Pronto!'. Cada problema cai como notificação vermelha; cada solução é digitada, fixada ou tocada.",
+  "gancho": "'Você é nutricionista e…' / 'Uma paciente te chama no WhatsApp e…'",
+  "exemplos": [
+   "A bio que vende",
+   "Os três posts fixados",
+   "O link da bio",
+   "O que postar hoje nos Stories",
+   "Perguntou o preço. E agora?"
+  ]
+ },
+ {
+  "id": "mundinho",
+  "nome": "Mundinho do consultório",
+  "cenas": [
+   "estilo mundo (3D)"
+  ],
+  "dur": "30-60 s",
+  "como": "Mundinho 3D de hexágonos (modelo dos vídeos 'Consultório previsível' e da corrente de hexágonos): uma plataforma por conceito, a câmera andando de uma para a outra, e cada estação mostra literalmente o que a fala diz (outdoor na rua, print do anúncio patrocinado, print da matéria no portal, conversa no WhatsApp, consultório). Título numerado em cada conceito ('1. PROPAGANDA') e, no fim, a câmera sobe e mostra o caminho inteiro com o nome do sistema. Roteiro com \"estilo\": \"mundo\".",
+  "gancho": "'Se você abre um consultório e espera o paciente chegar…'",
+  "exemplos": [
+   "Isso é marketing (propaganda, tráfego pago, publicidade, vendas, fidelização)",
+   "Consultório previsível",
+   "Esteira de produtos"
+  ]
+ },
+ {
+  "id": "consulta",
+  "nome": "Dentro do consultório",
+  "cenas": [
+   "consultorio",
+   "whats",
+   "cta"
+  ],
+  "dur": "25-40 s",
+  "como": "A nutri e a paciente no consultório ilustrado: balões de fala, a paciente entrando, saindo, e popups (datas de retorno, plano, agenda na parede). Bom para atendimento, retorno, objeção e preço cara a cara.",
+  "gancho": "'Você atende uma paciente, entrega as orientações e…'",
+  "exemplos": [
+   "O segundo agendamento",
+   "A paciente que pede desconto na consulta",
+   "Como apresentar o acompanhamento no fim da consulta"
+  ]
+ },
+ {
+  "id": "conversa",
+  "nome": "A conversa que perde x a que fecha",
+  "cenas": [
+   "whats",
+   "cta"
+  ],
+  "dur": "25-40 s",
+  "como": "O WhatsApp da nutri: primeiro a resposta comum (marca vermelha, a paciente visualiza e some), depois a conversa refeita com a resposta certa sendo digitada (marca verde, a paciente responde).",
+  "gancho": "A mensagem que toda nutri recebe ('Quanto custa?', 'Vou pensar', 'Faz desconto?').",
+  "exemplos": [
+   "O paciente disse 'vou pensar'",
+   "Perguntou o preço. E agora?",
+   "O paciente que sumiu depois da 1ª consulta"
+  ]
+ },
+ {
+  "id": "antes_depois",
+  "nome": "Antes e depois na tela",
+  "cenas": [
+   "perfil",
+   "links",
+   "whats",
+   "stories",
+   "cta"
+  ],
+  "dur": "20-35 s",
+  "como": "A mesma tela mostrada errada (com as falhas marcadas por etiquetas e notificações vermelhas) e depois corrigida item por item, terminando com confete. Ideal para 'conserte isso hoje'.",
+  "gancho": "'Esse é o perfil de uma nutri que não recebe mensagem. Olha a bio.'",
+  "exemplos": [
+   "Perfil que não converte x perfil que converte",
+   "Link da bio com 10 botões x 1 botão",
+   "Destaques bagunçados x organizados"
+  ]
+ },
+ {
+  "id": "misto",
+  "nome": "Livre (o roteirista escolhe)",
+  "cenas": [],
+  "dur": "20-45 s",
+  "como": "O roteirista escolhe as telas que melhor contam a ideia, sempre no estilo 'construindo na tela'.",
+  "gancho": "O mais forte para a ideia.",
+  "exemplos": []
+ }
 ]
