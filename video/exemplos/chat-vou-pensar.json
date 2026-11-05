@@ -1,0 +1,21 @@
+{
+  "titulo": "A resposta que perde o paciente que disse 'vou pensar'",
+  "formato": "chat",
+  "tema": "escuro",
+  "destaques": ["pensar", "objetivo", "fechou"],
+  "final": {"titulo": "Manda para uma amiga nutri", "sub": "Marketing e vendas para nutricionistas"},
+  "falas": [
+    {"texto": "Toda nutricionista já recebeu essa mensagem.", "cena": {"tipo": "chat", "contato": "Paciente · Carla"}, "passo": {"de": "ele", "msg": "Oi! Vi o valor da consulta. Vou pensar e te aviso 🙂", "hora": "19:42"}},
+    {"texto": "E a maioria responde assim.", "passo": {"de": "eu", "msg": "Claro! Fico à disposição. Qualquer coisa me chama 😊", "hora": "19:50", "lido": true, "marca": "erro"}},
+    {"texto": "Educada, simpática… e a paciente nunca mais aparece.", "passo": [{"aviso": "Carla visualizou e não respondeu", "em": "nunca"}, {"online": "visto por último há 12 dias", "em": "aparece"}]},
+    {"texto": "Porque vou pensar quase nunca é sobre o preço.", "cena": {"tipo": "titulo"}, "passo": {"texto": "\"Vou pensar\" quase nunca é sobre *preço*.", "icone": "alerta", "cor": "txt"}},
+    {"texto": "É dúvida que ela não teve coragem de falar.", "passo": {"texto": "É uma *dúvida* que ela não falou.", "atraso": 0.2}},
+    {"texto": "Então, em vez de se despedir, você pergunta.", "cena": {"tipo": "chat", "contato": "Paciente · Carla"}, "passo": {"de": "ele", "msg": "Oi! Vi o valor da consulta. Vou pensar e te aviso 🙂", "hora": "19:42", "digitando": false}},
+    {"texto": "Claro! Me conta: o que você quer resolver primeiro?", "passo": {"de": "eu", "msg": "Claro, Carla! Me conta: o que você quer resolver primeiro? Assim eu te digo se o acompanhamento faz sentido pra você.", "hora": "19:44", "lido": true, "marca": "acerto"}},
+    {"texto": "Agora ela fala do objetivo, e não do valor.", "passo": {"de": "ele", "msg": "Queria perder a barriga até o casamento da minha irmã, em março 😅", "hora": "19:47"}},
+    {"texto": "E você mostra o caminho até lá.", "passo": {"de": "eu", "msg": "Dá tempo! Em 12 semanas a gente monta isso juntas, com retorno a cada 15 dias.", "hora": "19:48", "lido": true}},
+    {"texto": "Pronto. Ela fechou.", "passo": [{"de": "ele", "msg": "Fechado! Qual horário você tem?", "hora": "19:51"}, {"selo": "Fechou", "cor": "bom", "atraso": 0.9}]},
+    {"texto": "Quem pergunta o objetivo vende acompanhamento. Quem se despede, fica no vácuo.", "cena": {"tipo": "split", "esq": {"titulo": "Se despede"}, "dir": {"titulo": "Pergunta"}}, "passo": [{"lado": "esq", "texto": "\"Qualquer coisa me chama\""}, {"lado": "dir", "texto": "\"O que você quer resolver primeiro?\"", "em": "vende"}, {"resultado": {"esq": "Vácuo", "dir": "Fechou"}, "em": "fica"}]},
+    {"texto": "Manda isso para uma amiga nutri que ainda responde no automático.", "cena": {"tipo": "final", "titulo": "Manda para uma amiga nutri", "sub": "Marketing e vendas para nutricionistas"}}
+  ]
+}

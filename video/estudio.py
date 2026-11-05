@@ -408,7 +408,7 @@ class Cena:
         s = p["selo"].upper()
         size = 64
         w = largura(s, size, 900) + 70
-        cx, cy = 540, p.get("selo_y", TOPO + 70)
+        cx, cy = 540, p.get("selo_y", BASE - 90 if self.tipo == "chat" else TOPO + 70)
         cv.save()
         cv.translate(cx, cy)
         cv.rotate(-6)
@@ -475,17 +475,8 @@ class Chat(Cena):
         rrect(cv, x0, y0, w, h, 46, self.BG, sombra=True)
         cv.save()
         cv.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x0, y0, w, h), 46, 46))
-        # cabeçalho
-        rrect(cv, x0, y0, w, 150, 0, self.TOP)
-        circulo(cv, x0 + 95, y0 + 75, 42, (100, 120, 130))
-        icone(cv, "pessoa", x0 + 95, y0 + 80, 52, (200, 210, 215))
-        texto(cv, self.d.get("contato", "Paciente"), x0 + 160, y0 + 58, 40, 700, self.TX, alinhar="e", maxw=700)
-        on = [p for tp, p in self.ativos(t) if p.get("online") is not None]
-        sub = self.d.get("status", "online")
-        if on:
-            sub = on[-1]["online"] if isinstance(on[-1]["online"], str) else ("online" if on[-1]["online"] else "visto por último hoje")
         digit = self._digitando(t)
-        texto(cv, "digitando..." if digit else sub, x0 + 160, y0 + 104, 28, 500, (0, 200, 140) if digit else self.SUBT, alinhar="e")
+        cv.save(); cv.clipRect(skia.Rect.MakeXYWH(x0, y0 + 150, w, h - 150))
         # mensagens
         msgs = []
         for tp, p in self.passos:
@@ -551,6 +542,17 @@ class Chat(Cena):
             for i in range(3):
                 ph = (t * 6 + i * 1.2) % (2 * math.pi)
                 circulo(cv, x0 + 80 + i * 35, yy + 35 - 6 * max(0, math.sin(ph)), 9, self.SUBT)
+        cv.restore()
+        # cabeçalho
+        rrect(cv, x0, y0, w, 150, 0, self.TOP)
+        circulo(cv, x0 + 95, y0 + 75, 42, (100, 120, 130))
+        icone(cv, "pessoa", x0 + 95, y0 + 80, 52, (200, 210, 215))
+        texto(cv, self.d.get("contato", "Paciente"), x0 + 160, y0 + 58, 40, 700, self.TX, alinhar="e", maxw=700)
+        on = [p for tp, p in self.ativos(t) if p.get("online") is not None]
+        sub = self.d.get("status", "online")
+        if on:
+            sub = on[-1]["online"] if isinstance(on[-1]["online"], str) else ("online" if on[-1]["online"] else "visto por último hoje")
+        texto(cv, "digitando..." if digit else sub, x0 + 160, y0 + 104, 28, 500, (0, 200, 140) if digit else self.SUBT, alinhar="e")
         cv.restore()
 
     def _digitando(self, t):
