@@ -1,0 +1,123 @@
+{
+ "titulo": "O que postar hoje?",
+ "estilo": "tela",
+ "velocidade": 1.1,
+ "final": null,
+ "tema": "claro",
+ "destaques": [
+  "bastidor",
+  "dúvida"
+ ],
+ "falas": [
+  {
+   "texto": "Você abre os Stories e pensa: “O que eu vou postar hoje?”",
+   "cena": {
+    "tipo": "stories",
+    "vazio": "O que eu vou postar hoje? 🤔"
+   }
+  },
+  {
+   "texto": "Aí mostra seu café, a mesa do consultório... e para por aí.",
+   "passo": [
+    {
+     "story": {
+      "tipo": "foto",
+      "objeto": "cafe",
+      "texto": "Bom dia ☕",
+      "cor1": "#C98B5B",
+      "cor2": "#6E4226"
+     },
+     "em": "café"
+    },
+    {
+     "story": {
+      "tipo": "foto",
+      "objeto": "mesa",
+      "texto": "Consultório pronto ✨",
+      "cor1": "#8EC5FC",
+      "cor2": "#B79CF0"
+     },
+     "em": "mesa"
+    }
+   ]
+  },
+  {
+   "texto": "Mas tem um problema: quem acompanha você ainda não entende seu trabalho.",
+   "passo": {
+    "problema": "Bonito... mas o que você faz?"
+   }
+  },
+  {
+   "texto": "Então você mostra um bastidor do atendimento, sem expor pacientes.",
+   "cena": {
+    "tipo": "stories",
+    "vazio": ""
+   },
+   "passo": [
+    {
+     "story": {
+      "tipo": "bastidor",
+      "texto": "Montando um plano alimentar",
+      "cor1": "#34A878",
+      "cor2": "#1E6B4C"
+     }
+    },
+    {
+     "rotulo": "SEM EXPOR PACIENTES",
+     "alvo": [
+      540,
+      1560
+     ],
+     "lado": "c",
+     "em": "expor"
+    }
+   ]
+  },
+  {
+   "texto": "Depois responde uma dúvida que escuta toda semana.",
+   "passo": {
+    "story": {
+     "tipo": "caixinha",
+     "titulo": "Posso comer pão à noite?",
+     "texto": "Dúvida da semana",
+     "cor1": "#F58529",
+     "cor2": "#DD2A7B"
+    }
+   }
+  },
+  {
+   "texto": "E termina explicando como a pessoa pode conhecer sua consulta.",
+   "passo": {
+    "story": {
+     "tipo": "link",
+     "titulo": "Agendar consulta",
+     "texto": "Como funciona a consulta",
+     "cor1": "#4F8CFF",
+     "cor2": "#7B4DFF"
+    }
+   }
+  },
+  {
+   "texto": "Pronto! Três Stories simples, com começo, meio e fim.",
+   "passo": [
+    {
+     "grade": true,
+     "em": "Três"
+    },
+    {
+     "comemora": "3 STORIES PRONTOS!",
+     "em": "fim",
+     "y": 330
+    }
+   ]
+  },
+  {
+   "texto": "Quer mais ideias assim? Comenta STORIES.",
+   "cena": {
+    "tipo": "cta",
+    "modo": "comentar",
+    "palavra": "STORIES"
+   }
+  }
+ ]
+}

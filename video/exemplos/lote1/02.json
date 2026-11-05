@@ -1,0 +1,125 @@
+{
+ "titulo": "Perguntou o preço. E agora?",
+ "estilo": "tela",
+ "velocidade": 1.1,
+ "final": null,
+ "tema": "claro",
+ "destaques": [
+  "incluído",
+  "dúvida"
+ ],
+ "falas": [
+  {
+   "texto": "Uma paciente te chama no WhatsApp e pergunta: “Quanto custa a consulta?”",
+   "cena": {
+    "tipo": "whats",
+    "contato": "Juliana"
+   },
+   "passo": {
+    "de": "ele",
+    "msg": "Oi! Quanto custa a consulta? 😊",
+    "hora": "18:02",
+    "em": "pergunta"
+   }
+  },
+  {
+   "texto": "Você responde só o preço.",
+   "passo": {
+    "de": "eu",
+    "msg": "Oi, Juliana! R$ 250.",
+    "hora": "18:03",
+    "lido": true
+   }
+  },
+  {
+   "texto": "Ela visualiza e some.",
+   "passo": [
+    {
+     "aviso": "Juliana visualizou às 18:03",
+     "em": "visualiza"
+    },
+    {
+     "problema": "Visualizou e sumiu",
+     "em": "some"
+    }
+   ]
+  },
+  {
+   "texto": "Mas talvez ela ainda nem tenha entendido o que está incluído.",
+   "passo": {
+    "problema": "O que está incluído nesse valor?"
+   }
+  },
+  {
+   "texto": "Então, antes de mandar um texto enorme, você explica de forma simples como funciona seu atendimento e o que está incluído no valor.",
+   "cena": {
+    "tipo": "whats",
+    "contato": "Juliana"
+   },
+   "passo": [
+    {
+     "de": "ele",
+     "msg": "Oi! Quanto custa a consulta? 😊",
+     "hora": "18:02",
+     "digitando": false,
+     "som": ""
+    },
+    {
+     "de": "eu",
+     "msg": "Oi, Juliana! A consulta dura 1 hora: entendo sua rotina e seu objetivo, e você sai com um plano feito pra você + retorno em 30 dias. O valor é R$ 250.",
+     "hora": "18:04",
+     "lido": true,
+     "em": "explica"
+    }
+   ]
+  },
+  {
+   "texto": "Agora ela entende melhor a proposta.",
+   "passo": {
+    "resolvido": "Agora ela sabe o que está pagando"
+   }
+  },
+  {
+   "texto": "Só que ainda pode ter uma dúvida.",
+   "passo": {
+    "de": "ele",
+    "msg": "Hmm... entendi",
+    "hora": "18:06"
+   }
+  },
+  {
+   "texto": "Então você pergunta: “Ficou alguma dúvida sobre o acompanhamento?”",
+   "passo": {
+    "de": "eu",
+    "msg": "Ficou alguma dúvida sobre o acompanhamento?",
+    "hora": "18:06",
+    "lido": true,
+    "marca": "acerto",
+    "em": "Ficou"
+   }
+  },
+  {
+   "texto": "Assim você abre espaço para uma conversa, sem pressionar ninguém.",
+   "passo": [
+    {
+     "de": "ele",
+     "msg": "Fiquei sim! Dá pra ser online?",
+     "hora": "18:07",
+     "em": "conversa"
+    },
+    {
+     "resolvido": "A conversa continuou",
+     "em": "pressionar"
+    }
+   ]
+  },
+  {
+   "texto": "Quer mais estratégias práticas para seu consultório? Comenta QUERO que eu te envio o link da minha comunidade gratuita no WhatsApp.",
+   "cena": {
+    "tipo": "cta",
+    "modo": "comentar",
+    "palavra": "QUERO"
+   }
+  }
+ ]
+}

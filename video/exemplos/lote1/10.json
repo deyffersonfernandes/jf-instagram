@@ -1,0 +1,122 @@
+{
+ "titulo": "O link da bio",
+ "estilo": "tela",
+ "velocidade": 1.1,
+ "final": null,
+ "tema": "claro",
+ "destaques": [
+  "destaque",
+  "pronta"
+ ],
+ "falas": [
+  {
+   "texto": "Uma pessoa entra no seu Instagram, gosta do seu trabalho e decide agendar uma consulta.",
+   "cena": {
+    "tipo": "perfil",
+    "usuario": "anasouzanutri",
+    "nome": "Ana Souza | Nutri Emagrecimento",
+    "foto": true,
+    "verificado": false,
+    "posts": 48,
+    "seguidores": 1284,
+    "seguindo": 312,
+    "crn": "Nutricionista | CRN-3 54321",
+    "bio": "Ajudo mulheres a emagrecer com acompanhamento nutricional",
+    "grade": 6,
+    "link": "anasouzanutri.com.br/links",
+    "cta": "👇 Agende sua consulta"
+   },
+   "passo": {
+    "tap": "link",
+    "em": "agendar"
+   }
+  },
+  {
+   "texto": "Mas, quando clica no link da bio, encontra dez opções diferentes.",
+   "cena": {
+    "tipo": "links",
+    "nome": "Ana Souza | Nutricionista",
+    "botoes": [
+     "Meu e-book",
+     "Receitas grátis",
+     "Loja",
+     "Blog",
+     "Podcast",
+     "Parcerias",
+     "Cupons",
+     "YouTube",
+     "Lista de compras",
+     "Agendar consulta"
+    ]
+   }
+  },
+  {
+   "texto": "Ela não sabe onde clicar e desiste.",
+   "passo": {
+    "problema": "Onde eu clico? 😵"
+   }
+  },
+  {
+   "texto": "Então você deixa o agendamento em destaque, com um botão claro: “Agendar consulta”.",
+   "passo": [
+    {
+     "botoes": [
+      "Agendar consulta",
+      "Receitas grátis",
+      "Blog"
+     ],
+     "em": "agendamento"
+    },
+    {
+     "destaque": 0,
+     "em": "botão"
+    }
+   ]
+  },
+  {
+   "texto": "Pronto! Agora o caminho ficou mais simples.",
+   "passo": {
+    "tap": "botao0",
+    "em": "caminho"
+   }
+  },
+  {
+   "texto": "Só que, ao abrir o WhatsApp, a pessoa ainda precisa pensar no que escrever.",
+   "cena": {
+    "tipo": "whats",
+    "contato": "Ana Souza | Nutri"
+   },
+   "passo": {
+    "problema": "O que eu escrevo? 🤔",
+    "em": "pensar"
+   }
+  },
+  {
+   "texto": "Então você usa uma mensagem pronta: “Olá! Quero saber como funciona a consulta”.",
+   "passo": {
+    "de": "eu",
+    "msg": "Olá! Quero saber como funciona a consulta",
+    "hora": "10:15",
+    "em": "Olá"
+   }
+  },
+  {
+   "texto": "Menos dúvidas no caminho, mais facilidade para entrar em contato.",
+   "passo": {
+    "de": "ele",
+    "msg": "Oi! Que bom que chamou 😊 Te explico tudo!",
+    "hora": "10:16",
+    "em": "facilidade"
+   }
+  },
+  {
+   "texto": "Salva esse vídeo e testa seu link como se você fosse um paciente.",
+   "cena": {
+    "tipo": "cta",
+    "modo": "salvar",
+    "titulo": "SALVA ESSE VÍDEO",
+    "post": "Testa seu link como paciente"
+   }
+  }
+ ]
+}

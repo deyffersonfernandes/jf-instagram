@@ -1,0 +1,134 @@
+{
+ "titulo": "A bio que vende",
+ "estilo": "tela",
+ "velocidade": 1.1,
+ "final": null,
+ "destaques": [
+  "clara",
+  "próximo"
+ ],
+ "falas": [
+  {
+   "texto": "Você é nutricionista e cria um Instagram para atrair pacientes.",
+   "cena": {
+    "tipo": "consultorio"
+   },
+   "passo": {
+    "pensa": "Como atrair pacientes pelo Instagram? 🤔",
+    "atraso": 0.3
+   }
+  },
+  {
+   "texto": "Mas tem um problema: sua bio só diz “Nutricionista clínica”.",
+   "cena": {
+    "tipo": "perfil",
+    "usuario": "anasouzanutri",
+    "nome": "Ana Souza",
+    "foto": true,
+    "posts": 12,
+    "seguidores": 184,
+    "seguindo": 210,
+    "bio": "Nutricionista clínica",
+    "grade": 6
+   },
+   "passo": {
+    "rotulo": "SÓ ISSO?",
+    "alvo": "bio",
+    "em": "bio"
+   }
+  },
+  {
+   "texto": "Quem chega ao perfil não entende para quem é seu atendimento.",
+   "passo": {
+    "problema": "Esse atendimento é pra mim?"
+   }
+  },
+  {
+   "texto": "Então você troca a descrição por uma frase clara: “Ajudo mulheres a emagrecer com acompanhamento nutricional”.",
+   "cena": {
+    "tipo": "editar",
+    "nome": "Ana Souza",
+    "usuario": "anasouzanutri",
+    "foto": true,
+    "bio": "Nutricionista clínica"
+   },
+   "passo": {
+    "set": {
+     "bio": "Ajudo mulheres a emagrecer com acompanhamento nutricional"
+    },
+    "em": "Ajudo"
+   }
+  },
+  {
+   "texto": "Pronto! Agora a pessoa sabe quem você ajuda.",
+   "cena": {
+    "tipo": "perfil",
+    "usuario": "anasouzanutri",
+    "nome": "Ana Souza",
+    "foto": true,
+    "posts": 12,
+    "seguidores": 184,
+    "seguindo": 210,
+    "bio": "Ajudo mulheres a emagrecer com acompanhamento nutricional",
+    "grade": 6
+   },
+   "passo": [
+    {
+     "rotulo": "QUEM VOCÊ AJUDA",
+     "alvo": "bio"
+    },
+    {
+     "set": {
+      "seguidores": 251
+     },
+     "em": "sabe"
+    }
+   ]
+  },
+  {
+   "texto": "Só que ainda falta dizer o que fazer depois.",
+   "passo": {
+    "problema": "Gostei. E agora, faço o quê?"
+   }
+  },
+  {
+   "texto": "Então você acrescenta: “Agende sua consulta pelo link abaixo”.",
+   "passo": {
+    "set": {
+     "cta": "👇 Agende sua consulta pelo link abaixo",
+     "link": "anasouzanutri.com.br/agendar"
+    },
+    "em": "Agende"
+   }
+  },
+  {
+   "texto": "Agora sua bio apresenta seu trabalho e mostra o próximo passo.",
+   "passo": [
+    {
+     "rotulo": "PRÓXIMO PASSO",
+     "alvo": "cta"
+    },
+    {
+     "comemora": "BIO PRONTA!",
+     "em": "próximo"
+    },
+    {
+     "set": {
+      "seguidores": 312
+     },
+     "em": "trabalho"
+    }
+   ]
+  },
+  {
+   "texto": "Salva esse vídeo e confere sua bio hoje.",
+   "cena": {
+    "tipo": "cta",
+    "modo": "salvar",
+    "titulo": "SALVA ESSE VÍDEO",
+    "post": "Confere sua bio hoje"
+   }
+  }
+ ],
+ "tema": "claro"
+}

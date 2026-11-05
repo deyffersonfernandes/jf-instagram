@@ -332,6 +332,7 @@ def palavras_roteiro(rot):
 
 def estimar(rot):
     t = 0.35
+    vel = float(rot.get("velocidade", 1.1))  # a voz do ElevenLabs vai em 1.1
     pal = palavras_roteiro(rot)
     ult = -1
     for p in pal:
@@ -341,6 +342,7 @@ def estimar(rot):
         d = 0.13 + 0.047 * len(norm(p["w"]))
         if p["w"][-1:] in ",.?!:;…":
             d += 0.12
+        d /= vel
         p["ini"], p["fim"] = t, t + d
         t += d
     return pal, t + 0.3
@@ -1239,6 +1241,10 @@ class Final(Cena):
 
 
 CENAS = {c.tipo: c for c in [Titulo, Frase, Chat, Conta, Barras, Split, Quiz, Tier, Top, Mito, Agenda, Jogo, Plantao, Timeline, Funil, Celular, AntesDepois, Final]}
+TELAS = set()
+sys.path.insert(0, AQUI)
+import telas as _telas  # noqa: E402  (cenas na tela do app)
+_telas.registrar(sys.modules[__name__])
 
 
 # ---------------------------------------------------------------- montagem
@@ -1333,7 +1339,33 @@ class Video:
             y = (rng.random() * H - t * (5 + rng.random() * 8)) % H
             circulo(cv, x, y, 3 + rng.random() * 5, T["txt"], 0.05)
 
+    def legenda_palavra(self, cv, t):
+        """Uma palavra por vez, branca com contorno preto (estilo do vídeo do perfil)."""
+        atual = None
+        for x in self.pal:
+            if x["ini"] - 0.03 <= t <= x["fim"] + 0.12:
+                atual = x
+        if atual is None:
+            return
+        s = re.sub(r"^[\"'“”(]+|[\"'“”).,;:!?…]+$", "", atual["w"])
+        s = "".join(ch for ch in s if not eh_emoji(ch))
+        if not s:
+            return
+        dest = norm(atual["w"]) in self.destaques
+        k = e_back(prog(t, atual["ini"] - 0.03, 0.16))
+        size = 104
+        fnt = F(size, 900)
+        lw = fnt.measureText(s)
+        sc = min(1.0, 960 / lw) * lerp(0.75, 1, k)
+        y = self.rot.get("legenda_y", 1330)
+        cv.save(); cv.translate(540, y); cv.scale(sc, sc)
+        cv.drawString(s, -lw / 2, size * 0.35, fnt, P((0, 0, 0), 1, stroke=22))
+        cv.drawString(s, -lw / 2, size * 0.35, fnt, P(FIXAS["hi"] if dest else (255, 255, 255)))
+        cv.restore()
+
     def legenda(self, cv, t):
+        if self.rot.get("estilo") == "tela":
+            return self.legenda_palavra(cv, t)
         f = None
         for x in self.falas:
             if x["ini"] - 0.05 <= t <= x["fim"] + 0.35:
@@ -1385,6 +1417,8 @@ class Video:
         cv.restore()
 
     def moldura(self, cv, t):
+        if self.rot.get("estilo") == "tela":
+            return
         # marca d'água e barra de progresso
         texto(cv, HANDLE, 540, 150, 30, 700, T["txt"], 0.55)
         rrect(cv, 0, 0, W * cl(t / self.dur), 10, 0, cor("acc"), 0.9)

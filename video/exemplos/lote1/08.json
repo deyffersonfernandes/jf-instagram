@@ -1,0 +1,76 @@
+{
+ "titulo": "Uma ideia, três conteúdos",
+ "estilo": "tela",
+ "velocidade": 1.1,
+ "final": null,
+ "tema": "claro",
+ "destaques": [
+  "três"
+ ],
+ "falas": [
+  {
+   "texto": "Você é nutricionista e acha que precisa de uma ideia nova para cada postagem.",
+   "cena": {
+    "tipo": "consultorio"
+   },
+   "passo": {
+    "pensa": "Uma ideia nova pra cada post? 😩",
+    "atraso": 0.3
+   }
+  },
+  {
+   "texto": "Mas isso deixa a produção de conteúdo muito mais difícil.",
+   "passo": {
+    "problema": "Bloqueio criativo todo dia"
+   }
+  },
+  {
+   "texto": "Então você pega uma dúvida real: “Preciso cortar pão para emagrecer?”",
+   "cena": {
+    "tipo": "conteudos",
+    "carrossel": "Preciso cortar o pão?"
+   },
+   "passo": {
+    "duvida": "Preciso cortar pão para emagrecer?",
+    "em": "Preciso"
+   }
+  },
+  {
+   "texto": "Primeiro, transforma a resposta em um Reels curto.",
+   "passo": {
+    "mostrar": "reels",
+    "em": "Reels"
+   }
+  },
+  {
+   "texto": "Depois, faz um carrossel explicando os principais pontos.",
+   "passo": {
+    "mostrar": "carrossel",
+    "em": "carrossel"
+   }
+  },
+  {
+   "texto": "E, nos Stories, abre uma caixinha para ouvir outras dúvidas sobre o assunto.",
+   "passo": {
+    "mostrar": "stories",
+    "em": "Stories"
+   }
+  },
+  {
+   "texto": "Pronto! Uma pergunta virou três conteúdos diferentes, sem repetir tudo do mesmo jeito.",
+   "passo": {
+    "comemora": "1 DÚVIDA = 3 POSTS",
+    "em": "três",
+    "y": 1500
+   }
+  },
+  {
+   "texto": "Quer mais exemplos? Comenta IDEIAS.",
+   "cena": {
+    "tipo": "cta",
+    "modo": "comentar",
+    "palavra": "IDEIAS"
+   }
+  }
+ ]
+}

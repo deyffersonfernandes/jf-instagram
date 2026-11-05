@@ -1,0 +1,120 @@
+{
+ "titulo": "O paciente disse “vou pensar”",
+ "estilo": "tela",
+ "velocidade": 1.1,
+ "final": null,
+ "tema": "claro",
+ "destaques": [
+  "dúvida",
+  "informação"
+ ],
+ "falas": [
+  {
+   "texto": "Você explica sua consulta e a pessoa responde: “Vou pensar”.",
+   "cena": {
+    "tipo": "whats",
+    "contato": "Carla"
+   },
+   "passo": [
+    {
+     "de": "eu",
+     "msg": "A consulta inclui avaliação completa, plano personalizado e retorno em 30 dias 😊",
+     "hora": "19:40",
+     "lido": true,
+     "digitar": false,
+     "som": ""
+    },
+    {
+     "de": "ele",
+     "msg": "Vou pensar...",
+     "hora": "19:42",
+     "em": "responde"
+    }
+   ]
+  },
+  {
+   "texto": "Sua primeira vontade é oferecer desconto para fechar logo.",
+   "passo": {
+    "de": "eu",
+    "msg": "Se fechar hoje, te dou 30% de desconto!",
+    "hora": "19:43",
+    "marca": "erro",
+    "em": "desconto"
+   }
+  },
+  {
+   "texto": "Mas calma: você ainda não sabe o que está impedindo a decisão.",
+   "passo": {
+    "problema": "O que está travando a decisão?",
+    "em": "calma"
+   }
+  },
+  {
+   "texto": "Então responde: “Claro! Tem alguma dúvida sobre o atendimento que eu possa esclarecer?”",
+   "cena": {
+    "tipo": "whats",
+    "contato": "Carla"
+   },
+   "passo": [
+    {
+     "de": "eu",
+     "msg": "A consulta inclui avaliação completa, plano personalizado e retorno em 30 dias 😊",
+     "hora": "19:40",
+     "lido": true,
+     "digitar": false,
+     "som": ""
+    },
+    {
+     "de": "ele",
+     "msg": "Vou pensar...",
+     "hora": "19:42",
+     "digitando": false,
+     "som": ""
+    },
+    {
+     "de": "eu",
+     "msg": "Claro! Tem alguma dúvida sobre o atendimento que eu possa esclarecer?",
+     "hora": "19:43",
+     "lido": true,
+     "marca": "acerto",
+     "em": "Claro"
+    }
+   ]
+  },
+  {
+   "texto": "Pronto! Você abre espaço para entender a situação.",
+   "passo": {
+    "de": "ele",
+    "msg": "Na verdade queria saber se dá pra fazer online",
+    "hora": "19:45",
+    "em": "espaço"
+   }
+  },
+  {
+   "texto": "Se houver uma dúvida, esclareça. Se a pessoa precisar de tempo, respeite.",
+   "passo": {
+    "de": "eu",
+    "msg": "Dá sim! Atendo online por videochamada 💚",
+    "hora": "19:46",
+    "lido": true,
+    "em": "esclareça"
+   }
+  },
+  {
+   "texto": "Vender bem não é insistir até alguém aceitar. É ajudar a pessoa a decidir com informação.",
+   "passo": {
+    "resolvido": "Decisão com informação, sem pressão",
+    "em": "ajudar"
+   }
+  },
+  {
+   "texto": "Salva essa resposta para usar quando precisar.",
+   "cena": {
+    "tipo": "cta",
+    "modo": "salvar",
+    "titulo": "SALVA ESSE VÍDEO",
+    "post": "“Tem alguma dúvida que eu possa esclarecer?”"
+   }
+  }
+ ]
+}

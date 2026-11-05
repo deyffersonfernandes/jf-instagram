@@ -1,0 +1,142 @@
+{
+ "titulo": "Você atende todo mundo?",
+ "estilo": "tela",
+ "velocidade": 1.1,
+ "final": null,
+ "tema": "claro",
+ "destaques": [
+  "foco",
+  "primeiro"
+ ],
+ "falas": [
+  {
+   "texto": "Você é nutricionista e coloca na bio: “Atendo todas as idades e objetivos”.",
+   "cena": {
+    "tipo": "editar",
+    "nome": "Ana Souza",
+    "usuario": "anasouzanutri",
+    "foto": true
+   },
+   "passo": {
+    "set": {
+     "bio": "Atendo todas as idades e objetivos"
+    },
+    "em": "Atendo"
+   }
+  },
+  {
+   "texto": "Só que tem um problema: quem entra não sabe se você é a profissional certa para aquela necessidade.",
+   "cena": {
+    "tipo": "perfil",
+    "usuario": "anasouzanutri",
+    "nome": "Ana Souza | Nutricionista",
+    "foto": true,
+    "verificado": false,
+    "posts": 48,
+    "seguidores": 1284,
+    "seguindo": 312,
+    "crn": "Nutricionista | CRN-3 54321",
+    "bio": "Atendo todas as idades e objetivos",
+    "grade": 6
+   },
+   "passo": [
+    {
+     "rotulo": "PARA QUEM?",
+     "alvo": "bio",
+     "em": "entra"
+    },
+    {
+     "problema": "Será que ela é a nutri certa pra mim?",
+     "em": "profissional"
+    }
+   ]
+  },
+  {
+   "texto": "Então você escolhe um público que quer priorizar na sua comunicação.",
+   "cena": {
+    "tipo": "quiz",
+    "pergunta": "Com quem você quer conversar primeiro?",
+    "opcoes": [
+     "Gestantes",
+     "Mulheres que querem emagrecer",
+     "Atletas"
+    ],
+    "certa": 1,
+    "riscar": false
+   }
+  },
+  {
+   "texto": "Por exemplo: mulheres que buscam emagrecimento com acompanhamento nutricional.",
+   "passo": {
+    "acao": "revelar",
+    "em": "mulheres"
+   }
+  },
+  {
+   "texto": "Agora sua mensagem fica mais fácil de entender.",
+   "cena": {
+    "tipo": "perfil",
+    "usuario": "anasouzanutri",
+    "nome": "Ana Souza | Nutri Emagrecimento",
+    "foto": true,
+    "verificado": false,
+    "posts": 48,
+    "seguidores": 1284,
+    "seguindo": 312,
+    "crn": "Nutricionista | CRN-3 54321",
+    "bio": "Ajudo mulheres a emagrecer com acompanhamento nutricional",
+    "grade": 6
+   },
+   "passo": [
+    {
+     "rotulo": "MENSAGEM CLARA",
+     "alvo": "bio"
+    },
+    {
+     "set": {
+      "seguidores": 1390
+     },
+     "em": "fácil"
+    }
+   ]
+  },
+  {
+   "texto": "Mas atenção: comunicar um foco não significa que você precisa recusar todos os outros pacientes.",
+   "cena": {
+    "tipo": "whats",
+    "contato": "Roberto"
+   },
+   "passo": [
+    {
+     "de": "ele",
+     "msg": "Oi! Você atende homem também? 😅",
+     "hora": "09:12",
+     "em": "foco"
+    },
+    {
+     "de": "eu",
+     "msg": "Atendo sim, Roberto! Quer marcar uma avaliação?",
+     "hora": "09:14",
+     "lido": true,
+     "marca": "acerto",
+     "em": "recusar"
+    }
+   ]
+  },
+  {
+   "texto": "Significa deixar claro com quem você quer conversar primeiro.",
+   "passo": {
+    "resolvido": "Foco na mensagem, porta aberta",
+    "em": "claro"
+   }
+  },
+  {
+   "texto": "Quer aprender mais estratégias para atrair pacientes? Comenta QUERO que eu te mando o link da Comunidade Nutri+.",
+   "cena": {
+    "tipo": "cta",
+    "modo": "comentar",
+    "palavra": "QUERO"
+   }
+  }
+ ]
+}

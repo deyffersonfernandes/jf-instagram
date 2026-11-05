@@ -1,0 +1,145 @@
+{
+ "titulo": "Sua agenda está vazia",
+ "estilo": "tela",
+ "velocidade": 1.1,
+ "final": null,
+ "tema": "claro",
+ "destaques": [
+  "caminho"
+ ],
+ "falas": [
+  {
+   "texto": "Você abriu seu consultório, preparou a sala e está esperando os pacientes chegarem.",
+   "cena": {
+    "tipo": "consultorio"
+   },
+   "passo": [
+    {
+     "agenda": 0,
+     "em": "preparou"
+    },
+    {
+     "pensa": "Cadê os pacientes? 🤔",
+     "em": "esperando"
+    }
+   ]
+  },
+  {
+   "texto": "Só que a agenda continua vazia.",
+   "passo": {
+    "problema": "Agenda vazia de novo"
+   }
+  },
+  {
+   "texto": "Então você começa a postar qualquer coisa no Instagram.",
+   "cena": {
+    "tipo": "perfil",
+    "usuario": "anasouzanutri",
+    "nome": "Ana Souza",
+    "foto": true,
+    "verificado": false,
+    "posts": 3,
+    "seguidores": 1284,
+    "seguindo": 312,
+    "crn": "",
+    "bio": "Nutricionista 🍎",
+    "grade": 9
+   },
+   "passo": [
+    {
+     "set": {
+      "fixados": [
+       "Bom dia ☕"
+      ]
+     },
+     "em": "postar"
+    },
+    {
+     "set": {
+      "fixados": [
+       "Bom dia ☕",
+       "Bolo fit de caneca"
+      ],
+      "posts": 27
+     },
+     "em": "qualquer"
+    },
+    {
+     "set": {
+      "fixados": [
+       "Bom dia ☕",
+       "Bolo fit de caneca",
+       "Look do dia"
+      ],
+      "posts": 61
+     },
+     "em": "Instagram"
+    }
+   ]
+  },
+  {
+   "texto": "Mas tem outro problema: as pessoas veem seus posts e não entendem para quem é seu atendimento.",
+   "passo": {
+    "problema": "Legal... mas é pra quem?",
+    "em": "veem"
+   }
+  },
+  {
+   "texto": "Primeiro, deixe claro qual público você quer atender e como pode ajudar.",
+   "cena": {
+    "tipo": "caminho",
+    "titulo": "UM CAMINHO",
+    "etapas": [
+     {
+      "nome": "Público claro",
+      "icone": "pessoa",
+      "rotulo": "quem você ajuda"
+     },
+     {
+      "nome": "Conteúdo que responde",
+      "icone": "alerta",
+      "rotulo": "dúvidas desse público"
+     },
+     {
+      "nome": "Contato fácil",
+      "icone": "celular",
+      "rotulo": "como agendar"
+     }
+    ]
+   },
+   "passo": {
+    "etapa": 0,
+    "em": "claro"
+   }
+  },
+  {
+   "texto": "Depois, publique conteúdos que respondam às dúvidas desse público.",
+   "passo": {
+    "etapa": 1,
+    "em": "publique"
+   }
+  },
+  {
+   "texto": "E facilite o contato de quem quiser saber sobre a consulta.",
+   "passo": {
+    "etapa": 2,
+    "em": "facilite"
+   }
+  },
+  {
+   "texto": "Isso não enche uma agenda da noite para o dia, mas cria um caminho para as pessoas conhecerem seu trabalho.",
+   "passo": {
+    "final": true,
+    "em": "caminho"
+   }
+  },
+  {
+   "texto": "Quer mais estratégias práticas? Comenta QUERO que eu te envio a Comunidade Nutri+ no WhatsApp.",
+   "cena": {
+    "tipo": "cta",
+    "modo": "comentar",
+    "palavra": "QUERO"
+   }
+  }
+ ]
+}

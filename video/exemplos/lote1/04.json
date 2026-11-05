@@ -1,0 +1,118 @@
+{
+ "titulo": "Os três posts fixados",
+ "estilo": "tela",
+ "velocidade": 1.1,
+ "final": null,
+ "tema": "claro",
+ "destaques": [
+  "fixa",
+  "fixados"
+ ],
+ "falas": [
+  {
+   "texto": "Você é nutricionista e alguém acaba de encontrar seu Instagram.",
+   "cena": {
+    "tipo": "perfil",
+    "usuario": "anasouzanutri",
+    "nome": "Ana Souza | Nutri Emagrecimento",
+    "foto": true,
+    "verificado": false,
+    "posts": 48,
+    "seguidores": 1284,
+    "seguindo": 312,
+    "crn": "Nutricionista | CRN-3 54321",
+    "bio": "Ajudo mulheres a emagrecer com acompanhamento nutricional",
+    "grade": 9
+   },
+   "passo": {
+    "notif": {
+     "app": "Instagram",
+     "titulo": "Novo visitante",
+     "texto": "Alguém acabou de ver seu perfil"
+    },
+    "em": "encontrar"
+   }
+  },
+  {
+   "texto": "Mas tem um problema: a pessoa não sabe quem você é.",
+   "passo": {
+    "problema": "Quem é essa nutri?"
+   }
+  },
+  {
+   "texto": "Então você fixa um post se apresentando.",
+   "passo": {
+    "set": {
+     "fixados": [
+      "Prazer, sou a Ana"
+     ]
+    },
+    "em": "fixa"
+   }
+  },
+  {
+   "texto": "Pronto! Agora ela conhece você.",
+   "passo": {
+    "rotulo": "QUEM É VOCÊ",
+    "alvo": "fixado0",
+    "lado": "e"
+   }
+  },
+  {
+   "texto": "Só que ainda não entende como seu trabalho pode ajudar.",
+   "passo": {
+    "problema": "Mas você pode me ajudar?"
+   }
+  },
+  {
+   "texto": "Então você fixa mais dois posts: um explicando um problema que você ajuda a resolver e outro mostrando como funciona seu atendimento.",
+   "passo": [
+    {
+     "set": {
+      "fixados": [
+       "Prazer, sou a Ana",
+       "5 erros que travam seu emagre-cimento"
+      ]
+     },
+     "em": "explicando"
+    },
+    {
+     "set": {
+      "fixados": [
+       "Prazer, sou a Ana",
+       "5 erros que travam seu emagre-cimento",
+       "Como funciona meu acompa-nhamento"
+      ]
+     },
+     "em": "mostrando"
+    }
+   ]
+  },
+  {
+   "texto": "Agora quem chega ao seu perfil encontra as informações mais importantes logo de cara.",
+   "passo": [
+    {
+     "comemora": "FIXADOS PRONTOS!",
+     "em": "importantes",
+     "y": 620
+    },
+    {
+     "set": {
+      "seguidores": 1402
+     },
+     "em": "perfil"
+    }
+   ]
+  },
+  {
+   "texto": "Salva esse vídeo e organiza seus três fixados.",
+   "cena": {
+    "tipo": "cta",
+    "modo": "salvar",
+    "titulo": "SALVA ESSE VÍDEO",
+    "post": "Organiza seus 3 fixados"
+   }
+  }
+ ],
+ "legenda_y": 1720
+}

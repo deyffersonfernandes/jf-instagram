@@ -1,0 +1,108 @@
+{
+ "titulo": "O segundo agendamento",
+ "estilo": "tela",
+ "velocidade": 1.1,
+ "final": null,
+ "tema": "claro",
+ "destaques": [
+  "voltar",
+  "retorno"
+ ],
+ "falas": [
+  {
+   "texto": "Você atende uma paciente, entrega as orientações e encerra a consulta.",
+   "cena": {
+    "tipo": "consultorio"
+   },
+   "passo": [
+    {
+     "paciente": "senta"
+    },
+    {
+     "fala": "Aqui está o seu plano! 📋",
+     "em": "entrega"
+    }
+   ]
+  },
+  {
+   "texto": "Mas tem um problema: ela vai embora sem saber quando deve voltar.",
+   "passo": [
+    {
+     "paciente": "sai",
+     "em": "embora"
+    },
+    {
+     "fala": "Quando eu volto? 🤔",
+     "quem": "paciente",
+     "em": "problema"
+    },
+    {
+     "problema": "Ela saiu sem data de retorno",
+     "em": "sem"
+    }
+   ]
+  },
+  {
+   "texto": "Então, antes de finalizar, você explica por que o acompanhamento pode ser importante para o objetivo dela.",
+   "cena": {
+    "tipo": "consultorio"
+   },
+   "passo": [
+    {
+     "paciente": "senta"
+    },
+    {
+     "fala": "No retorno a gente ajusta o plano pro seu objetivo 💚",
+     "em": "explica"
+    }
+   ]
+  },
+  {
+   "texto": "Pronto! Agora ela entende que o cuidado não precisa acabar ali.",
+   "passo": {
+    "resolvido": "O cuidado não acaba na consulta"
+   }
+  },
+  {
+   "texto": "Só que entender não significa lembrar de marcar.",
+   "passo": {
+    "problema": "Entendeu... e esqueceu de marcar"
+   }
+  },
+  {
+   "texto": "Então você combina o próximo passo e, quando fizer sentido, já oferece as datas disponíveis para o retorno.",
+   "passo": {
+    "popup": {
+     "titulo": "Datas para o retorno",
+     "linhas": [
+      "Qui 14/11 · 15h",
+      "Ter 19/11 · 10h"
+     ]
+    },
+    "em": "oferece"
+   }
+  },
+  {
+   "texto": "O objetivo não é forçar outra consulta. É deixar o acompanhamento claro e organizado.",
+   "passo": [
+    {
+     "agenda": 6,
+     "em": "deixar"
+    },
+    {
+     "resolvido": "Retorno marcado antes de sair",
+     "em": "organizado"
+    }
+   ]
+  },
+  {
+   "texto": "Salva essa ideia para aplicar no próximo atendimento.",
+   "cena": {
+    "tipo": "cta",
+    "modo": "salvar",
+    "titulo": "SALVA ESSE VÍDEO",
+    "post": "Combine o retorno antes de a paciente sair"
+   }
+  }
+ ]
+}
