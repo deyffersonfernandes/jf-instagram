@@ -1,9 +1,5 @@
 {
-  "token_ok": true,
-  "conta": "josefernandesmarketing",
-  "ig_user_id": "17841403880854172",
-  "checagem_duplicados": "ok (3 posts lidos)",
-  "telegram": "conectado",
-  "telegram_chat": "978937291",
-  "verificado_em": "2026-10-20T16:27:21.714569+00:00"
+  "token_ok": false,
+  "erro": "GET me: HTTP 400 - Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+  "verificado_em": "2026-11-15T19:49:40.061121+00:00"
 }
