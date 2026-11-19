@@ -239,6 +239,12 @@ def registrar_status(**dados):
             antigo = json.loads(arq.read_text())
         except Exception:
             pass
+    # o chat do Telegram nunca pode se perder (ex.: quando o token da Meta expira e o status
+    # é regravado só com o erro). Sem ele o aviso não tem para onde ir, porque o bot do CMO
+    # consome as mensagens e o getUpdates daqui volta sempre vazio.
+    chat = dados.get("telegram_chat") or antigo.get("telegram_chat") or TELEGRAM_CHAT_ID
+    if chat:
+        dados["telegram_chat"] = str(chat)
     comparar = {k: v for k, v in antigo.items() if k != "verificado_em"}
     if comparar != dados:
         arq.write_text(json.dumps({**dados, "verificado_em": agora().isoformat()},
@@ -264,7 +270,7 @@ def conferir_conta():
             antigo = json.loads((RAIZ / "status.json").read_text())
         except Exception:
             pass
-        if antigo.get("telegram") == "conectado":
+        if antigo.get("telegram") == "conectado" and TELEGRAM_CHAT_ID:
             tg = "conectado"
         elif telegram("🔔 Pronto! A partir de agora eu te aviso aqui toda vez que um post sair no Instagram."):
             tg = "conectado"
