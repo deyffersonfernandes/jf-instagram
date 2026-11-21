@@ -3,3 +3,4 @@ car1117-decisoes-compram-tempo 2026-11-19
 frase1117-03 2026-11-20
 reel1111-11-cresca-no-seu-tempo 2026-11-20
 car1117-funil-furado 2026-11-20
+frase1117-04 2026-11-21
