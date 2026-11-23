@@ -7,5 +7,7 @@
   "arquivos": [
     "01.jpg"
   ],
-  "assinatura": "37c998627376"
+  "assinatura": "37c998627376",
+  "tentativas": 1,
+  "ultimo_erro": "POST 17841403880854172/media: HTTP 400 - Timeout"
 }
