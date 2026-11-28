@@ -22,3 +22,4 @@ reel1126-11-voce-tem-3-segundos 2026-11-26
 frase1117-15 2026-11-27
 reel1111-12-frase-que-voce-pausar 2026-11-27
 frase1117-14 2026-11-28
+reel1111-05-justo-que-muito-custe 2026-11-28
